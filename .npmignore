@@ -1,0 +1,8 @@
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierrc
+.env
+README.md
+public/
+node_modules/
