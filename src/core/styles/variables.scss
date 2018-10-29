@@ -1,0 +1,144 @@
+/**
+* Variables partial
+* ================
+* This file should contain all project-wide reusable values.
+* e.g. color palette, responsive breakpoints etc.
+*/
+
+/**
+* Color palette
+*/
+$co-color-black: #3e3e3e;
+$co-color-white: #fff;
+$co-color-light-blue: #edfbff;
+$co-color-primary: #0095b3;
+$co-color-secondary: #056679;
+$co-color-light-gray: #f3f3f3;
+$co-color-mid-gray: #c0c0c0;
+$co-color-gray: #777;
+$co-color-dark-gray: #3e3e3e;
+$co-color-light-green: #effff5;
+$co-color-green: #51be76;
+$co-color-dark-green: #1b7038;
+$co-color-light-red: #fff2f2;
+$co-color-red: #ed4747;
+$co-color-dark-red: #ad1919;
+$co-color-light-orange: #fff6ec;
+$co-color-orange: #f7b05e;
+$co-color-dark-orange: #dc7700;
+$co-color-yellow: #fad248;
+
+:export {
+    black: $co-color-black;
+    white: $co-color-white;
+    lightBlue: $co-color-light-blue;
+    primary: $co-color-primary;
+    secondary: $co-color-secondary;
+    lightGray: $co-color-light-gray;
+    midGray: $co-color-mid-gray;
+    gray: $co-color-gray;
+    darkGray: $co-color-dark-gray;
+    lightGreen: $co-color-light-green;
+    darkGreen: $co-color-dark-green;
+    lightRed: $co-color-light-red;
+    darkRed :$co-color-dark-red;
+    lightOrange: $co-color-light-orange;
+    orange: $co-color-orange;
+    darkOrange: $co-color-dark-orange;
+    yellow: $co-color-yellow;
+}
+
+/**
+* Color palette text
+*/
+$co-color-primary-text: $co-color-black;
+$co-color-secondary-text: $co-color-gray;
+
+:export {
+  primaryText: $co-color-primary-text;
+  secondaryText: $co-color-secondary-text;
+}
+
+/**
+* Color palette of social media
+*/
+$co-color-fb: #334f8d;
+$co-color-twitter: #319fdc;
+$co-color-xing: #005959;
+$co-color-linkedin: #0074a8;
+
+:export {
+  fb: $co-color-fb;
+  twitter: $co-color-twitter;
+  xing: $co-color-xing;
+  linkedin: $co-color-linkedin;
+}
+
+/**
+* Inputs
+*/
+$co-inputs-margin-bottom: 30px;
+$co-labels-margin-bottom: 13px;
+$co-input-box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+$co-input-box-shadow-focus: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+$co-input-box-shadow-error: 0 0 4px 0 rgba(173, 25, 25, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+
+/**
+* Responsive breakpoints
+*/
+$xs-width-max: 575px;
+$sm-width: 576px;
+$sm-width-max: 767px;
+$md-width: 768px;
+$md-width-max: 991px;
+$lg-width: 992px;
+$lg-width-max: 1199px;
+$xl-width: 1200px;
+
+:export {
+  xsMaxWidth: $xs-width-max;
+  smWidth: $sm-width;
+  smMaxWidth: $sm-width-max;
+  mdWidth: $md-width;
+  mdMaxWidth: $md-width-max;
+  lgWidth: $lg-width;
+  lgMaxWidth: $lg-width-max;
+  xlWidth: $xl-width;
+}
+
+/**
+* Typography
+*/
+$co-font-xs: 12px;
+$co-font-sm: 14px;
+$co-font-md: 16px;
+$co-font-lg: 18px;
+$co-font-xl: 20px;
+$co-font-xxl: 24px;
+
+$co-line-height-xs: 18px;
+$co-line-height-sm: 20px;
+$co-line-height-md: 22px;
+$co-line-height-lg: 24px;
+$co-line-height-xl: 26px;
+$co-line-height-xxl: 30px;
+
+:export {
+  fontXs: $co-font-xs;
+  fontSm: $co-font-sm;
+  fontMd: $co-font-md;
+  fontLg: $co-font-lg;
+  fontXl: $co-font-xl;
+  fontXxl: $co-font-xxl;
+  lineHeightXs: $co-line-height-xs;
+  lineHeightSm: $co-line-height-sm;
+  lineHeightMd: $co-line-height-xl;
+  lineHeightLg: $co-line-height-xl;
+  lineHeightXl: $co-line-height-xl;
+  lineHeightXxl: $co-line-height-xxl;
+}
+
+/**
+* Transitions
+*/
+$co-transition-fast: 250ms;

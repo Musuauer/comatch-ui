@@ -1,0 +1,59 @@
+/**
+ * All styles defined here define the overall look & feel of the application
+ * and our based on our styleguide.
+ *
+ * @see https://app.zeplin.io/project/5a291fa3dd015b9e085b67e2
+ */
+// Import our variable definitions and necessary assets.
+@import './variables.scss';
+// Import normalize.css to ensure cross-browser uniformity for base styles.
+@import '~normalize.css/normalize.css';
+
+// Base
+*,
+hr,
+input[type='search'] {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ATCOverlook', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: $co-font-sm;
+    line-height: $co-line-height-sm;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Style headings with default sizes + line heights,
+//  we have 3 different types, thus h4-h6 are never used and not styled.
+h1 {
+    font-size: $co-font-xxl;
+    line-height: $co-line-height-xxl;
+}
+
+h2 {
+    font-size: $co-font-xl;
+    line-height: $co-line-height-xl;
+}
+
+h3 {
+    font-size: $co-font-md;
+    line-height: $co-line-height-md;
+}
+
+// Input related styling
+label {
+    font-size: $co-font-xs;
+    line-height: $co-line-height-xs;
+}
+
+select:-moz-focusring {
+    // This will remove the focus dotted outline appearing
+    // only on Firefox achieving cross browser uniformity
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}

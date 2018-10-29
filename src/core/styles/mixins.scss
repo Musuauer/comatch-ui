@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+// Desktop first media queries
+@mixin mobile {
+    @media (max-width: #{$xs-width-max}) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape {
+    @media screen and (orientation: landscape) and (max-width: #{$sm-width-max}) {
+        @content;
+    }
+}
+
+// Mobile first media queries
+@mixin mobile-large {
+    @media (min-width: #{$sm-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$md-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$lg-width}) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media (min-width: #{$xl-width}) {
+        @content;
+    }
+}
