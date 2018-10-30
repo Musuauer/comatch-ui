@@ -3,6 +3,8 @@
 .gitignore
 .prettierrc
 .env
+.vscode/
+build/
 README.md
 public/
 node_modules/
