@@ -20,7 +20,7 @@ module.exports = {
             modules: true,
         },
     },
-    extends: ['airbnb/base', 'plugin:react/recommended', 'react-app', 'prettier'],
+    extends: ['airbnb/base', 'plugin:react/recommended', 'prettier'],
     rules: {
         'valid-jsdoc': ['error'],
         'class-methods-use-this': 0,
