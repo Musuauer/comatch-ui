@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# storybook
+.cache/
+
 # testing
 /coverage
 
