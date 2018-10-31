@@ -1,0 +1,172 @@
+@import '../../../styles/variables.scss';
+
+.Popover {
+    color: $co-color-black;
+    display: inline-block;
+    position: relative;
+    font-weight: normal;
+
+    &__icon {
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+    }
+
+    &__content {
+        background-color: $co-color-white;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(119, 119, 119, 0.2);
+        border: 1px solid $co-color-mid-gray;
+        font-size: $co-font-sm;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        top: 40%;
+        transform: scale(0.75) translateY(-50%) translateZ(0);
+        transition: opacity 400ms cubic-bezier(0.45, 1.8, 0.5, 0.75), transform 400ms cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        will-change: opacity, transform;
+        width: 250px;
+        z-index: 1;
+
+        // Elements
+        p {
+            line-height: $co-line-height-sm;
+            font-weight: 400;
+            font-size: $co-font-sm;
+            margin: 0 0 10px 0;
+            padding: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &:after {
+            // This is going to the caret of the popover
+            display: block;
+            content: '';
+            background-color: $co-color-white;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            transform: scale(0.5) rotate(45deg) translateY(-50%) translateZ(0);
+            transform-origin: top center;
+            transition: transform 400ms cubic-bezier(0.45, 1.8, 0.5, 0.75);
+            will-change: transform;
+            z-index: -1;
+        }
+    }
+
+    // States
+    &.open {
+        .Popover__content {
+            opacity: 1;
+
+            &:after {
+                transform: scale(1) rotate(45deg) translateY(-50%) translateZ(0);
+            }
+        }
+    }
+
+    &.left {
+        .Popover__content {
+            transform-origin: top left;
+            left: 0;
+            transform: scale(0.75) translateX(-103%) translateY(-50%) translateZ(0);
+
+            &:after {
+                border-right: 1px solid $co-color-mid-gray;
+                border-top: 1px solid $co-color-mid-gray;
+                box-shadow: 3px -1px 2px rgba(119, 119, 119, 0.2);
+                right: -8px;
+            }
+        }
+
+        &.open {
+            .Popover__content {
+                left: 0;
+                transform: scale(1) translateX(-103%) translateY(-50%) translateZ(0);
+            }
+        }
+    }
+
+    &.right {
+        .Popover__content {
+            transform-origin: top right;
+            right: 0;
+            transform: scale(0.75) translateX(103%) translateY(-50%) translateZ(0);
+
+            &:after {
+                border-left: 1px solid $co-color-mid-gray;
+                border-bottom: 1px solid $co-color-mid-gray;
+                box-shadow: -1px 2px 2px rgba(119, 119, 119, 0.2);
+                left: -8px;
+            }
+        }
+
+        &.open {
+            .Popover__content {
+                right: 0;
+                transform: scale(1) translateX(103%) translateY(-50%) translateZ(0);
+            }
+        }
+    }
+
+    &.bottom {
+        .Popover__content {
+            transform-origin: bottom left;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: scale(0.75) translateX(-50%) translateY(8px) translateZ(0);
+
+            &:after {
+                top: 8px;
+                left: 50%;
+                transform: scale(1) translateX(-3px) rotate(135deg) translateY(0) translateZ(0);
+                border-left: 1px solid $co-color-mid-gray;
+                border-bottom: 1px solid $co-color-mid-gray;
+                box-shadow: -1px 2px 2px rgba(119, 119, 119, 0.2);
+            }
+        }
+
+        &.open {
+            .Popover__content {
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                transform: scale(1) translateX(-50%) translateY(8px) translateZ(0);
+            }
+        }
+    }
+
+    &.top {
+        .Popover__content {
+            transform-origin: top left;
+            position: absolute;
+            left: 50%;
+            top: -8px;
+            transform: scale(0.75) translateX(-50%) translateY(-100%) translateZ(0);
+
+            &:after {
+                top: 100%;
+                left: 50%;
+                transform: scale(1) translateX(-8px) rotate(135deg) translateY(-8px) translateZ(0);
+                border-right: 1px solid $co-color-mid-gray;
+                border-top: 1px solid $co-color-mid-gray;
+                box-shadow: 1px -2px 2px rgba(119, 119, 119, 0.2);
+            }
+        }
+
+        &.open {
+            .Popover__content {
+                position: absolute;
+                left: 50%;
+                top: -8px;
+                transform: scale(1) translateX(-50%) translateY(-100%) translateZ(0);
+            }
+        }
+    }
+}
