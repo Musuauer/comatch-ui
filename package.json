@@ -56,9 +56,9 @@
         "test": "jest",
         "lint": "./node_modules/.bin/eslint .",
         "preversion": "yarn test",
-        "version": "yarn build && git add .",
-        "postversion": "git push && git push --tags",
-        "release": "./release.sh"
+        "version": "yarn build",
+        "postversion": "git push --tags",
+        "release": "npm publish"
     },
     "browserslist": [
         ">0.2%",
