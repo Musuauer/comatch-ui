@@ -4,7 +4,7 @@
 
 This project contains all React core (UI) components to be re-used across our projects.
 
-This project is setup with [Create React App](https://github.com/facebook/create-react-app) (Documentation also to be found in their repo). 
+This project is setup with a minimalistic Webpack config to handle the build and Storybook to facilitate development.
 
 ## Documentation
 
