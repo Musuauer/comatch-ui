@@ -54,7 +54,11 @@
         "start": "start-storybook -p 9001 -c .storybook",
         "build": "webpack --mode production",
         "test": "jest",
-        "lint": "./node_modules/.bin/eslint ."
+        "lint": "./node_modules/.bin/eslint .",
+        "preversion": "yarn test",
+        "version": "yarn build && git add .",
+        "postversion": "git push && git push --tags",
+        "release": "./release.sh"
     },
     "browserslist": [
         ">0.2%",
