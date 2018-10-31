@@ -1,0 +1,184 @@
+@import '../../../styles/variables.scss';
+
+.Panel {
+    background-color: $co-color-white;
+    border-radius: 3px;
+    border: 1px solid $co-color-mid-gray;
+    margin: 10px 0;
+    padding: 20px;
+
+    &.with-controls {
+        padding: 14.6px 20px;
+    }
+
+    // Header in case controls or collapsible are/is set
+    &__header {
+        display: flex;
+        margin-top: -20px;
+        margin-left: -20px;
+        margin-right: -20px;
+
+        .Panel__title,
+        .Panel__controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .Panel__title {
+            flex-grow: 1;
+        }
+
+        .Panel__controls {
+            padding-left: 20px;
+            flex-shrink: 1;
+            * {
+                position: relative;
+            }
+            * ~ * {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    // <h6> heading of Panel
+    &__title {
+        margin: 0;
+
+        &.green {
+            color: $co-color-green;
+        }
+        &.blue {
+            color: $co-color-primary;
+        }
+        &.gray {
+            color: $co-color-mid-gray;
+        }
+    }
+
+    &__separator {
+        background-color: $co-color-mid-gray;
+        height: 1px;
+    }
+
+    &__separator,
+    .Separator {
+        margin: 20px -20px;
+    }
+
+    // Create whitespace between subsequent Panels
+    & ~ & {
+        margin-top: 0;
+    }
+
+    // Stylistic variations
+    &.primary {
+        .Panel__header {
+            min-height: 50px;
+            margin-bottom: 20px;
+            padding: 20px 20px 0 20px;
+        }
+        .Panel__title {
+            font-size: $co-font-xl;
+            font-weight: normal;
+            line-height: $co-line-height-xl;
+        }
+    }
+
+    &.secondary {
+        .Panel__header {
+            min-height: 40px;
+            margin-bottom: 20px;
+            padding: 5px 20px;
+            position: relative;
+
+            &:before {
+                background-color: $co-color-light-gray;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                border-bottom: 1px solid $co-color-mid-gray;
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        .Panel__title {
+            font-size: $co-font-md;
+            line-height: $co-line-height-md;
+            font-weight: bold;
+            position: relative;
+        }
+    }
+
+    // States
+    &.collapsible {
+        .Panel__header {
+            cursor: pointer;
+            // For headers of all collapsible panels, margin-bottom will animate
+            transition: margin-bottom 250ms ease-out;
+            will-change: margin-bottom;
+            // Setting translateZ forces GPU accelerated animations improving mobile performance
+            transform: translateZ(0);
+        }
+
+        // For primary styled panels that are collapsible
+        &.primary {
+            .Panel__header {
+                margin-bottom: 0;
+            }
+        }
+
+        // For secondary styled panels that are collapsible
+        &.secondary {
+            .Panel__header {
+                margin-bottom: -20px;
+
+                &:before {
+                    border-bottom-right-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    &.expanded {
+        &.primary {
+            .Panel__header {
+                margin-bottom: 20px;
+            }
+        }
+
+        &.secondary {
+            .Panel__header {
+                margin-bottom: 20px;
+
+                &:before {
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom: 1px solid $co-color-mid-gray;
+                }
+            }
+        }
+    }
+
+    &.without-content {
+        .Panel__header {
+            margin-bottom: 0;
+        }
+    }
+
+    &.disabled {
+        .Panel__header {
+            color: $co-color-mid-gray;
+        }
+    }
+}
+
+.react-slidedown.Panel__contents {
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+}
