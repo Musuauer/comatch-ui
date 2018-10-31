@@ -1,4 +1,5 @@
 # COMATCH UI
+[![CircleCI](https://circleci.com/gh/COMATCH/comatch-ui.svg?style=svg&circle-token=b2eea611c1911aa0d1f9c3ccf48631766425f5ec)](https://circleci.com/gh/COMATCH/comatch-ui)
 
 ## Description
 

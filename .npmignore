@@ -8,3 +8,4 @@ build/
 README.md
 public/
 node_modules/
+.circleci/
