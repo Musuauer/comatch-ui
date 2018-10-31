@@ -1,0 +1,50 @@
+@import '../../../styles/variables.scss';
+
+.Table {
+    overflow-x: auto;
+
+    &__table {
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+
+        th,
+        td {
+            text-align: left;
+            font-size: $co-font-sm;
+            border-bottom: 1px solid $co-color-mid-gray;
+        }
+    }
+
+    // Different styles
+    &.primary {
+        th {
+            padding: 10px 10px 5px;
+        }
+        td {
+            padding: 15px 10px;
+        }
+    }
+
+    &.secondary {
+        th {
+            padding: 10px;
+        }
+        td {
+            padding: 10px 10px;
+        }
+        tr, td, th {
+            border: 1px solid $co-color-mid-gray;
+        }
+    }
+
+    tr.Link {
+        transition: color $co-transition-fast ease-out;
+
+        &:hover {
+            color: $co-color-primary;
+            cursor: pointer;
+        }
+    }
+}
