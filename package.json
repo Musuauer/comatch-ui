@@ -1,6 +1,6 @@
 {
     "name": "@comatch/ui",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "main": "dist/react-core.js",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.4.1",
@@ -57,7 +57,7 @@
         "lint": "./node_modules/.bin/eslint .",
         "preversion": "yarn test",
         "version": "yarn build",
-        "postversion": "git push --tags",
+        "postversion": "git push && git push --tags",
         "release": "npm publish"
     },
     "browserslist": [

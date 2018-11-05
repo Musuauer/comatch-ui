@@ -1,1 +1,1 @@
-export { Alert } from './Alert';
+export { Alert, ALERT_TYPE } from './Alert';

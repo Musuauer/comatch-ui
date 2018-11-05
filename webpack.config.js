@@ -9,7 +9,19 @@ module.exports = {
         library: '',
         libraryTarget: 'commonjs',
     },
-    externals: [nodeExternals()],
+    externals: [
+        nodeExternals(),
+        '@fortawesome/fontawesome-free',
+        '@fortawesome/fontawesome-svg-core',
+        '@fortawesome/free-brands-svg-icons',
+        '@fortawesome/free-regular-svg-icons',
+        '@fortawesome/free-solid-svg-icons',
+        '@fortawesome/react-fontawesome',
+        'classnames',
+        'react',
+        'react-dom',
+        'react-slidedown',
+    ],
     module: {
         rules: [
             {
