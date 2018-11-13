@@ -1,0 +1,69 @@
+@import '../../../styles/variables.scss';
+
+.Badge {
+    border-radius: 3px;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 8px;
+
+    svg {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    // Size contextual classes
+    &.xs {
+        font-size: $co-font-xs;
+        font-weight: bold;
+        line-height: 1;
+        padding: 2px 5px 3px 5px;
+
+        svg {
+            height: 10px;
+        }
+    }
+
+    &.sm {
+        font-size: $co-font-sm;
+
+        svg {
+            height: 12px;
+        }
+    }
+
+    // Color contextual classes
+    &:not(.white) {
+        color: $co-color-white;
+    }
+
+    &.green {
+        background-color: $co-color-green;
+        border-color: $co-color-green;
+    }
+
+    &.orange {
+        background-color: $co-color-orange;
+        border-color: $co-color-orange;
+    }
+
+    &.gray {
+        background-color: $co-color-gray;
+        border-color: $co-color-gray;
+    }
+
+    &.white {
+        background-color: $co-color-white;
+        border-color: $co-color-gray;
+        color: $co-color-gray;
+    }
+
+    &.blue {
+        background-color: $co-color-secondary;
+        border-color: $co-color-secondary;
+    }
+
+    &.lightblue {
+        background-color: $co-color-primary;
+        border-color: $co-color-primary;
+    }
+}

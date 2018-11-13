@@ -1,4 +1,5 @@
 export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
+export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
 export { Navigation, ORIENTATION } from './core/ui/components/Navigation';
 export { Panel } from './core/ui/components/Panel';
