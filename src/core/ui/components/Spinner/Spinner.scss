@@ -1,0 +1,13 @@
+@import '../../../styles/variables.scss';
+
+.Spinner {
+  background-color: $co-color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-height: 60%;
+    max-width: 82px;
+  }
+}
