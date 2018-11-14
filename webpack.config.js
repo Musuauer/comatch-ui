@@ -21,6 +21,8 @@ module.exports = {
         'react',
         'react-dom',
         'react-slidedown',
+        'redux',
+        'react-redux',
     ],
     module: {
         rules: [

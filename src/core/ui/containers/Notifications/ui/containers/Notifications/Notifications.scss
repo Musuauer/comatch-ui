@@ -1,0 +1,47 @@
+@import '../../../../../../styles/variables.scss';
+@import '../../../../../../styles/mixins.scss';
+
+.Notifications {
+  background: transparent;
+  padding: 0;
+  position: fixed;
+  // Tablet+ view of Notifications
+  // places the component on the top right
+  right: 0;
+  top: 70px;
+  z-index: 999999;
+  transform: translate3d(100%,0,0);
+  will-change: transform;
+  transition: opacity 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000),
+              transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  &.shown {
+      transform: translate3d(0, 0, 0);
+  }
+
+  // Mobile view of Notifications
+  // takes up full width and text is centered.
+  @include mobile {
+    width: 100%;
+    top: 0;
+    text-align: center;
+  }
+
+  .Alert {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include mobile {
+      // Mobile view take out border radius
+      // and center the icon together with the text
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      display: block;
+
+      .Alert__icon {
+        position: static;
+        margin-right: 5px;
+      }
+    }
+  }
+}
