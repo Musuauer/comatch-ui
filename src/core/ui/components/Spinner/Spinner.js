@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import comatchLogoSrc from './images/comatch_logo.svg';
+import { comatchLogoBase64 } from './images/comatch_logo_base64';
 
 import './Spinner.scss';
 
@@ -20,7 +20,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    imgSrc: comatchLogoSrc,
+    imgSrc: comatchLogoBase64,
     size: 'page',
 };
 
