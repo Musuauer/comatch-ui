@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { comatchLogoBase64 } from './images/comatch_logo_base64';
+import { comatchLogoBase64 } from './images/comatchLogoBase64';
 
 import './Spinner.scss';
 
