@@ -1,0 +1,74 @@
+@import '../../../styles/variables.scss';
+
+.SectionHeader {
+    display: flex;
+    position: relative;
+
+    &__title {
+        margin: 0;
+        font-weight: bold;
+        flex-grow: 1;
+        display: inline;
+    }
+
+    &__addOn {
+        margin-left: 5px;
+    }
+
+    &__controls {
+        .Button {
+            margin-left: 10px;
+            &:first {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &:after {
+        background-color: $co-color-mid-gray;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    // sizes
+    &.size-xs {
+        margin-bottom: 20px;
+
+        .SectionHeader__title {
+            font-size: $co-font-sm;
+        }
+
+        &:after {
+            bottom: -5px;
+        }
+    }
+
+    &.size-sm {
+        margin-bottom: 30px;
+
+        .SectionHeader__title {
+            font-size: $co-font-md;
+        }
+
+        &:after {
+            bottom: -5px;
+        }
+    }
+
+    &.size-xl {
+        margin-bottom: 30px;
+
+        .SectionHeader__title {
+            font-size: $co-font-xl;
+            line-height: 1.3;
+        }
+
+        &:after {
+            bottom: -5px;
+        }
+    }
+}

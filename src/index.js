@@ -9,10 +9,12 @@ export { notificationsActions, notificationsReducer, Notifications } from './cor
 export { NumberInput } from './core/ui/components/NumberInput';
 export { Panel } from './core/ui/components/Panel';
 export { Popover } from './core/ui/components/Popover';
+export { SectionHeader } from './core/ui/components/SectionHeader';
 export { SelectInput } from './core/ui/components/SelectInput';
 export { Spinner } from './core/ui/components/Spinner';
 export { StepProgressBar } from './core/ui/components/StepProgressBar';
 export { StickyBanner } from './core/ui/components/StickyBanner';
 export { Table } from './core/ui/components/Table';
+export { TabNavigation } from './core/ui/components/TabNavigation';
 export { TextAreaInput } from './core/ui/components/TextAreaInput';
 export { TextInput } from './core/ui/components/TextInput';
