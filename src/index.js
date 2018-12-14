@@ -18,6 +18,7 @@ export { RadioGroupInput } from './core/ui/components/RadioGroupInput';
 export { RadioInput } from './core/ui/components/RadioInput';
 export { SectionHeader } from './core/ui/components/SectionHeader';
 export { SelectInput } from './core/ui/components/SelectInput';
+export { Separator } from './core/ui/components/Separator';
 export { Spinner } from './core/ui/components/Spinner';
 export { StepProgressBar } from './core/ui/components/StepProgressBar';
 export { StickyBanner } from './core/ui/components/StickyBanner';
