@@ -1,0 +1,101 @@
+@import '../../../styles/variables.scss';
+
+.TextInput {
+    display: inline-block;
+    margin-bottom: $co-inputs-margin-bottom;
+
+    .InputLabel,
+    &.block,
+    &__input {
+        display: block;
+    }
+
+    &__input {
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        font-size: $co-font-sm;
+        // sizing & whitespace
+        font-size: $co-font-sm;
+        padding: 9px;
+        height: 40px;
+        width: 100%;
+        // Transition effects
+        transition: box-shadow 250ms ease-out;
+        transform: translateZ(0);
+        will-change: box-shadow;
+        // reset browser defaults
+        outline: 0 !important;
+
+        &:focus {
+            box-shadow: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    // States
+    &.disabled {
+        .TextInput__input:hover,
+        .TextInput__input {
+            background-color: $co-color-light-gray;;
+            color: $co-color-gray;
+        }
+
+        .TextInput__icon,
+        svg {
+            color: $co-color-gray;
+        }
+    }
+
+    &.has-error {
+        .TextInput__input {
+            box-shadow: 0 0 4px 0 rgba(173, 25, 25, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    &.with-icon {
+        position: relative;
+
+        .TextInput__input {
+            padding-right: 30px;
+        }
+
+        // icon
+        .TextInput__icon,
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .TextInput__icon,
+        & > svg {
+            right: 10px;
+            position: absolute;
+            transform: translateY(-26px);
+        }
+
+        .TextInput__icon:not(.clickable),
+        & > svg:not(.clickable) {
+            pointer-events: none;
+        }
+
+        .TextInput__icon.clickable,
+        & > svg.clickable {
+            cursor: pointer;
+        }
+    }
+}
+
+// Defining the color of the placeholder
+.TextInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $co-color-mid-gray;
+    opacity: 1; /* Firefox */
+}
+
+.TextInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $co-color-mid-gray;
+}
+
+.TextInput::-ms-input-placeholder { /* Microsoft Edge */
+    color: $co-color-mid-gray;
+}

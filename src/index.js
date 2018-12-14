@@ -1,9 +1,13 @@
 export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
 export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
+export { InputError } from './core/ui/components/InputError';
+export { InputLabel } from './core/ui/components/InputLabel';
 export { Navigation, ORIENTATION } from './core/ui/components/Navigation';
 export { notificationsActions, notificationsReducer, Notifications } from './core/ui/containers/Notifications';
 export { Panel } from './core/ui/components/Panel';
 export { Popover } from './core/ui/components/Popover';
 export { Spinner } from './core/ui/components/Spinner';
 export { Table } from './core/ui/components/Table';
+export { TextAreaInput } from './core/ui/components/TextAreaInput';
+export { TextInput } from './core/ui/components/TextInput';

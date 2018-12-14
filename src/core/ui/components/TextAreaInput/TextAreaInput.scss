@@ -1,0 +1,94 @@
+@import '../../../styles/variables.scss';
+
+.TextAreaInput {
+    display: inline-block;
+    margin-bottom: $co-inputs-margin-bottom;
+
+    .InputLabel,
+    &.block,
+    &__input {
+        display: block;
+    }
+
+    &__input {
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 3px;
+        box-shadow: $co-input-box-shadow;
+        // sizing & whitespace
+        font-size: $co-font-sm;
+        padding: 9px;
+        width: 100%;
+        // Transition effects
+        transition: box-shadow 250ms ease-out;
+        transform: translateZ(0);
+        will-change: box-shadow;
+        // reset browser defaults
+        outline: 0 !important;
+        min-height: 40px;
+        resize: vertical;
+
+        &:focus {
+            box-shadow: $co-input-box-shadow-focus;
+        }
+    }
+
+    // States
+    &.has-error {
+        .TextAreaInput__input {
+            box-shadow: $co-input-box-shadow-error;
+        }
+    }
+
+    &.with-icon {
+        position: relative;
+
+        .TextAreaInput__input {
+            padding-right: 30px;
+        }
+
+        // icon
+        .TextAreaInput__icon,
+        svg {
+            top: 33px;
+            right: 10px;
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+            transform: translateY(-23px);
+        }
+
+        .InputLabel ~ .TextAreaInput__icon,
+        .InputLabel ~ svg {
+            top: 58px;
+        }
+    }
+
+    &.with-html-placeholder {
+        position: relative;
+        .html-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 11px 9px;
+            font-size: $co-font-sm;
+            color: $co-color-mid-gray;
+            pointer-events: none;
+        }
+    }
+}
+
+// Defining the color of the placeholder
+.TextAreaInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $co-color-mid-gray;
+    opacity: 1; /* Firefox */
+}
+
+.TextAreaInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $co-color-mid-gray;
+}
+
+.TextAreaInput::-ms-input-placeholder { /* Microsoft Edge */
+    color: $co-color-mid-gray;
+}
