@@ -66,6 +66,9 @@ module.exports = {
         'no-plusplus': 0,
         curly: ['error', 'all'],
     },
+    globals: {
+        document: true,
+    },
     settings: {
         react: {
             ...reactVersion(),
