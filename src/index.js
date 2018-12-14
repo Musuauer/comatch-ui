@@ -2,6 +2,7 @@ export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
 export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
 export { EmailInput } from './core/ui/components/EmailInput';
+export { Flyout } from './core/ui/components/Flyout';
 export { InputError } from './core/ui/components/InputError';
 export { InputLabel } from './core/ui/components/InputLabel';
 export { Navigation, ORIENTATION } from './core/ui/components/Navigation';
