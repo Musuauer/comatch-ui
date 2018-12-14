@@ -1,0 +1,68 @@
+@import '../../../styles/variables.scss';
+
+.SelectInput {
+    font-size: $co-font-sm;
+    display: inline-block;
+    margin-bottom: $co-inputs-margin-bottom;
+
+    // common styles
+    .InputLabel,
+    &.block,
+    &__input {
+        display: block;
+    }
+
+    // Elements
+    &__input {
+        // coloring
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        // sizing & whitespace
+        padding: 8px;
+        height: 40px;
+        width: 100%;
+        // transition effects
+        transition: box-shadow 250ms ease-out;
+        transform: translateZ(0);
+        will-change: box-shadow;
+        // reset browser defaults
+        outline: 0 !important;
+
+        &:focus {
+            box-shadow: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    // States
+    &.has-error {
+        .SelectInput__input {
+            box-shadow: 0 0 4px 0 rgba(173, 25, 25, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    &.disabled {
+        color: $co-color-gray;
+    }
+}
+
+// The following styles are used to achive cross browser consistency
+.SelectInput__input {
+    // This fix will remove the glossy background for select elements
+    // from the Safari browser, while maintaing the default arrow icon
+    background: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+')
+        no-repeat right 2px center;
+    // For uniformity across browsers
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 20px;
+
+    &:-moz-focusring {
+        // This will remove the focus dotted outline appearing
+        // only on Firefox achieving cross browser uniformity
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+}
