@@ -21,6 +21,7 @@ module.exports = {
         'react',
         'react-dom',
         'react-slidedown',
+        'react-modal',
         'redux',
         'react-redux',
     ],

@@ -1,0 +1,160 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.ModalWindow {
+  background-color: $co-color-white;
+  border-radius: 3px;
+  overflow: auto;
+  outline: none;
+  padding: 0;
+  // positioning
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  transform: translate(0, -50%);
+  // mobile on landscape orientation
+  @include mobile-landscape {
+    top: 15px;
+    margin-bottom: 15px;
+  }
+  // tablet+
+  @include tablet {
+    // reset from mobile
+    right: initial;
+    // sizing
+    width: 100%;
+    max-width: 650px;
+    // positioning
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  // desktop+
+  @include desktop {
+    max-width: 800px;
+  }
+
+  // Whitespace arrangement
+  &__header,
+  &__body,
+  &__footer {
+    padding: 20px;
+  }
+
+  // Elements
+  &__header {
+    border-bottom: 1px solid $co-color-mid-gray;
+    display: flex;
+    padding: 15px 20px;
+
+    // Main heading
+    &-title {
+      flex-grow: 1;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+      padding: 5px 0;
+    }
+
+    .ModalWindow__close-button {
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+
+  &__body {
+    overflow-y: auto;
+    // mobile only on portrait
+    @media screen and (orientation: portrait) {
+      max-height: 50vh;
+    }
+    // tablet+
+    @include tablet {
+      max-height: 500px;
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid $co-color-mid-gray;
+    text-align: right;
+
+    .Button ~ .Button {
+        margin-left: 10px;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    @include mobile-landscape {
+        overflow-y: scroll;
+    }
+  }
+}
+
+// Animations for modal window using the react-modal package
+.ReactModal {
+  &__Content {
+    transition: opacity 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000), transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    will-change: opacity, transform;
+    opacity: 0;
+    transform: scale(0.75) translate3d(0, -50%, 0);
+    transform-origin: center;
+
+    @include mobile-landscape {
+      transform: scale(0.75);
+    }
+
+    @include tablet {
+      transform: scale(0.75) translate3d(-50%, -50%, 0);
+      transform-origin: top left;
+    }
+
+    &--after-open {
+      opacity: 1;
+      transform: scale(1) translate3d(0, -50%, 0);
+      // mobile with orientation landscape
+      @include mobile-landscape {
+        transform: scale(1);
+      }
+      // tablet+
+      @include tablet {
+        transform: scale(1) translate3d(-50%, -50%, 0);
+      }
+    }
+
+    &--before-close {
+      opacity: 0;
+      transform: scale(0.75) translate3d(0, -50%, 0);
+      transform-origin: center;
+
+      @include mobile-landscape {
+        transform: scale(0.75);
+      }
+
+      @include tablet {
+        transform: scale(0.75) translate3d(-50%, -50%, 0);
+        transform-origin: top left;
+      }
+    }
+  }
+
+  &__Overlay {
+    opacity: 0;
+    transition: opacity 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    will-change: opacity;
+    &--after-open {
+      opacity: 1;
+    }
+    &--before-close {
+      opacity: 0;
+    }
+  }
+}
