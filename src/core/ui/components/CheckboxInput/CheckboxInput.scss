@@ -1,0 +1,96 @@
+@import '../../../styles/variables.scss';
+
+.CheckboxInput {
+    display: inline-block;
+
+    &.block {
+        display: block;
+        text-align: left;
+    }
+
+    // Whitespace
+    &:not(.block) ~ &:not(.block) {
+        margin-left: 30px;
+    }
+
+    // Common styles
+    &__input,
+    &__label {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__label,
+    &__label * {
+        line-height: $co-line-height-sm;
+    }
+
+    // Actual input
+    input {
+        display: none; // hide
+
+        // When actually input has state :checked
+        // make the tick of the pseudo-checkbox show up
+        &:checked ~ .CheckboxInput__input {
+            .CheckboxInput__tick {
+                transform: scale(1) translate3d(-50%, -50%, 0);
+            }
+        }
+    }
+
+    // Pseudo input
+    &__input {
+        // coloring
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 1px;
+        // positioning
+        position: absolute;
+        top: 3px;
+        left: 0;
+        // sizing
+        width: 15px;
+        height: 15px;
+
+        // Tick of pseudo checkbox
+        .CheckboxInput__tick {
+            color: $co-color-primary;
+            // positioning
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            // animation
+            transition: transform 400ms cubic-bezier(0.45, 1.8, 0.5, 0.75);
+            transform: scale(0) translate3d(-50%, -50%, 0);
+            transform-origin: top left;
+        }
+    }
+
+    &__label {
+        color: $co-color-black;
+        font-weight: normal;
+        font-size: $co-font-sm;
+        line-height: $co-line-height-sm;
+    }
+
+    &__input ~ &__label {
+        margin-left: 10px;
+    }
+
+    label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    // Whitepsace
+    & ~ & {
+        margin-top: 5px;
+    }
+
+    &.inline {
+        .InputLabel {
+            margin-bottom: 0;
+        }
+    }
+}

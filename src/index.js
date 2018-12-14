@@ -1,6 +1,8 @@
 export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
 export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
+export { CheckboxInput } from './core/ui/components/CheckboxInput';
+export { CheckboxGroupInput } from './core/ui/components/CheckboxGroupInput';
 export { EmailInput } from './core/ui/components/EmailInput';
 export { Flyout } from './core/ui/components/Flyout';
 export { InputError } from './core/ui/components/InputError';

@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+
+.CheckboxGroupInput {
+    margin-bottom: $co-inputs-margin-bottom;
+
+    &:not(.inline) {
+        .InputLabel {
+            width: 100%;
+        }
+    }
+
+    // Convenience variations where the user can choose how many
+    // checkboxes the group should render per row, by setting a prop
+    @for $i from 2 through 5 {
+        &.per-row-#{$i} {
+            display: flex;
+            flex-flow: row wrap;
+
+            .SectionHeader {
+                width: 100%;
+
+                &:not(:first-child) {
+                    margin-top: 20px;
+                }
+            }
+
+            .CheckboxInput {
+                display: inline-block;
+                margin: 0;
+                flex-basis: percentage(1 / $i);
+            }
+        }
+    }
+
+    // states
+    &.has-error {
+        .CheckboxInput__label {
+            color: $co-color-black;
+        }
+
+        .InputError {
+            // precaution to push error to next line even if per-row is specified
+            width: 100%;
+        }
+    }
+}
