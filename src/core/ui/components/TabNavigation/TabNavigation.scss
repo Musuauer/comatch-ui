@@ -1,0 +1,81 @@
+@import '../../../styles/variables.scss';
+
+.TabNavigation {
+    button {
+        outline: 0;
+        background: none;
+        border: none;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    // Elements
+    &__list-item {
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        // display
+        display: inline-block;
+        // positioning
+        position: relative;
+        top: 1px;
+        z-index: 1;
+
+        // Links contained in tabs
+        button,
+        a:link,
+        a:active,
+        a:hover,
+        a:visited {
+            color: $co-color-black;
+            cursor: pointer;
+            display: inline-block;
+            padding: 8px 10px;
+            transition: color 250ms ease-out;
+            // text
+            font-size: $co-font-md;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        // States
+        &.active {
+            border-bottom-color: $co-color-white;
+
+            button,
+            a:link,
+            a:active,
+            a:hover,
+            a:visited {
+                color: $co-color-primary;
+            }
+        }
+    }
+
+    // Whitespace arrangement
+    &__list-item {
+        &:first-child button,
+        &:first-child a {
+            // Extra whitespace for first item to align with
+            // panel contents.
+            padding-left: 20px;
+        }
+
+        & ~ .TabNavigation__list-item {
+            // Whitespace between subsequent tabs
+            margin-left: 5px;
+        }
+    }
+
+    // Reset the top margin of Panels following a TabNavigation
+    & ~ .Panel {
+        border-top-left-radius: 0;
+        margin-top: 0;
+    }
+}
