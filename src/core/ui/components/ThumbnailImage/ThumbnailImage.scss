@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.ThumbnailImage {
+    background-color: $co-color-white;
+    border: 1px solid $co-color-mid-gray;
+    border-radius: 3px;
+    width: 170px;
+    padding: 3px;
+
+    .Image {
+        width: 100%;
+    }
+
+    // States
+    // - when image is uploaded and displayed
+    &:not(.with-placeholder) {
+        .Image {
+            border: 1px solid $co-color-mid-gray;
+        }
+    }
+}

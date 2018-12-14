@@ -26,3 +26,4 @@ export { Table } from './core/ui/components/Table';
 export { TabNavigation } from './core/ui/components/TabNavigation';
 export { TextAreaInput } from './core/ui/components/TextAreaInput';
 export { TextInput } from './core/ui/components/TextInput';
+export { ThumbnailImage } from './core/ui/components/ThumbnailImage';
