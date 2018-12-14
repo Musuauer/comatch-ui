@@ -1,0 +1,33 @@
+.MultiLangTextAreaInput {
+    // Hide inactive languages using visibility,
+    // this way their values are still submitted
+    // as their display is not set to none.
+    &.active-lang-en {
+        .TextAreaInput:not(.lang-en) {
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    &.active-lang-de {
+        .TextAreaInput:not(.lang-de) {
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    &.active-lang-fr {
+        .TextAreaInput:not(.lang-fr) {
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    // Resize icons as flags are used
+    .TextAreaInput .TextAreaInput__icon,
+    .TextAreaInput .InputLabel ~ .TextAreaInput__icon {
+        width: 20px;
+        height: 16px;
+    }
+}

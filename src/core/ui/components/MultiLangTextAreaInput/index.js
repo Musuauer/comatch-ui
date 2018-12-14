@@ -1,0 +1,1 @@
+export { MultiLangTextAreaInput } from './MultiLangTextAreaInput';

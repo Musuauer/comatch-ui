@@ -10,6 +10,8 @@ export { InputLabel } from './core/ui/components/InputLabel';
 export { Navigation, ORIENTATION } from './core/ui/components/Navigation';
 export { notificationsActions, notificationsReducer, Notifications } from './core/ui/containers/Notifications';
 export { NumberInput } from './core/ui/components/NumberInput';
+export { MultiLangTextAreaInput } from './core/ui/components/MultiLangTextAreaInput';
+export { MultiLangTextInput } from './core/ui/components/MultiLangTextInput';
 export { Panel } from './core/ui/components/Panel';
 export { PasswordInput } from './core/ui/components/PasswordInput';
 export { Popover } from './core/ui/components/Popover';

@@ -1,0 +1,3 @@
+/* eslint-disable max-len */
+export const flagFrBase64 =
+    'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA1MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9Im5vbmUiPjxwYXRoIGZpbGw9IiNFRDI5MzkiIGQ9Ik0wIDBoNTB2NDBIMHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAwaDMzLjMzM3Y0MEgweiIvPjxwYXRoIGZpbGw9IiMwMDIzOTUiIGQ9Ik0wIDBoMTYuNjY3djQwSDB6Ii8+PC9nPjwvc3ZnPg==';
