@@ -9,6 +9,7 @@ export { notificationsActions, notificationsReducer, Notifications } from './cor
 export { NumberInput } from './core/ui/components/NumberInput';
 export { Panel } from './core/ui/components/Panel';
 export { Popover } from './core/ui/components/Popover';
+export { ProgressBar } from './core/ui/components/ProgressBar';
 export { SectionHeader } from './core/ui/components/SectionHeader';
 export { SelectInput } from './core/ui/components/SelectInput';
 export { Spinner } from './core/ui/components/Spinner';
