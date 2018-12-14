@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+
+.RadioGroupInput {
+    margin-bottom: $co-inputs-margin-bottom;
+
+    span.InputLabel {
+        // Whitespace
+        & ~ .RadioInput:not(.block) {
+            margin-left: 10px;
+        }
+    }
+}

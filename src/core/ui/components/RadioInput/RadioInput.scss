@@ -1,0 +1,98 @@
+@import '../../../styles/variables.scss';
+
+// Radio inputs
+.RadioInput {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+
+    // Displays
+    &.block {
+        display: block;
+        text-align: left;
+    }
+
+    // Whitespace
+    &:not(.block) ~ &:not(.block) {
+        margin-left: 30px;
+    }
+
+    &.block ~ &.block {
+        margin-top: 5px;
+    }
+
+    // Elements
+    &__input {
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        position: relative;
+
+        &:after {
+            background-color: $co-color-primary;
+            border-radius: 50%;
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            transition: transform 400ms cubic-bezier(0.45, 1.8, 0.5, 0.75);
+            transform: scale(0) translate3d(-50%, -50%, 0);
+            transform-origin: top left;
+        }
+
+        input[type="radio"]:disabled ~ &:after {
+            background-color: $co-color-mid-gray;
+        }
+
+        // Whitepsace
+        & ~ .InputLabel {
+            margin-left: 10px;
+        }
+    }
+
+    &__input,
+    .InputLabel {
+        display: inline-block;
+        vertical-align: middle;
+        color: $co-color-black;
+        font-size: $co-font-sm;
+        font-weight: normal;
+    }
+
+    input[type="radio"]:disabled ~ &__label {
+        color: $co-color-mid-gray;
+    }
+
+    label {
+        cursor: pointer;
+        margin: 0;
+    }
+
+    input[type='radio'] {
+        display: none;
+
+        &:checked ~ .RadioInput__input:after {
+            transform: scale(1) translate3d(-50%, -50%, 0);
+        }
+    }
+
+    span.InputLabel {
+        margin-bottom: 2px;
+    }
+
+    // States
+    &.disabled {
+        * {
+            color: $co-color-black !important; // important can be removed when legacy css is removed
+        }
+
+        label {
+            cursor: not-allowed;
+        }
+    }
+}
