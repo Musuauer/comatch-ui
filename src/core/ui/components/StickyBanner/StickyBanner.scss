@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.StickyBanner {
+    // color & border
+    background-color: $co-color-white;
+    border-bottom: 1px solid $co-color-mid-gray;
+    // display
+    display: flex;
+    justify-content: center;
+    // sizing
+    width: 100%;
+    padding: 10px 0;
+    // positioning
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        max-width: 1184px; // restrict to grid width
+    }
+
+    // states
+    &.animated {
+        transition: transform 250ms ease-out;
+        transform: translateY(-100%);
+
+        &.shown {
+            transform: translateY(0);
+        }
+    }
+}
