@@ -47,6 +47,8 @@
         "file-loader": "^2.0.0",
         "jest": "^23.6.0",
         "prettier": "^1.14.3",
+        "react-docgen": "^2.21.0",
+        "react-docgen-markdown-renderer": "^1.1.0",
         "regenerator-runtime": "^0.12.1",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
@@ -57,6 +59,7 @@
     "scripts": {
         "start": "start-storybook -p 9001 -c .storybook",
         "build": "webpack --mode production",
+        "generate-docs": "node generateDocs.js",
         "test": "jest",
         "lint": "./node_modules/.bin/eslint .",
         "preversion": "yarn test",
