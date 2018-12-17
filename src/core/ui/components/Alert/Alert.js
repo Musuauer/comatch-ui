@@ -28,12 +28,31 @@ const getIcon = (type) => {
 };
 
 const propTypes = {
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+     * Whether to render the icon that denotes the Alert's type
+     */
     displayIcon: PropTypes.bool,
+    /**
+     * `box` will have `display: block` and `background-color`,
+     * `inline` is only text and `notification` is like `box` with `display: inline-block`
+     */
     display: PropTypes.oneOf(['box', 'inline', 'notification']),
+    /**
+     * HTML id attribute
+     */
     id: PropTypes.string,
+    /**
+     * Text content of the Alert
+     */
     message: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    /**
+     * Alternative stylings for the Alert
+     */
     type: PropTypes.oneOf([ALERT_TYPE.INFO, ALERT_TYPE.DANGER, ALERT_TYPE.SUCCESS, ALERT_TYPE.WARNING]),
 };
 
@@ -46,6 +65,10 @@ const defaultProps = {
     message: '',
     type: ALERT_TYPE.INFO,
 };
+
+/**
+ * An Alert component with different stylistic variations.
+ */
 
 export const Alert = ({ id, className, children, displayIcon, display, message, type }) => (
     <section

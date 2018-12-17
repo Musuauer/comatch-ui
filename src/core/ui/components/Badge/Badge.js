@@ -7,10 +7,22 @@ import './Badge.scss';
 export const allowedColors = ['green', 'orange', 'gray', 'white', 'blue', 'lightblue'];
 
 const propTypes = {
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
+    /**
+     * Text color of `Badge`
+     */
     color: PropTypes.oneOf(allowedColors),
+    /**
+     * SVG icon
+     */
     icon: PropTypes.node,
     size: PropTypes.oneOf(['xs', 'sm']),
+    /**
+     * Text content of `Badge`
+     */
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 

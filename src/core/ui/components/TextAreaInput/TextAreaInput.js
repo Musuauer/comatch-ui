@@ -8,9 +8,18 @@ import { InputError } from '../InputError';
 import './TextAreaInput.scss';
 
 const propTypes = {
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
     display: PropTypes.oneOf(['block', 'inline']),
+    /**
+     * SVG icon
+     */
     icon: PropTypes.node,
+    /**
+     * HTML id attribute
+     */
     id: PropTypes.string,
     inputError: PropTypes.string,
     label: PropTypes.string,
@@ -42,6 +51,10 @@ const defaultProps = {
     rows: 5,
     value: '',
 };
+
+/**
+ * A `<textarea>` input.
+ */
 
 export const TextAreaInput = ({
     className,

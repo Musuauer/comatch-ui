@@ -4,11 +4,21 @@ import classNames from 'classnames';
 
 import './StickyBanner.scss';
 
+/**
+ * A banner that appear on the top of the browser's window the follows the user as they scroll down.
+ */
+
 export class StickyBanner extends Component {
     static propTypes = {
-        // number in pixels
+        /**
+         * Value in pixels. If defined determines at which distance
+         * from the document's top the `StickyBanner` will become visible.
+         */
         scrollTopVisibilityThreshold: PropTypes.number,
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+        /**
+         * Additional class names
+         */
         className: PropTypes.string,
     };
 

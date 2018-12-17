@@ -7,22 +7,35 @@ import { InputError } from '../InputError';
 
 import './TextInput.scss';
 
+// TextInput needs to have an implementation as an ES6 class, as opposed
+// to a functional component, as it is used also internally by the DateInput.
+// The DateInput uses the npm package react-datepicker, which needs to maintain
+// an internal ref of the TextInput, thus a class is needed.
+
 /**
- * TextInput needs to have an implementation as an ES6 class, as opposed
- * to a functional component, as it is used also internally by the DateInput.
- *
- * The DateInput uses the npm package react-datepicker, which needs to maintain
- * an internal ref of the TextInput, thus a class is needed.
+ * An input of type `text`.
  */
 
 export class TextInput extends Component {
     static propTypes = {
         autoComplete: PropTypes.oneOf(['on', 'off', null]),
+        /**
+         * Additional class names
+         */
         className: PropTypes.string,
+        /**
+         * Fallback default for `value`
+         */
         defaultValue: PropTypes.string,
         disabled: PropTypes.bool,
         display: PropTypes.oneOf(['block', 'inline']),
+        /**
+         * SVG icon
+         */
         icon: PropTypes.node,
+        /**
+         * HTML id attribute
+         */
         id: PropTypes.string,
         inputError: PropTypes.string,
         label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),

@@ -3,15 +3,15 @@
 
 From [`TextAreaInput.js`](TextAreaInput.js)
 
-
+A `<textarea>` input.
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
-**className** | `String` | `null` | :x: | 
+**className** | `String` | `null` | :x: | Additional class names
 **display** | `Enum('block','inline')` | `'block'` | :x: | 
 **htmlPlaceholder** | `Object` | `null` | :x: | 
-**icon** | `ReactNode` | `null` | :x: | 
-**id** | `String` | `null` | :x: | 
+**icon** | `ReactNode` | `null` | :x: | SVG icon
+**id** | `String` | `null` | :x: | HTML id attribute
 **inputError** | `String` | `null` | :x: | 
 **label** | `String` | `null` | :x: | 
 **maxLength** | `Number` | `null` | :x: | 

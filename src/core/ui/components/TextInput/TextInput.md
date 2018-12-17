@@ -3,21 +3,17 @@
 
 From [`TextInput.js`](TextInput.js)
 
-TextInput needs to have an implementation as an ES6 class, as opposed
-to a functional component, as it is used also internally by the DateInput.
-
-The DateInput uses the npm package react-datepicker, which needs to maintain
-an internal ref of the TextInput, thus a class is needed.
+An input of type `text`.
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **autoComplete** | `Enum('on','off',null)` | `null` | :x: | 
-**className** | `String` | `null` | :x: | 
-**defaultValue** | `String` | `''` | :x: | 
+**className** | `String` | `null` | :x: | Additional class names
+**defaultValue** | `String` | `''` | :x: | Fallback default for `value`
 **disabled** | `Boolean` | `null` | :x: | 
 **display** | `Enum('block','inline')` | `'block'` | :x: | 
-**icon** | `ReactNode` | `null` | :x: | 
-**id** | `String` | `null` | :x: | 
+**icon** | `ReactNode` | `null` | :x: | SVG icon
+**id** | `String` | `null` | :x: | HTML id attribute
 **inputError** | `String` | `''` | :x: | 
 **label** | `Union<ReactNode \| String>` | `''` | :x: | 
 **maxLength** | `Number` | `null` | :x: | 

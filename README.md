@@ -91,3 +91,7 @@ The PropTypes of all components of the library are documented in their respectiv
 -   [TextAreaInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/TextAreaInput/TextAreaInput.md)
 -   [TextInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/TextInput/TextInput.md)
 -   [ThumbnailImage](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/ThumbnailImage/ThumbnailImage.md)
+
+**Container PropTypes**
+
+-   [Notifications](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/containers/Notifications/ui/containers/Notifications/Notifications.md)
