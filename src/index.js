@@ -15,6 +15,7 @@ export { MultiLangTextAreaInput } from './core/ui/components/MultiLangTextAreaIn
 export { MultiLangTextInput } from './core/ui/components/MultiLangTextInput';
 export { Panel } from './core/ui/components/Panel';
 export { PasswordInput } from './core/ui/components/PasswordInput';
+export { PhoneNumberInput } from './core/ui/components/PhoneNumberInput';
 export { Popover } from './core/ui/components/Popover';
 export { ProgressBar } from './core/ui/components/ProgressBar';
 export { RadioBooleanInput } from './core/ui/components/RadioBooleanInput';
@@ -24,6 +25,7 @@ export { SectionHeader } from './core/ui/components/SectionHeader';
 export { SelectInput } from './core/ui/components/SelectInput';
 export { Separator } from './core/ui/components/Separator';
 export { Spinner } from './core/ui/components/Spinner';
+export { StarRatingInput } from './core/ui/components/StarRatingInput';
 export { StepProgressBar } from './core/ui/components/StepProgressBar';
 export { StickyBanner } from './core/ui/components/StickyBanner';
 export { Table } from './core/ui/components/Table';

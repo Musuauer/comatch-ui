@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.FileInput {
+    display: inline-block;
+
+    input[type='file'] {
+        display: none;
+    }
+}
