@@ -1,0 +1,48 @@
+@import '../../../styles/variables.scss';
+
+.StarRatingInput {
+    display: inline-block;
+    white-space: nowrap;
+
+    input[type='radio'] {
+        display: none;
+    }
+
+    &__half-icon,
+    &__icon {
+        width: 17px;
+        height: 16px;
+        margin-right: 2px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        // icon states
+        &.full {
+            color: $co-color-yellow;
+        }
+    }
+
+    &__half-stars-container {
+        .StarRatingInput__half-icon {
+            &:first-child {
+                margin-right: -18px;
+            }
+            &:last-child {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    // states
+    &:not(.read-only) {
+        .StarRatingInput__icon {
+            cursor: pointer;
+        }
+    }
+}
+
+svg.svg-inline--fa.fa-star-half.fa-w-18.StarRatingInput__half-icon {
+    width: 18px;
+}
