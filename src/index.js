@@ -4,6 +4,7 @@ export { Button } from './core/ui/components/Button';
 export { CheckboxInput } from './core/ui/components/CheckboxInput';
 export { CheckboxGroupInput } from './core/ui/components/CheckboxGroupInput';
 export { EmailInput } from './core/ui/components/EmailInput';
+export { FileInput } from './core/ui/components/FileInput';
 export { Flyout } from './core/ui/components/Flyout';
 export { InputError } from './core/ui/components/InputError';
 export { InputLabel } from './core/ui/components/InputLabel';
