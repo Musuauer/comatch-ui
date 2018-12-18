@@ -5,9 +5,18 @@ import noop from 'lodash/noop';
 
 import './TabNavigation.scss';
 
+/**
+ * A tab navigation that can appear above a `Panel`.
+ *
+ * When the tabs are clicked they will usually reveal different parts of the content.
+ */
+
 export class TabNavigation extends Component {
     static propTypes = {
-        // This is used to set which tab you want to be active
+        // eslint-disable-next-line valid-jsdoc
+        /**
+         * Determines which tab should be active
+         */
         activeTabIndex: (props, propName, componentName) => {
             const prop = props[propName];
             if (typeof prop !== 'number') {
@@ -26,6 +35,9 @@ export class TabNavigation extends Component {
             return false;
         },
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+        /**
+         * Updates the state with the active tab before invoking `onTabClick`
+         */
         handleTabClick: PropTypes.func,
         onTabClick: PropTypes.func,
     };
@@ -66,11 +78,7 @@ export class TabNavigation extends Component {
                         });
 
                         return (
-                            <li
-                                className={classes}
-                                key={key}
-                                onClick={() => handleTabClick(key)}
-                            >
+                            <li className={classes} key={key} onClick={() => handleTabClick(key)}>
                                 {child}
                             </li>
                         );

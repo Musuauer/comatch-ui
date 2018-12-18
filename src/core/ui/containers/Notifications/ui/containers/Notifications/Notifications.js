@@ -8,12 +8,27 @@ import { Alert } from '../../../../../components/Alert';
 
 import './Notifications.scss';
 
-export class NotificationsComponent extends Component {
+class NotificationsComponent extends Component {
     static propTypes = {
+        /**
+         * Action that reset the `Notification` container
+         */
         clearNotification: PropTypes.func.isRequired,
+        /**
+         * The currently shown notification, with type, message, timeout
+         */
         notifications: PropTypes.shape({
+            /**
+             * Notification type can be 'danger', 'info', 'success', 'warning'
+             */
             type: PropTypes.string,
+            /**
+             * Message to be displayed in the `Notifications` component
+             */
             message: PropTypes.string,
+            /**
+             * Defined in ms. When expired it the `Notifications` component will slide out
+             */
             timeout: PropTypes.number,
         }).isRequired,
     };
@@ -85,6 +100,14 @@ function mapStateToProps({ notifications }) {
 }
 
 const mapDispatchToProps = { clearNotification };
+
+/**
+ * The `Notifications` container renders a notification box on the top right of the screen,
+ * with `position: fixed`. It can have the same states as an `Alert` component (danger, success,warning, info).
+ *
+ * It displays important success messages, such as the correct submission of a form or errors such as
+ * an unresolved call to your API.
+ */
 
 export const Notifications = connect(
     mapStateToProps,

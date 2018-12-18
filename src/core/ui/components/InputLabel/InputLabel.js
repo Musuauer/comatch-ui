@@ -5,11 +5,26 @@ import classNames from 'classnames';
 import './InputLabel.scss';
 
 const propTypes = {
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
+    /**
+     * HTML for attribute
+     */
     htmlFor: PropTypes.string,
+    /**
+     * HTML id attribute
+     */
     id: PropTypes.string,
     required: PropTypes.bool,
+    /**
+     * If true will use `<span>` instead of `<label>`
+     */
     span: PropTypes.bool,
+    /**
+     * Text content of `Button`
+     */
     text: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };
 
@@ -20,6 +35,11 @@ const defaultProps = {
     required: false,
     span: false,
 };
+
+/**
+ * A label element to be used with inputs. By default uses a `<label>` tag,
+ * but can also be a `<span>` if the `span` prop is set to true.
+ */
 
 export const InputLabel = ({ className, htmlFor, id, required, span, text }) =>
     span ? (

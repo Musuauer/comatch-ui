@@ -9,17 +9,42 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import 'react-slidedown/lib/slidedown.css';
 import './Panel.scss';
 
+/**
+ * The `Panel` is a way to organize and present content in the different pages.
+ */
+
 export class Panel extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+        /**
+         * Additional class names
+         */
         className: PropTypes.string,
+        /**
+         * Some buttons, links or other HTML content to be placed on the right part of the header next to the title.
+         */
         controls: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+        /**
+         * If true, the `Panel` can expand and collapse its contents. Starts out as collapsed in the first render.
+         */
         collapsible: PropTypes.bool,
+        /**
+         * If true, starts out as expanded in the first render
+         */
         expanded: PropTypes.bool,
         disabled: PropTypes.bool,
+        /**
+         * HTML id attribute
+         */
         id: PropTypes.string,
         onClick: PropTypes.func,
+        /**
+         * Alternative styling
+         */
         secondary: PropTypes.bool,
+        /**
+         * Heading in the header of the `Panel`
+         */
         title: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]),
         titleColor: PropTypes.oneOf(['black', 'gray', 'blue', 'green']),
     };

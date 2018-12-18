@@ -4,18 +4,14 @@ import { comatchLogoBase64 } from './images/comatchLogoBase64';
 
 import './Spinner.scss';
 
-/**
- * Displays the animated COMATCH logo to be used as a loading indicator.
- * The component will fill its container's width.
- * A size prop is used to set the height (since the container is likely empty, would have no height otherwise)
- * Size prop can be:
- * - 'page' (default) sets height to 500px
- * - 'panel' sets height to 200px
- * - a positive number: height value in px
- */
-
 const propTypes = {
+    /**
+     * Source of the spinner image
+     */
     imgSrc: PropTypes.string,
+    /**
+     * `page` sizing will take up the whole page whereas `panel` is constrained within a `Panel` component
+     */
     size: PropTypes.oneOfType([PropTypes.oneOf(['page', 'panel']), PropTypes.number]),
 };
 
@@ -34,6 +30,16 @@ function calculateHeight(size) {
             return size;
     }
 }
+
+/**
+ * Displays an animated logo (the COMATCH one by default) to be used as a loading indicator.
+ * The component will fill its container's width.
+ * A size prop is used to set the height (since the container is likely empty, would have no height otherwise)
+ * Size prop can be:
+ * - `page` (default) sets height to 500px
+ * - `panel` sets height to 200px
+ * - a positive number: height value in px
+ */
 
 export const Spinner = ({ imgSrc, size }) => (
     <div className="Spinner" style={{ height: calculateHeight(size) }}>

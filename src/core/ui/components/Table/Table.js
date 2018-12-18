@@ -5,14 +5,26 @@ import classNames from 'classnames';
 import './Table.scss';
 
 const propTypes = {
+    /**
+     * Data goes in the `<td>`
+     */
     cellData: PropTypes.arrayOf(PropTypes.object),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
+    /**
+     * Data goes in the row with the `<th>`
+     */
     headings: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.string),
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]),
+    /**
+     * Alternative styling
+     */
     secondary: PropTypes.bool,
 };
 
@@ -47,6 +59,10 @@ function renderCells(cellData, children) {
 
     return children;
 }
+
+/**
+ * A styled HTML `<table>` to present and organize data.
+ */
 
 export const Table = ({ cellData, children, className, headings, secondary }) => (
     <div className={classNames('Table', className, { primary: !secondary, secondary })}>

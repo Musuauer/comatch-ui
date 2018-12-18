@@ -6,15 +6,36 @@ import classNames from 'classnames';
 import './Button.scss';
 
 const propTypes = {
+    /**
+     * Additional class names
+     */
     className: PropTypes.string,
     disabled: PropTypes.bool,
+    /**
+     * Alternative styling with white background and primary colored text
+     */
     ghost: PropTypes.bool,
+    /**
+     * If true, uses `<a>` instead of `<button>`
+     */
     href: PropTypes.string,
+    /**
+     * HTML id attribute
+     */
     id: PropTypes.string,
+    /**
+     * SVG icon
+     */
     icon: PropTypes.node,
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
+    /**
+     * To be used with `href`, could set for example `target="_blank"`
+     */
     target: PropTypes.string,
+    /**
+     * Text content of `Button`
+     */
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
 };
@@ -51,19 +72,16 @@ function renderHtmlButton(classes, content, disabled, id, onClick, type) {
     );
 }
 
-export const Button = ({
-    className,
-    disabled,
-    ghost,
-    href,
-    id,
-    icon,
-    iconAfterText,
-    onClick,
-    target,
-    text,
-    type,
-}) => {
+/**
+ * A `Button` component with different stylistic variations. By default the styling is `full`,
+ * but `ghost` is an alternative version with reversed colors.
+ * 
+ * If `href` is set an `<a>` is used instead of `<button>`. If the `target` prop is set to `_blank`
+ * in combination with `href`, then it will also add the prop `rel="noopener noreferrer"` for
+ * additional security.
+ */
+
+export const Button = ({ className, disabled, ghost, href, id, icon, iconAfterText, onClick, target, text, type }) => {
     const classes = classNames('Button', className, {
         full: !ghost,
         disabled,

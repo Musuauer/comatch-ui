@@ -7,12 +7,24 @@ import noop from 'lodash/noop';
 
 import './Popover.scss';
 
+/**
+ * The `Popover` is used as a tooltip to display explanatory text next to inputs or other content.
+ */
+
 export class Popover extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+        /**
+         * Determines where to position the `Popover` relative to its toggle
+         */
         position: PropTypes.oneOf(['left', 'right', 'bottom', 'top']).isRequired,
+        /**
+         * The React.Node that serves as the toggle that triggers the `Popover` open when hovered
+         */
         toggle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-        // To make the open state also controllable from the outside.
+        /**
+         * Makes the `open` state of the `Popover` controllable from the outside
+         */
         open: PropTypes.bool,
     };
 
@@ -71,17 +83,8 @@ export class Popover extends Component {
                 onTransitionEnd={this.handleTransitionEnd}
                 className={classes}
             >
-                {toggle || (
-                    <FontAwesomeIcon
-                        icon={faQuestionCircle}
-                        className="Popover__toggle Popover__icon"
-                    />
-                )}
-                <div
-                    aria-hidden={!renderContent}
-                    role="tooltip"
-                    className="Popover__content"
-                >
+                {toggle || <FontAwesomeIcon icon={faQuestionCircle} className="Popover__toggle Popover__icon" />}
+                <div aria-hidden={!renderContent} role="tooltip" className="Popover__content">
                     {renderContent ? children : null}
                 </div>
             </section>
