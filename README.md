@@ -1,4 +1,6 @@
-# COMATCH UI [(Live Storybook preview)](https://comatch.github.io/comatch-ui/)
+# <img src="./comatchUiLogo.svg" width="350" alt="COMATCH UI">
+
+:point_right: [Live Storybook preview](https://comatch.github.io/comatch-ui/) :point_left:
 
 [![CircleCI](https://circleci.com/gh/COMATCH/comatch-ui.svg?style=svg&circle-token=b2eea611c1911aa0d1f9c3ccf48631766425f5ec)](https://circleci.com/gh/COMATCH/comatch-ui)
 
@@ -83,7 +85,7 @@ The PropTypes of all components of the library are documented in their respectiv
 -   [RadioInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/RadioInput/RadioInput.md)
 -   [SectionHeader](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/SectionHeader/SectionHeader.md)
 -   [SelectInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/SelectInput/SelectInput.md)
--   [Separator](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Separator/Separator.md)
+-   [Separator](https://github.jcom/COMATCH/comatch-ui/blob/master/src/core/ui/components/Separator/Separator.md)
 -   [Spinner](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Spinner/Spinner.md)
 -   [StarRatingInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/StarRatingInput/StarRatingInput.md)
 -   [StepProgressBar](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/StepProgressBar/StepProgressBar.md)
