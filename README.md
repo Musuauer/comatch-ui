@@ -1,4 +1,4 @@
-# COMATCH UI
+# [COMATCH UI](https://comatch.github.io/comatch-ui/)
 
 [![CircleCI](https://circleci.com/gh/COMATCH/comatch-ui.svg?style=svg&circle-token=b2eea611c1911aa0d1f9c3ccf48631766425f5ec)](https://circleci.com/gh/COMATCH/comatch-ui)
 
@@ -7,6 +7,8 @@
 This project contains all of our React core (UI) components to be re-used across our projects.
 
 This project is setup with a minimalistic Webpack config to handle the build pipeline and Storybook to facilitate development.
+
+A preview of all the components can be seen on the deployed version of our Storybook by clicking [here](https://comatch.github.io/comatch-ui/).
 
 ## Documentation
 
