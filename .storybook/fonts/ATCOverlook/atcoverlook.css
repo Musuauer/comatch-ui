@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'ATCOverlook';
+    src: url('./atcoverlook_regular.woff') format('woff'), url('./atcoverlook_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ATCOverlook';
+    src: url('./atcoverlook_bold.woff') format('woff'), url('./atcoverlook_bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
