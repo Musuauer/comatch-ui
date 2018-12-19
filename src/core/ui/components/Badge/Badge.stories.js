@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { Badge } from './Badge';
 
@@ -7,72 +8,72 @@ storiesOf('Badge', module)
     .add('with xs size and lightblue background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="lightblue" />
-            <code>{'<Badge text="Badge text" size="xs" color="lightblue" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="lightblue" />'}</Highlight>
         </>
     ))
     .add('with xs size and blue background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="blue" />
-            <code>{'<Badge text="Badge text" size="xs" color="blue" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="blue" />'}</Highlight>
         </>
     ))
     .add('with xs size and orange background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="orange" />
-            <code>{'<Badge text="Badge text" size="xs" color="orange" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="orange" />'}</Highlight>
         </>
     ))
     .add('with xs size and green background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="green" />
-            <code>{'<Badge text="Badge text" size="xs" color="green" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="green" />'}</Highlight>
         </>
     ))
     .add('with xs size and gray background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="gray" />
-            <code>{'<Badge text="Badge text" size="xs" color="gray" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="gray" />'}</Highlight>
         </>
     ))
     .add('with xs size and white background-color', () => (
         <>
             <Badge text="Badge text" size="xs" color="white" />
-            <code>{'<Badge text="Badge text" size="xs" color="white" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="xs" color="white" />'}</Highlight>
         </>
     ))
     .add('with sm size and lightblue background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="lightblue" />
-            <code>{'<Badge text="Badge text" size="sm" color="lightblue" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="lightblue" />'}</Highlight>
         </>
     ))
     .add('with sm size and blue background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="blue" />
-            <code>{'<Badge text="Badge text" size="sm" color="blue" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="blue" />'}</Highlight>
         </>
     ))
     .add('with sm size and orange background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="orange" />
-            <code>{'<Badge text="Badge text" size="sm" color="orange" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="orange" />'}</Highlight>
         </>
     ))
     .add('with sm size and green background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="green" />
-            <code>{'<Badge text="Badge text" size="sm" color="green" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="green" />'}</Highlight>
         </>
     ))
     .add('with sm size and gray background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="gray" />
-            <code>{'<Badge text="Badge text" size="sm" color="gray" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="gray" />'}</Highlight>
         </>
     ))
     .add('with sm size and white background-color', () => (
         <>
             <Badge text="Badge text" size="sm" color="white" />
-            <code>{'<Badge text="Badge text" size="sm" color="white" />'}</code>
+            <Highlight className="html">{'<Badge text="Badge text" size="sm" color="white" />'}</Highlight>
         </>
     ));
