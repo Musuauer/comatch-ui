@@ -1,66 +1,74 @@
 import React from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { Alert, ALERT_TYPE } from './Alert';
-// import { RadioGroupInput } from '../RadioGroupInput/RadioGroupInput.jsx';
 
 storiesOf('Alert', module)
     .add('with success style', () => (
         <>
             <Alert type={ALERT_TYPE.SUCCESS} message="A block alert" />
-            <code>{'<Alert type={ALERT_TYPE.SUCCESS} message="A block alert" />'}</code>
+            <Highlight className="html">{'<Alert type={ALERT_TYPE.SUCCESS} message="A block alert" />'}</Highlight>
         </>
     ))
     .add('with warning style', () => (
         <>
             <Alert type={ALERT_TYPE.WARNING} message="A block alert" />
-            <code>{'<Alert type={ALERT_TYPE.WARNING} message="A block alert" />'}</code>
+            <Highlight className="html">{'<Alert type={ALERT_TYPE.WARNING} message="A block alert" />'}</Highlight>
         </>
     ))
     .add('with danger style', () => (
         <>
             <Alert type={ALERT_TYPE.DANGER} message="A block alert" />
-            <code>{'<Alert type={ALERT_TYPE.DANGER} message="A block alert" />'}</code>
+            <Highlight className="html">{'<Alert type={ALERT_TYPE.DANGER} message="A block alert" />'}</Highlight>
         </>
     ))
     .add('with info style', () => (
         <>
             <Alert type={ALERT_TYPE.INFO} message="A block alert" />
-            <code>{'<Alert type={ALERT_TYPE.INFO} message="A block alert" />'}</code>
+            <Highlight className="html">{'<Alert type={ALERT_TYPE.INFO} message="A block alert" />'}</Highlight>
         </>
     ))
     .add('with success style and display inline', () => (
         <>
             <Alert display="inline" type={ALERT_TYPE.SUCCESS} message="A block alert" />
-            <code>{'<Alert display="inline" type={ALERT_TYPE.SUCCESS} message="A block alert" />'}</code>
+            <Highlight className="html">
+                {'<Alert display="inline" type={ALERT_TYPE.SUCCESS} message="A block alert" />'}
+            </Highlight>
         </>
     ))
     .add('with warning style and display inline', () => (
         <>
             <Alert display="inline" type={ALERT_TYPE.WARNING} message="A block alert" />
-            <code>{'<Alert display="inline" type={ALERT_TYPE.WARNING} message="A block alert" />'}</code>
+            <Highlight className="html">
+                {'<Alert display="inline" type={ALERT_TYPE.WARNING} message="A block alert" />'}
+            </Highlight>
         </>
     ))
     .add('with danger style and display inline', () => (
         <>
             <Alert display="inline" type={ALERT_TYPE.DANGER} message="A block alert" />
-            <code>{'<Alert display="inline" type={ALERT_TYPE.DANGER} message="A block alert" />'}</code>
+            <Highlight className="html">
+                {'<Alert display="inline" type={ALERT_TYPE.DANGER} message="A block alert" />'}
+            </Highlight>
         </>
     ))
     .add('with info style and display inline', () => (
         <>
             <Alert display="inline" type={ALERT_TYPE.INFO} message="A block alert" />
-            <code>{'<Alert display="inline" type={ALERT_TYPE.INFO} message="A block alert" />'}</code>
+            <Highlight className="html">
+                {'<Alert display="inline" type={ALERT_TYPE.INFO} message="A block alert" />'}
+            </Highlight>
         </>
     ))
     .add('with no props', () => (
         <>
             <Alert />
-            <code>{'<Alert />'}</code>
+            <Highlight className="html">{'<Alert />'}</Highlight>
         </>
     ))
     .add('with displayIcon false', () => (
         <>
             <Alert displayIcon={false} />
-            <code>{'<Alert displayIcon={false} />'}</code>
+            <Highlight className="html">{'<Alert displayIcon={false} />'}</Highlight>
         </>
     ));
