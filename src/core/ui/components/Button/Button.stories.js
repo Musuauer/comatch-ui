@@ -7,32 +7,64 @@ import { Button } from './Button';
 
 storiesOf('Button', module)
     .add('with primary style', () => (
-        <Button text="Hello world" />
+        <>
+            <Button text="Hello world" />
+            <code>{'<Button text="Hello world" />'}</code>
+        </>
     ))
     .add('disabled with primary style', () => (
-        <Button disabled text="Hello world" />
+        <>
+            <Button disabled text="Hello world" />
+            <code>{'<Button disabled text="Hello world" />'}</code>
+        </>
     ))
-    .add('with primary style and onClickHandler', () => (
-        <Button text="Hello world" onClickHandler={action('clicked')} />
+    .add('with primary style and onClick handler', () => (
+        <>
+            <Button text="Hello world" onClick={action('clicked')} />
+            <code>{`<Button text="Hello world" onClick={(event) => {}} />`}</code>
+        </>
     ))
     .add('with ghost style', () => (
-        <Button ghost={true} text="Hello world" />
+        <>
+            <Button ghost text="Hello world" />
+            <code>{'<Button ghost text="Hello world" />'}</code>
+        </>
     ))
     .add('disabled with ghost style', () => (
-        <Button ghost={true} disabled text="Hello world" />
+        <>
+            <Button ghost disabled text="Hello world" />
+            <code>{'<Button ghost disabled text="Hello world" />'}</code>
+        </>
     ))
     .add('with icon', () => (
-        <Button icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />
+            <code>{'<Button icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />'}</code>
+        </>
     ))
     .add('with icon and ghost style', () => (
-        <Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} text="Hello world" />
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} text="Hello world" />
+            <code>{'<Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} text="Hello world" />'}</code>
+        </>
     ))
     .add('with icon on the right', () => (
-        <Button iconAfterText={true} icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />
+        <>
+            <Button iconAfterText={true} icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />
+            <code>
+                {'<Button iconAfterText={true} icon={<FontAwesomeIcon icon={faTimes} />} text="Hello world" />'}
+            </code>
+        </>
     ))
     .add('with icon only', () => (
-        <Button icon={<FontAwesomeIcon icon={faTimes} />} />
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} />
+            <code>{'<Button icon={<FontAwesomeIcon icon={faTimes} />} />'}</code>
+        </>
     ))
     .add('with icon only and ghost style', () => (
-        <Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} />
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} />
+            <code>{'<Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} />'}</code>
+        </>
     ));
