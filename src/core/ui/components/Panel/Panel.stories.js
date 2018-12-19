@@ -20,37 +20,65 @@ const titleWithIcon = (
 );
 
 storiesOf('Panel', module)
-    .add('primary style with title', () => <Panel title="A panel title">{panelText}</Panel>)
-    .add('primary style with title and without content', () => <Panel title="A panel title" />)
+    .add('primary style with title', () => (
+        <>
+            <Panel title="A panel title">{panelText}</Panel>
+            <code>{`<Panel title="A panel title">{panelText}</Panel>`}</code>
+        </>
+    ))
+    .add('primary style with title and without content', () => (
+        <>
+            <Panel title="A panel title" />
+            <code>{`<Panel title="A panel title" />`}</code>
+        </>
+    ))
     .add('primary style with green title color', () => (
-        <Panel title="A panel title" titleColor="green">
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" titleColor="green">
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" titleColor="green">{panelText}</Panel>`}</code>
+        </>
     ))
     .add('primary style with blue title color', () => (
-        <Panel title="A panel title" titleColor="blue">
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" titleColor="blue">
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" titleColor="blue">{panelText}</Panel>`}</code>
+        </>
     ))
     .add('primary style with gray title color', () => (
-        <Panel title="A panel title" titleColor="gray">
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" titleColor="gray">
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" titleColor="gray">{panelText}</Panel>`}</code>
+        </>
     ))
     .add('primary style with title and a control', () => (
-        <Panel title="A panel title" controls={control} primary>
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" controls={control} primary>
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" controls={control} primary>{panelText}</Panel>`}</code>
+        </>
     ))
     .add('primary style with title and controls', () => (
-        <Panel title="A panel title" controls={controls} primary>
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" controls={controls} primary>
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" controls={controls} primary>{panelText}</Panel>`}</code>
+        </>
     ))
     .add('collapsible with primary style and blue title', () => (
-        <Panel title="A panel title" titleColor="blue" collapsible>
-            {panelText}
-        </Panel>
+        <>
+            <Panel title="A panel title" titleColor="blue" collapsible>
+                {panelText}
+            </Panel>
+            <code>{`<Panel title="A panel title" titleColor="blue" collapsible>{panelText}</Panel`}</code>
+        </>
     ))
     .add('collapsible with primary style and without content', () => <Panel title="A panel title" collapsible />)
     .add('collapsible with primary style and huge title', () => (
@@ -112,6 +140,4 @@ storiesOf('Panel', module)
         </Panel>
     ))
     .add('without title', () => <Panel>{panelText}</Panel>)
-    .add('disabled', () => (
-        <Panel title="A panel title" disabled />
-    ));
+    .add('disabled', () => <Panel title="A panel title" disabled />);
