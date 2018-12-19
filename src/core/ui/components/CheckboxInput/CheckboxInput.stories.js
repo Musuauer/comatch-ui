@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { CheckboxInput } from './CheckboxInput';
 
 storiesOf('CheckboxInput', module)
-    .add('single no label', () => <CheckboxInput name="isFoo" />)
-    .add('single with label', () => <CheckboxInput label="Foo" name="isFoo" />)
+    .add('single no label', () => (
+        <>
+            <CheckboxInput name="isFoo" />
+            <Highlight className="html">{'<CheckboxInput name="isFoo" />'}</Highlight>
+        </>
+    ))
+    .add('single with label', () => (
+        <>
+            <CheckboxInput label="Foo" name="isFoo" />
+            <Highlight className="html">{'<CheckboxInput label="Foo" name="isFoo" />'}</Highlight>
+        </>
+    ))
     .add('multiple with label', () => (
         <div>
             <CheckboxInput label="Foo" name="isFoo" value="1" />
@@ -30,7 +41,12 @@ storiesOf('CheckboxInput', module)
         </div>
     ))
     .add('single with label and inputError', () => (
-        <CheckboxInput label="Foo" name="isFoo" inputError="Alarm! Meltdown Imminent!" />
+        <>
+            <CheckboxInput label="Foo" name="isFoo" inputError="Alarm! Meltdown Imminent!" />
+            <Highlight className="html">
+                {'<CheckboxInput label="Foo" name="isFoo" inputError="Alarm! Meltdown Imminent!" />'}
+            </Highlight>
+        </>
     ))
     .add('multiple with label and inputError', () => (
         <div>
@@ -62,6 +78,13 @@ class CheckboxInputContainer extends Component {
     };
 
     render() {
-        return <CheckboxInput label="Available" name="available" onChange={this.handleChange} />;
+        return (
+            <>
+                <CheckboxInput label="Available" name="available" onChange={this.handleChange} />
+                <Highlight className="html">
+                    {'<CheckboxInput label="Available" name="available" onChange={function() {}} />'}
+                </Highlight>
+            </>
+        );
     }
 }
