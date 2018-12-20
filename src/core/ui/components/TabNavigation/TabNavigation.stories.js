@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { TabNavigation } from './TabNavigation';
@@ -30,6 +30,16 @@ storiesOf('TabNavigation', module)
             <Panel title="A panel title" titleColor="green">
                 {panelText}
             </Panel>
+            <Highlight className="html">
+                {`<TabNavigation>` +
+                    `\n\t<button onClick={onTabClick}>Tab 1</button>` +
+                    `\n\t<button onClick={onTabClick}>Tab 2</button>` +
+                    `\n\t<button onClick={onTabClick}>Tab 3</button>` +
+                    `\n</TabNavigation>` +
+                    `\n<Panel title="A panel title" titleColor="green">` +
+                    `\n\t{panelText}` +
+                    `\n</Panel>`}
+            </Highlight>
         </div>
     ))
     .add('with default props, rendering links', () => (
@@ -48,6 +58,22 @@ storiesOf('TabNavigation', module)
             <Panel title="A panel title" titleColor="green">
                 {panelText}
             </Panel>
+            <Highlight className="html">
+                {'<TabNavigation>' +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 1` +
+                    `\n\t</a>` +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 2` +
+                    `\n\t</a>` +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 3` +
+                    `\n\t</a>` +
+                    `\n</TabNavigation>` +
+                    `\n<Panel title="A panel title" titleColor="green">` +
+                    `\n\t{panelText}` +
+                    `\n</Panel>`}
+            </Highlight>
         </div>
     ))
     .add('rendering links and activeTabIndex set to 2', () => (
@@ -66,5 +92,21 @@ storiesOf('TabNavigation', module)
             <Panel title="A panel title" titleColor="green">
                 {panelText}
             </Panel>
+            <Highlight className="html">
+                {`<TabNavigation activeTabIndex={2}>` +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 1` +
+                    `\n\t</a>` +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 2` +
+                    `\n\t</a>` +
+                    `\n\t<a href="#" onClick={onLinkClick}>` +
+                    `\n\t\tTab 3` +
+                    `\n\t</a>` +
+                    `\n</TabNavigation>` +
+                    `\n<Panel title="A panel title" titleColor="green">` +
+                    `\n\t{panelText}` +
+                    `\n</Panel>`}
+            </Highlight>
         </div>
     ));
