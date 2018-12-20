@@ -37,15 +37,15 @@ storiesOf('Flyout', module)
             <Flyout>
                 <LoremText />
             </Flyout>
-            <Highlight className="html">
-                {'<Flyout ref={(ref) => { this.flyout = ref;}}> <div>Lorem ipsum...</div> ' +
-                    '<Button onClick={() => this.flyout.close()} text="Close" /> </Flyout>'}
-            </Highlight>
+            <Highlight className="html">{'<Flyout> <div>Lorem ipsum...</div> </Flyout>'}</Highlight>
         </>
     ))
     .add('close with button placed in the flyout', () => (
         <>
             <FlyoutWrapper />
-            <Highlight className="html">{'<Flyout> <div>Lorem ipsum...</div> </Flyout>'}</Highlight>
+            <Highlight className="html">
+                {'<Flyout ref={(ref) => { this.flyout = ref;}}> <div>Lorem ipsum...</div> ' +
+                    '<Button onClick={() => this.flyout.close()} text="Close" /> </Flyout>'}
+            </Highlight>
         </>
     ));
