@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { Button } from '../Button/Button';
 import { Flyout } from './Flyout';
@@ -33,8 +33,19 @@ class FlyoutWrapper extends Component {
 
 storiesOf('Flyout', module)
     .add('show flyout on page', () => (
-        <Flyout>
-            <LoremText />
-        </Flyout>
+        <>
+            <Flyout>
+                <LoremText />
+            </Flyout>
+            <Highlight className="html">{'<Flyout> <div>Lorem ipsum...</div> </Flyout>'}</Highlight>
+        </>
     ))
-    .add('close with button placed in the flyout', () => <FlyoutWrapper />);
+    .add('close with button placed in the flyout', () => (
+        <>
+            <FlyoutWrapper />
+            <Highlight className="html">
+                {'<Flyout ref={(ref) => { this.flyout = ref;}}> <div>Lorem ipsum...</div> ' +
+                    '<Button onClick={() => this.flyout.close()} text="Close" /> </Flyout>'}
+            </Highlight>
+        </>
+    ));

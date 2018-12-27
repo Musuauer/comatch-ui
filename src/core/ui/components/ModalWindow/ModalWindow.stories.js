@@ -1,4 +1,5 @@
 import React from 'react';
+import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { ModalWindow } from './ModalWindow';
@@ -51,10 +52,25 @@ const customFooter = (
 );
 
 storiesOf('ModalWindow', module)
-    .add('with standard options', () => <ModalWindowWrapper />)
-    .add('with custom success button text', () => <ModalWindowWrapper successButtonText="Send it over!" />)
-    .add('with custom close button text', () => <ModalWindowWrapper closeButtonText="Zip it" />)
-    .add('with custom close and success button texts', () => (
-        <ModalWindowWrapper closeButtonText="Zip it" successButtonText="Let's do it!" />
+    .add('with standard options', () => (
+        <>
+            <ModalWindowWrapper />
+            <Highlight className="html">
+                {'<div><button type="button" onClick={this.openModal}>Open modal</button>' +
+                    '<ModalWindow title="Test modal" isOpen={this.state.modalOpen} onClose={function() {}}' +
+                    'onSuccess={function() {}} closeButtonText="Close" successButtonText="OK"> Lorem Ipsum...' +
+                    '</ModalWindow>'}
+            </Highlight>
+        </>
     ))
-    .add('with custom footer', () => <ModalWindowWrapper footerChildren={customFooter} />);
+    .add('with custom footer', () => (
+        <>
+            <ModalWindowWrapper footerChildren={customFooter} />
+            <Highlight className="html">
+                {'<div><button type="button" onClick={this.openModal}>Open modal</button>' +
+                    '<ModalWindow title="Test modal" isOpen={this.state.modalOpen} onClose={function() {}}' +
+                    'onSuccess={function() {}} closeButtonText="Close" successButtonText="OK"' +
+                    'footerChildren={customFooter}> Lorem Ipsum...</ModalWindow></div>'}
+            </Highlight>
+        </>
+    ));
