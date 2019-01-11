@@ -1,0 +1,47 @@
+@import '../../../styles/variables.scss';
+
+.MultiSelectInput {
+    font-size: $co-font-sm;
+    display: inline-block;
+    margin-bottom: $co-inputs-margin-bottom;
+
+    // common styles
+    .InputLabel,
+    &.block,
+    &__input {
+        display: block;
+    }
+
+    // Elements
+    &__input {
+        // coloring
+        background-color: $co-color-white;
+        border: 1px solid $co-color-mid-gray;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        // sizing & whitespace
+        height: 40px;
+        width: 100%;
+        // transition effects
+        transition: box-shadow 250ms ease-out;
+        transform: translateZ(0);
+        will-change: box-shadow;
+        // reset browser defaults
+        outline: 0 !important;
+
+        &:focus {
+            box-shadow: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    // States
+    &.has-error {
+        .SelectInput__input {
+            box-shadow: 0 0 4px 0 rgba(173, 25, 25, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
+        }
+    }
+
+    &.disabled {
+        color: $co-color-gray;
+    }
+}

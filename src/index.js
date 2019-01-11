@@ -14,6 +14,7 @@ export { NumberInput } from './core/ui/components/NumberInput';
 export { ModalWindow } from './core/ui/components/ModalWindow';
 export { MultiLangTextAreaInput } from './core/ui/components/MultiLangTextAreaInput';
 export { MultiLangTextInput } from './core/ui/components/MultiLangTextInput';
+export { MultiSelectInput } from './core/ui/components/MultiSelectInput';
 export { Panel } from './core/ui/components/Panel';
 export { PasswordInput } from './core/ui/components/PasswordInput';
 export { PhoneNumberInput } from './core/ui/components/PhoneNumberInput';

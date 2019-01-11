@@ -24,6 +24,7 @@ module.exports = {
         'react-modal',
         'redux',
         'react-redux',
+        'react-select',
     ],
     module: {
         rules: [
