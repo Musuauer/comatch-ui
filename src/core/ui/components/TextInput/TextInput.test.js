@@ -13,6 +13,32 @@ describe('TextInput', () => {
         onChange: jest.fn(),
     };
 
+    const ASSIGNED_OPTIONAL_PROPS = {
+        className: lorem.word(),
+        defaultValue: lorem.word(),
+        id: lorem.word(),
+        inputError: lorem.word(),
+        label: lorem.word(),
+        name: lorem.word(),
+        placeholder: lorem.word(),
+        value: lorem.word(),
+
+        disabled: false,
+        required: true,
+
+        autoComplete: 'on',
+        display: 'inline',
+        type: 'password',
+
+        maxLength: 100,
+
+        icon: <i />,
+
+        onBlur: jest.fn(),
+        onClick: jest.fn(),
+        onFocus: jest.fn(),
+    };
+
     it('should render correctly', () => {
         const props = {
             ...COMMON_PROPS,
@@ -56,30 +82,7 @@ describe('TextInput', () => {
     it('should render with certain props', () => {
         const props = {
             ...COMMON_PROPS,
-
-            className: lorem.word(),
-            defaultValue: lorem.word(),
-            id: lorem.word(),
-            inputError: lorem.word(),
-            label: lorem.word(),
-            name: lorem.word(),
-            placeholder: lorem.word(),
-            value: lorem.word(),
-
-            disabled: false,
-            required: true,
-
-            autoComplete: 'on',
-            display: 'inline',
-            type: 'password',
-
-            maxLength: 100,
-
-            icon: <i />,
-
-            onBlur: jest.fn(),
-            onClick: jest.fn(),
-            onFocus: jest.fn(),
+            ...ASSIGNED_OPTIONAL_PROPS,
         };
 
         const thing = mount(<TextInput {...props} />);
