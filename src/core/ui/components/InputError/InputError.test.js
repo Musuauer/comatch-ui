@@ -12,7 +12,7 @@ describe('InputError', () => {
         expect(inputError).toMatchSnapshot();
     });
 
-    it('should render an IputError with default props', () => {
+    it('should render an InputError with default props', () => {
         const item = shallow(<InputError text={testText} />);
 
         // should have a default classe .InputError
