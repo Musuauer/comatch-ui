@@ -11,13 +11,14 @@ export const customStyles = {
         border: 'none',
         position: 'relative',
         minWidth: 90,
+        zIndex: 1,
     }),
     dropdownIndicator: () => ({
-        height: '37.5px',
+        height: '37px',
         width: 20,
         position: 'absolute',
         right: '.5px',
-        top: 0,
+        top: '.5px',
         // This fix will remove the glossy background for select elements
         // from the Safari browser, while maintaing the default arrow icon
         /* eslint-disable max-len */
@@ -35,7 +36,6 @@ export const customStyles = {
         borderBottomRightRadius: 3,
         marginTop: 0,
     }),
-    menuList: () => ({}),
     option: (provided, state) => ({
         ...provided,
         backgroundColor: state.isFocused ? palette.lightGray : palette.white,
