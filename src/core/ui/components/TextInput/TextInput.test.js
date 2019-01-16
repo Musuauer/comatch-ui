@@ -17,8 +17,8 @@ describe('TextInput', () => {
         className: lorem.word(),
         defaultValue: lorem.word(),
         id: lorem.word(),
-        inputError: lorem.word(),
-        label: lorem.word(),
+        inputError: 'Testing InputError Message',
+        label: 'Testing Label',
         name: lorem.word(),
         placeholder: lorem.word(),
         value: lorem.word(),
@@ -115,5 +115,47 @@ describe('TextInput', () => {
         expect(thing.prop('onBlur')).toEqual(props.onBlur);
         expect(thing.prop('onClick')).toEqual(props.onClick);
         expect(thing.prop('onFocus')).toEqual(props.onFocus);
+    });
+
+    it('should render with correct HTML structure (manipulated through props)', () => {
+        const inputWithLabel = (
+            <TextInput
+                {...COMMON_PROPS}
+                label={ASSIGNED_OPTIONAL_PROPS.label}
+            />
+        );
+
+        const inputWithIcon = (
+            <TextInput
+                {...COMMON_PROPS}
+                icon={ASSIGNED_OPTIONAL_PROPS.icon}
+            />
+        );
+
+        const inputWithInputError = (
+            <TextInput
+                {...COMMON_PROPS}
+                inputError={ASSIGNED_OPTIONAL_PROPS.inputError}
+            />
+        );
+
+        const inputWithEverything = (
+            <TextInput
+                {...COMMON_PROPS}
+                label={ASSIGNED_OPTIONAL_PROPS.label}
+                icon={ASSIGNED_OPTIONAL_PROPS.icon}
+                inputError={ASSIGNED_OPTIONAL_PROPS.inputError}
+            />
+        );
+
+        const thingWithLabel = renderer.create(inputWithLabel).toJSON();
+        const thingWithIcon = renderer.create(inputWithIcon).toJSON();
+        const thingWithInputError = renderer.create(inputWithInputError).toJSON();
+        const thingWithEverything = renderer.create(inputWithEverything).toJSON();
+
+        expect(thingWithLabel).toMatchSnapshot();
+        expect(thingWithIcon).toMatchSnapshot();
+        expect(thingWithInputError).toMatchSnapshot();
+        expect(thingWithEverything).toMatchSnapshot();
     });
 });

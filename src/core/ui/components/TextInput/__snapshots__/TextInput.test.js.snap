@@ -23,3 +23,121 @@ exports[`TextInput should render correctly 1`] = `
   
 </div>
 `;
+
+exports[`TextInput should render with correct HTML structure (manipulated through props) 1`] = `
+<div
+  className="Input TextInput block"
+  id={null}
+>
+  <label
+    className="InputLabel"
+    htmlFor={null}
+    id={null}
+  >
+    Testing Label
+  </label>
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  
+</div>
+`;
+
+exports[`TextInput should render with correct HTML structure (manipulated through props) 2`] = `
+<div
+  className="Input TextInput block with-icon"
+  id={null}
+>
+  
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <i />
+  
+</div>
+`;
+
+exports[`TextInput should render with correct HTML structure (manipulated through props) 3`] = `
+<div
+  className="Input TextInput block has-error"
+  id={null}
+>
+  
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <span
+    className="InputError"
+  >
+    Testing InputError Message
+  </span>
+</div>
+`;
+
+exports[`TextInput should render with correct HTML structure (manipulated through props) 4`] = `
+<div
+  className="Input TextInput block has-error with-icon"
+  id={null}
+>
+  <label
+    className="InputLabel"
+    htmlFor={null}
+    id={null}
+  >
+    Testing Label
+  </label>
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <i />
+  <span
+    className="InputError"
+  >
+    Testing InputError Message
+  </span>
+</div>
+`;
