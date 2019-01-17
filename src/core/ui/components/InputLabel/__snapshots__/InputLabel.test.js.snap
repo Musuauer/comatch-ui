@@ -5,7 +5,12 @@ exports[`InputLabel should render correctly 1`] = `
   className="InputLabel"
   htmlFor={null}
   id={null}
->
-  A very random text
-</label>
+/>
+`;
+
+exports[`InputLabel snapshot of span prop set to true 1`] = `
+<span
+  className="InputLabel"
+  id={null}
+/>
 `;
