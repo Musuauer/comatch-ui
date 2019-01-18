@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should render correctly 1`] = `
+<div
+  className="Input TextInput block"
+  id={null}
+>
+  
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  
+</div>
+`;
+
+exports[`TextInput should render correctly with a Label 1`] = `
+<div
+  className="Input TextInput block"
+  id={null}
+>
+  <label
+    className="InputLabel"
+    htmlFor={null}
+    id={null}
+  >
+    Testing Label
+  </label>
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  
+</div>
+`;
+
+exports[`TextInput should render correctly with an Icon 1`] = `
+<div
+  className="Input TextInput block with-icon"
+  id={null}
+>
+  
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <i />
+  
+</div>
+`;
+
+exports[`TextInput should render correctly with an InputError 1`] = `
+<div
+  className="Input TextInput block has-error"
+  id={null}
+>
+  
+  <input
+    autoComplete={null}
+    className="TextInput__input"
+    disabled={null}
+    maxLength={null}
+    name="text-input-unit-test"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <span
+    className="InputError"
+  >
+    Testing InputError Message
+  </span>
+</div>
+`;
