@@ -117,45 +117,37 @@ describe('TextInput', () => {
         expect(textInputComponent.prop('onFocus')).toEqual(props.onFocus);
     });
 
-    it('should render with correct HTML structure (manipulated through props)', () => {
+    it('should render correctly with a Label', () => {
         const inputWithLabel = (
             <TextInput
                 {...REQUIRED_PROPS}
                 label={OPTIONAL_PROPS.label}
             />
         );
+        const textInputComponentWithLabel = renderer.create(inputWithLabel).toJSON();
 
+        expect(textInputComponentWithLabel).toMatchSnapshot();
+    });
+
+    it('should render correctly with an Icon', () => {
         const inputWithIcon = (
             <TextInput
                 {...REQUIRED_PROPS}
                 icon={OPTIONAL_PROPS.icon}
             />
         );
+        const textInputComponentWithIcon = renderer.create(inputWithIcon).toJSON();
+        expect(textInputComponentWithIcon).toMatchSnapshot();
+    });
 
+    it('should render correctly with an InputError', () => {
         const inputWithInputError = (
             <TextInput
                 {...REQUIRED_PROPS}
                 inputError={OPTIONAL_PROPS.inputError}
             />
         );
-
-        const inputWithEverything = (
-            <TextInput
-                {...REQUIRED_PROPS}
-                label={OPTIONAL_PROPS.label}
-                icon={OPTIONAL_PROPS.icon}
-                inputError={OPTIONAL_PROPS.inputError}
-            />
-        );
-
-        const textInputComponentWithLabel = renderer.create(inputWithLabel).toJSON();
-        const textInputComponentWithIcon = renderer.create(inputWithIcon).toJSON();
         const textInputComponentWithInputError = renderer.create(inputWithInputError).toJSON();
-        const textInputComponentWithEverything = renderer.create(inputWithEverything).toJSON();
-
-        expect(textInputComponentWithLabel).toMatchSnapshot();
-        expect(textInputComponentWithIcon).toMatchSnapshot();
         expect(textInputComponentWithInputError).toMatchSnapshot();
-        expect(textInputComponentWithEverything).toMatchSnapshot();
     });
 });
