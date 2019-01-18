@@ -8,12 +8,12 @@ import '../../../config/tests/setup';
 import { TextInput } from './TextInput';
 
 describe('TextInput', () => {
-    const COMMON_PROPS = {
+    const REQUIRED_PROPS = {
         name: 'text-input-unit-test',
         onChange: jest.fn(),
     };
 
-    const ASSIGNED_OPTIONAL_PROPS = {
+    const OPTIONAL_PROPS = {
         className: lorem.word(),
         defaultValue: lorem.word(),
         id: lorem.word(),
@@ -41,121 +41,121 @@ describe('TextInput', () => {
 
     it('should render correctly', () => {
         const props = {
-            ...COMMON_PROPS,
+            ...REQUIRED_PROPS,
         };
 
-        const thing = renderer.create(<TextInput {...props} />).toJSON();
-        expect(thing).toMatchSnapshot();
+        const textInputComponent = renderer.create(<TextInput {...props} />).toJSON();
+        expect(textInputComponent).toMatchSnapshot();
     });
 
     it('should render with default props', () => {
         const props = {
-            ...COMMON_PROPS,
+            ...REQUIRED_PROPS,
         };
 
-        const thing = mount(<TextInput {...props} />);
+        const textInputComponent = mount(<TextInput {...props} />);
 
         // Required props:
-        expect(thing.prop('name')).toEqual(props.name);
-        expect(thing.prop('onChange')).toEqual(props.onChange);
+        expect(textInputComponent.prop('name')).toEqual(props.name);
+        expect(textInputComponent.prop('onChange')).toEqual(props.onChange);
 
         // Defaults:
-        expect(thing.prop('autoComplete')).toEqual(null);
-        expect(thing.prop('className')).toEqual(null);
-        expect(thing.prop('defaultValue')).toEqual('');
-        expect(thing.prop('disabled')).toEqual(null);
-        expect(thing.prop('display')).toEqual('block');
-        expect(thing.prop('icon')).toEqual(null);
-        expect(thing.prop('id')).toEqual(null);
-        expect(thing.prop('inputError')).toEqual('');
-        expect(thing.prop('label')).toEqual('');
-        expect(thing.prop('maxLength')).toEqual(null);
-        expect(thing.prop('onBlur')).toEqual(noop);
-        expect(thing.prop('onClick')).toEqual(noop);
-        expect(thing.prop('onFocus')).toEqual(noop);
-        expect(thing.prop('placeholder')).toEqual('');
-        expect(thing.prop('required')).toEqual(false);
-        expect(thing.prop('type')).toEqual('text');
-        expect(thing.prop('value')).toEqual('');
+        expect(textInputComponent.prop('autoComplete')).toEqual(null);
+        expect(textInputComponent.prop('className')).toEqual(null);
+        expect(textInputComponent.prop('defaultValue')).toEqual('');
+        expect(textInputComponent.prop('disabled')).toEqual(null);
+        expect(textInputComponent.prop('display')).toEqual('block');
+        expect(textInputComponent.prop('icon')).toEqual(null);
+        expect(textInputComponent.prop('id')).toEqual(null);
+        expect(textInputComponent.prop('inputError')).toEqual('');
+        expect(textInputComponent.prop('label')).toEqual('');
+        expect(textInputComponent.prop('maxLength')).toEqual(null);
+        expect(textInputComponent.prop('onBlur')).toEqual(noop);
+        expect(textInputComponent.prop('onClick')).toEqual(noop);
+        expect(textInputComponent.prop('onFocus')).toEqual(noop);
+        expect(textInputComponent.prop('placeholder')).toEqual('');
+        expect(textInputComponent.prop('required')).toEqual(false);
+        expect(textInputComponent.prop('type')).toEqual('text');
+        expect(textInputComponent.prop('value')).toEqual('');
     });
 
     it('should render with certain props', () => {
         const props = {
-            ...COMMON_PROPS,
-            ...ASSIGNED_OPTIONAL_PROPS,
+            ...REQUIRED_PROPS,
+            ...OPTIONAL_PROPS,
         };
 
-        const thing = mount(<TextInput {...props} />);
+        const textInputComponent = mount(<TextInput {...props} />);
 
         // Required Props:
-        expect(thing.prop('name')).toEqual(props.name);
-        expect(thing.prop('onChange')).toEqual(props.onChange);
+        expect(textInputComponent.prop('name')).toEqual(props.name);
+        expect(textInputComponent.prop('onChange')).toEqual(props.onChange);
 
         // Optional Props:
-        expect(thing.prop('className')).toEqual(props.className);
-        expect(thing.prop('defaultValue')).toEqual(props.defaultValue);
-        expect(thing.prop('id')).toEqual(props.id);
-        expect(thing.prop('inputError')).toEqual(props.inputError);
-        expect(thing.prop('label')).toEqual(props.label);
-        expect(thing.prop('name')).toEqual(props.name);
-        expect(thing.prop('placeholder')).toEqual(props.placeholder);
-        expect(thing.prop('value')).toEqual(props.value);
+        expect(textInputComponent.prop('className')).toEqual(props.className);
+        expect(textInputComponent.prop('defaultValue')).toEqual(props.defaultValue);
+        expect(textInputComponent.prop('id')).toEqual(props.id);
+        expect(textInputComponent.prop('inputError')).toEqual(props.inputError);
+        expect(textInputComponent.prop('label')).toEqual(props.label);
+        expect(textInputComponent.prop('name')).toEqual(props.name);
+        expect(textInputComponent.prop('placeholder')).toEqual(props.placeholder);
+        expect(textInputComponent.prop('value')).toEqual(props.value);
 
-        expect(thing.prop('disabled')).toEqual(props.disabled);
-        expect(thing.prop('required')).toEqual(props.required);
+        expect(textInputComponent.prop('disabled')).toEqual(props.disabled);
+        expect(textInputComponent.prop('required')).toEqual(props.required);
 
-        expect(thing.prop('autoComplete')).toEqual(props.autoComplete);
-        expect(thing.prop('display')).toEqual(props.display);
-        expect(thing.prop('type')).toEqual(props.type);
+        expect(textInputComponent.prop('autoComplete')).toEqual(props.autoComplete);
+        expect(textInputComponent.prop('display')).toEqual(props.display);
+        expect(textInputComponent.prop('type')).toEqual(props.type);
 
-        expect(thing.prop('maxLength')).toEqual(props.maxLength);
+        expect(textInputComponent.prop('maxLength')).toEqual(props.maxLength);
 
-        expect(thing.prop('icon')).toEqual(props.icon);
+        expect(textInputComponent.prop('icon')).toEqual(props.icon);
 
-        expect(thing.prop('onBlur')).toEqual(props.onBlur);
-        expect(thing.prop('onClick')).toEqual(props.onClick);
-        expect(thing.prop('onFocus')).toEqual(props.onFocus);
+        expect(textInputComponent.prop('onBlur')).toEqual(props.onBlur);
+        expect(textInputComponent.prop('onClick')).toEqual(props.onClick);
+        expect(textInputComponent.prop('onFocus')).toEqual(props.onFocus);
     });
 
     it('should render with correct HTML structure (manipulated through props)', () => {
         const inputWithLabel = (
             <TextInput
-                {...COMMON_PROPS}
-                label={ASSIGNED_OPTIONAL_PROPS.label}
+                {...REQUIRED_PROPS}
+                label={OPTIONAL_PROPS.label}
             />
         );
 
         const inputWithIcon = (
             <TextInput
-                {...COMMON_PROPS}
-                icon={ASSIGNED_OPTIONAL_PROPS.icon}
+                {...REQUIRED_PROPS}
+                icon={OPTIONAL_PROPS.icon}
             />
         );
 
         const inputWithInputError = (
             <TextInput
-                {...COMMON_PROPS}
-                inputError={ASSIGNED_OPTIONAL_PROPS.inputError}
+                {...REQUIRED_PROPS}
+                inputError={OPTIONAL_PROPS.inputError}
             />
         );
 
         const inputWithEverything = (
             <TextInput
-                {...COMMON_PROPS}
-                label={ASSIGNED_OPTIONAL_PROPS.label}
-                icon={ASSIGNED_OPTIONAL_PROPS.icon}
-                inputError={ASSIGNED_OPTIONAL_PROPS.inputError}
+                {...REQUIRED_PROPS}
+                label={OPTIONAL_PROPS.label}
+                icon={OPTIONAL_PROPS.icon}
+                inputError={OPTIONAL_PROPS.inputError}
             />
         );
 
-        const thingWithLabel = renderer.create(inputWithLabel).toJSON();
-        const thingWithIcon = renderer.create(inputWithIcon).toJSON();
-        const thingWithInputError = renderer.create(inputWithInputError).toJSON();
-        const thingWithEverything = renderer.create(inputWithEverything).toJSON();
+        const textInputComponentWithLabel = renderer.create(inputWithLabel).toJSON();
+        const textInputComponentWithIcon = renderer.create(inputWithIcon).toJSON();
+        const textInputComponentWithInputError = renderer.create(inputWithInputError).toJSON();
+        const textInputComponentWithEverything = renderer.create(inputWithEverything).toJSON();
 
-        expect(thingWithLabel).toMatchSnapshot();
-        expect(thingWithIcon).toMatchSnapshot();
-        expect(thingWithInputError).toMatchSnapshot();
-        expect(thingWithEverything).toMatchSnapshot();
+        expect(textInputComponentWithLabel).toMatchSnapshot();
+        expect(textInputComponentWithIcon).toMatchSnapshot();
+        expect(textInputComponentWithInputError).toMatchSnapshot();
+        expect(textInputComponentWithEverything).toMatchSnapshot();
     });
 });
