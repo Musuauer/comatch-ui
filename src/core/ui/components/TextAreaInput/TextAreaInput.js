@@ -29,7 +29,7 @@ const propTypes = {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     placeholder: PropTypes.string,
-    htmlPlaceholder: PropTypes.object,
+    htmlPlaceholder: PropTypes.node,
     required: PropTypes.bool,
     rows: PropTypes.number,
     value: PropTypes.string,
