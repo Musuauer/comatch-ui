@@ -12,7 +12,7 @@ describe('InputLabel', () => {
         const inputLabel = create(<InputLabel />).toJSON();
         expect(inputLabel).toMatchSnapshot();
     });
-    it('snapshot of span prop set to true', () => {
+    it('should render the InputLabel with a <span> tag', () => {
         const inputLabel = create(<InputLabel span />).toJSON();
         expect(inputLabel).toMatchSnapshot();
     });

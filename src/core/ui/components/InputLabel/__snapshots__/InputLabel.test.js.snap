@@ -8,7 +8,7 @@ exports[`InputLabel should render correctly 1`] = `
 />
 `;
 
-exports[`InputLabel snapshot of span prop set to true 1`] = `
+exports[`InputLabel should render the InputLabel with a <span> tag 1`] = `
 <span
   className="InputLabel"
   id={null}
