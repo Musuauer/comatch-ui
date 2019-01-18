@@ -125,8 +125,13 @@ describe('TextInput', () => {
             />
         );
         const textInputComponentWithLabel = renderer.create(inputWithLabel).toJSON();
+        const mountedTextInput = mount(inputWithLabel);
+        const textInputContainerNode = mountedTextInput.children().at(0);
 
         expect(textInputComponentWithLabel).toMatchSnapshot();
+        expect(textInputContainerNode.children()).toHaveLength(2);
+        expect(textInputContainerNode.children().at(0).name()).toBe('InputLabel');
+        expect(textInputContainerNode.children().at(1).name()).toBe('input');
     });
 
     it('should render correctly with an Icon', () => {
@@ -136,8 +141,14 @@ describe('TextInput', () => {
                 icon={OPTIONAL_PROPS.icon}
             />
         );
+        const mountedTextInput = mount(inputWithIcon);
+        const textInputContainerNode = mountedTextInput.children().at(0);
         const textInputComponentWithIcon = renderer.create(inputWithIcon).toJSON();
+
         expect(textInputComponentWithIcon).toMatchSnapshot();
+        expect(textInputContainerNode.children()).toHaveLength(2);
+        expect(textInputContainerNode.children().at(0).name()).toBe('input');
+        expect(textInputContainerNode.children().at(1).name()).toBe('i');
     });
 
     it('should render correctly with an InputError', () => {
@@ -147,7 +158,13 @@ describe('TextInput', () => {
                 inputError={OPTIONAL_PROPS.inputError}
             />
         );
+        const mountedTextInput = mount(inputWithInputError);
+        const textInputContainerNode = mountedTextInput.children().at(0);
         const textInputComponentWithInputError = renderer.create(inputWithInputError).toJSON();
+
         expect(textInputComponentWithInputError).toMatchSnapshot();
+        expect(textInputContainerNode.children()).toHaveLength(2);
+        expect(textInputContainerNode.children().at(0).name()).toBe('input');
+        expect(textInputContainerNode.children().at(1).name()).toBe('InputError');
     });
 });
