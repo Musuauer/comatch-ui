@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextAreaInput should render correctly 1`] = `
+<div
+  className="Input TextAreaInput block"
+  id={null}
+>
+  <textarea
+    className="TextAreaInput__input"
+    maxLength={null}
+    name="testing-name"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder=""
+    rows={5}
+    value=""
+  />
+</div>
+`;
+
+exports[`TextAreaInput should render correctly with a Label 1`] = `
+<div
+  className="Input TextAreaInput block"
+  id={null}
+>
+  <label
+    className="InputLabel"
+    htmlFor={null}
+    id={null}
+  >
+    Testing Label
+  </label>
+  <textarea
+    className="TextAreaInput__input"
+    maxLength={null}
+    name="testing-name"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder=""
+    rows={5}
+    value=""
+  />
+</div>
+`;
+
+exports[`TextAreaInput should render correctly with an HTML Placeholder 1`] = `
+<div
+  className="Input TextAreaInput block with-html-placeholder"
+  id={null}
+>
+  <textarea
+    className="TextAreaInput__input"
+    maxLength={null}
+    name="testing-name"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder=""
+    rows={5}
+    value=""
+  />
+  <div
+    className="html-placeholder"
+  >
+    <span>
+      Testing HTML Placeholder
+    </span>
+  </div>
+</div>
+`;
+
+exports[`TextAreaInput should render correctly with an Icon 1`] = `
+<div
+  className="Input TextAreaInput block with-icon"
+  id={null}
+>
+  <textarea
+    className="TextAreaInput__input"
+    maxLength={null}
+    name="testing-name"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder=""
+    rows={5}
+    value=""
+  />
+  <i />
+</div>
+`;
+
+exports[`TextAreaInput should render correctly with an InputError 1`] = `
+<div
+  className="Input TextAreaInput block has-error"
+  id={null}
+>
+  <textarea
+    className="TextAreaInput__input"
+    maxLength={null}
+    name="testing-name"
+    onBlur={[Function]}
+    onChange={[MockFunction]}
+    onFocus={[Function]}
+    placeholder=""
+    rows={5}
+    value=""
+  />
+  <span
+    className="InputError"
+  >
+    Testing errror
+  </span>
+</div>
+`;
