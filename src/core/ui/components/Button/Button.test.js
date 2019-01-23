@@ -30,6 +30,11 @@ describe('Button', () => {
         expect(button).toMatchSnapshot();
     });
 
+    it('should render the textOnly and ghost button correctly', () => {
+        const button = renderer.create(<Button ghost={true} textOnly={true} />).toJSON();
+        expect(button).toMatchSnapshot();
+    });
+
     it('should have the correct default props', () => {
         const button = mount(<Button />);
         expect(button.prop('className')).toEqual('');
@@ -52,6 +57,7 @@ describe('Button', () => {
             className: 'test className',
             disabled: true,
             ghost: true,
+            textOnly: true,
             href: 'test href',
             id: 'test id',
             onClick: mockFunction,
