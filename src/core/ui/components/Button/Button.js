@@ -39,6 +39,10 @@ const propTypes = {
      */
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    /**
+     * Can have two values: rectangle(by dafauly) and circle. 
+     */
+    shape: PropTypes.oneOf(['rectangle', 'circle']),
 };
 
 const defaultProps = {
@@ -53,6 +57,7 @@ const defaultProps = {
     target: null,
     text: '',
     type: 'button',
+    shape: 'rectangle',
 };
 
 function renderLinkButton({ classes, content, disabled, href, id, onClick, target, styledProps } = {}) {
@@ -108,6 +113,7 @@ export const Button = ({
     type,
     icon,
     iconAfterText,
+    shape,
 }) => {
     const classes = classNames('Button', className, {
         full: !ghost,
@@ -147,6 +153,7 @@ export const Button = ({
             full: !ghost,
             onlyIcon: !text,
             iconAfterText: text && iconAfterText,
+            shape,
         },
     };
 

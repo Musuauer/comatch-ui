@@ -17,9 +17,8 @@ export const svgStyling = ({ onlyIcon, iconAfterText }) => `
     }
 `;
 
-export const generateStyling = ({ full, ghost, disabled, onlyIcon, iconAfterText }) => `
+export const generateStyling = ({ full, ghost, disabled, onlyIcon, iconAfterText, shape }) => `
     border: 1px solid;
-    border-radius: 3px;
     display: inline-block;
     font-size: ${typography.fontSm};
     outline: 0 !important;
@@ -34,6 +33,8 @@ export const generateStyling = ({ full, ghost, disabled, onlyIcon, iconAfterText
 
     ${svgStyling({ onlyIcon, iconAfterText })}
     ${iconAfterText ? 'white-space: initial;' : ''}
+
+    ${shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;' }
 
     // If buttons follow each other in a row
     // set a standardized whitespace between them
