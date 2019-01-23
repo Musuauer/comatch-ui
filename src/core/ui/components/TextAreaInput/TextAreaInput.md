@@ -9,7 +9,7 @@ prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **className** | `String` | `null` | :x: | Additional class names
 **display** | `Enum('block','inline')` | `'block'` | :x: | 
-**htmlPlaceholder** | `Object` | `null` | :x: | 
+**htmlPlaceholder** | `ReactNode` | `null` | :x: | 
 **icon** | `ReactNode` | `null` | :x: | SVG icon
 **id** | `String` | `null` | :x: | HTML id attribute
 **inputError** | `String` | `null` | :x: | 
