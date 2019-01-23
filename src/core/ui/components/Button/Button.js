@@ -106,6 +106,13 @@ export const Button = ({
             {text}
         </span>
     );
+    const styledProps = {
+        disabled,
+        ghost,
+        full: !ghost,
+        onlyIcon: !text,
+        iconAfterText: text && iconAfterText,
+    };
 
     const calculatedProps = {
         id,
