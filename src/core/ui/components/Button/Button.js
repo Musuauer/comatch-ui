@@ -106,12 +106,27 @@ export const Button = ({
             {text}
         </span>
     );
-    const styledProps = {
+
+    const calculatedProps = {
+        id,
+        classes,
+        href,
+        target,
+
+        type,
+        content,
+
         disabled,
-        ghost,
-        full: !ghost,
-        onlyIcon: !text,
-        iconAfterText: text && iconAfterText,
+
+        onClick,
+
+        styledProps: {
+            disabled,
+            ghost,
+            full: !ghost,
+            onlyIcon: !text,
+            iconAfterText: text && iconAfterText,
+        },
     };
 
     const calculatedProps = {
