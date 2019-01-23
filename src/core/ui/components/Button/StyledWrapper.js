@@ -10,6 +10,7 @@ export const StyledWrapper = styled(({
     shape,
     ...rest
 }) => <button {...rest} />)`
+    position: relative;
     border: 1px solid;
     display: inline-block;
     font-size: ${typography.fontSm};
@@ -42,6 +43,17 @@ export const StyledWrapper = styled(({
             ` : ''}
         }
     `}
+    .TooltipText {
+        display: none;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    &:hover {
+        .TooltipText {
+            display: unset;
+        }
+    }
 
     // If buttons follow each other in a row
     // set a standardized whitespace between them
