@@ -44,7 +44,7 @@ const propTypes = {
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
     /**
-     * If true Button has a trasnparent border
+     * If true Button has a transparent border
      */
     textOnly: PropTypes.bool,
 };

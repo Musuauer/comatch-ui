@@ -53,9 +53,9 @@ export const StyledWrapper = styled(({ onlyIcon, iconAfterText, full, ghost, sha
         }
     ` : ''}
 
-    ${({ ghost, disabled }) => ghost ? `
+    ${({ textOnly, ghost, disabled }) => (ghost || textOnly) ? `
         background-color: ${disabled ? `${palette.white} !important` : palette.white};
-        border-color: ${palette.primary};
+        border-color: ${textOnly ? 'transparent' : `${palette.primary}`};
         color: ${palette.primary};
 
         &:hover {
