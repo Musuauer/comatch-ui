@@ -36,6 +36,69 @@ export const generatePopupPositionBasedStyling = ({ popupMenuPosition }) => {
     }
 };
 
+export const generateSVGStyling = ({ onlyIcon, iconAfterText }) => `
+    // Some .Button adjustments
+    ${onlyIcon ? 'padding: 8px 12px;' : ''}
+
+    svg {
+        ${onlyIcon ? 'margin: 0;' : 'margin-right: 5px'}
+
+        ${iconAfterText ? `
+            float: right;
+            position: relative;
+            top: 2px;
+            margin-left: 5px;
+            margin-right: 0;
+        ` : ''}
+    }
+`;
+
+export const generateFullPropsStyling = ({ full, disabled }) => (
+    full
+        ? `
+            background-color: ${disabled ? `${palette.lightGray} !important` : palette.primary};
+            border-color: ${disabled ? `${palette.midGray} !important` : palette.primary};
+            color: ${palette.white};
+
+            &:hover {
+                background-color: ${palette.secondary};
+                border-color: ${palette.secondary};
+            }
+        `
+        : ''
+);
+
+export const generateGhostStyling = ({ ghost, disabled }) => (
+    ghost
+        ? `
+            background-color: ${disabled ? `${palette.white} !important` : palette.white};
+            border-color: ${palette.primary};
+            color: ${palette.primary};
+
+            &:hover {
+                background-color: ${palette.secondary};
+                border-color: ${palette.secondary};
+                color: ${palette.white};
+            }
+        `
+        : ''
+);
+
+export const generateDisabledStyling = ({ disabled }) => (
+    disabled
+        ? `
+            border-color: ${palette.midGray} !important;
+            cursor: not-allowed;
+            pointer-events: none;
+
+            &,
+            span {
+                color: ${palette.midGray} !important;
+            }
+        `
+        : ''
+);
+
 export const PopupMenuStyledWrapper = styled.div`
     position: absolute;
     cursor: default;
@@ -65,22 +128,7 @@ export const StyledWrapper = styled.button`
     }
 
     // SVG styling:
-    ${({ onlyIcon, iconAfterText }) => `
-        // Some .Button adjustments
-        ${onlyIcon ? 'padding: 8px 12px;' : ''}
-
-        svg {
-            ${onlyIcon ? 'margin: 0;' : 'margin-right: 5px'}
-
-            ${iconAfterText ? `
-                float: right;
-                position: relative;
-                top: 2px;
-                margin-left: 5px;
-                margin-right: 0;
-            ` : ''}
-        }
-    `}
+    ${generateSVGStyling}
 
     // If buttons follow each other in a row
     // set a standardized whitespace between them
@@ -88,37 +136,7 @@ export const StyledWrapper = styled.button`
         margin-left: 9px;
     }
 
-    ${({ full, disabled }) => full ? `
-        background-color: ${disabled ? `${palette.lightGray} !important` : palette.primary};
-        border-color: ${disabled ? `${palette.midGray} !important` : palette.primary};
-        color: ${palette.white};
-
-        &:hover {
-            background-color: ${palette.secondary};
-            border-color: ${palette.secondary};
-        }
-    ` : ''}
-
-    ${({ ghost, disabled }) => ghost ? `
-        background-color: ${disabled ? `${palette.white} !important` : palette.white};
-        border-color: ${palette.primary};
-        color: ${palette.primary};
-
-        &:hover {
-            background-color: ${palette.secondary};
-            border-color: ${palette.secondary};
-            color: ${palette.white};
-        }
-    ` : ''}
-
-    ${({ disabled }) => disabled ? `
-        border-color: ${palette.midGray} !important;
-        cursor: not-allowed;
-        pointer-events: none;
-
-        &,
-        span {
-            color: ${palette.midGray} !important;
-        }
-    ` : ''}
+    ${generateFullPropsStyling}
+    ${generateGhostStyling}
+    ${generateDisabledStyling}
 `;
