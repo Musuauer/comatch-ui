@@ -39,10 +39,13 @@ describe('Button', () => {
         expect(button.prop('target')).toEqual(null);
         expect(button.prop('text')).toEqual('');
         expect(button.prop('type')).toEqual('button');
+        expect(button.prop('popupMenu')).toEqual(null);
+        expect(button.prop('popupMenuPosition')).toEqual('bottom');
     });
 
     it('should have the correct passed props', () => {
         const mockFunction = jest.fn();
+        const popupMenu = <div><span>Testing Popup Menu</span></div>;
         const props = {
             className: 'test className',
             disabled: true,
@@ -53,6 +56,8 @@ describe('Button', () => {
             target: 'test target',
             text: 'test text',
             type: 'submit',
+            popupMenu,
+            popupMenuPosition: 'top',
         };
 
         const button = mount(<Button {...props} />);
@@ -65,6 +70,8 @@ describe('Button', () => {
         expect(button.prop('target')).toEqual('test target');
         expect(button.prop('text')).toEqual('test text');
         expect(button.prop('type')).toEqual('submit');
+        expect(button.prop('popupMenu')).toEqual(popupMenu);
+        expect(button.prop('popupMenuPosition')).toEqual('top');
     });
 
     it('should render the text', () => {
@@ -189,6 +196,41 @@ describe('Button', () => {
                     expect(mockFunction.mock.calls.length).toEqual(0);
                 });
             });
+        });
+    });
+
+    describe('validating popupMenu prop', () => {
+        const popupMenuText = 'Popup Menu';
+        const PopupMenu = (<span>{popupMenuText}</span>);
+
+        it('should not contain the popup menu container', () => {
+            const button = mount(<Button />);
+
+            expect(button.first().find('div')).toHaveLength(0);
+            button.simulate('click');
+            expect(button.first().find('div')).toHaveLength(0);
+        });
+
+        it('should contain the popup menu container', () => {
+            const button = mount(<Button popupMenu={PopupMenu} />);
+
+            expect(button.first().find('div')).toHaveLength(0);
+
+            // Click the button to render the Popup Menu
+            button.simulate('click');
+            expect(button.first().find('div')).toHaveLength(1);
+            expect(button.first().find('div').find('span')).toHaveLength(1);
+            expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
+
+            // Click the Popup Menu to verify that the event doesn't get propagated - e.g. toggles
+            button.find('div').simulate('click');
+            expect(button.first().find('div')).toHaveLength(1);
+            expect(button.first().find('div').find('span')).toHaveLength(1);
+            expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
+
+            // Click the button to remove the Popup Menu
+            button.simulate('click');
+            expect(button.find('div')).toHaveLength(0);
         });
     });
 });

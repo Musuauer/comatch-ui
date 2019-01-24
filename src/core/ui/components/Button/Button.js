@@ -39,7 +39,13 @@ const propTypes = {
      */
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    /**
+     * A PopupMenu node to be toggled when clicking on the button
+     */
     popupMenu: PropTypes.node,
+    /**
+     * The postion of the PopupMenu (if such is present of course)
+     */
     popupMenuPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
 };
 
