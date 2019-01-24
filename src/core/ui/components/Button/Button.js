@@ -93,12 +93,12 @@ export class Button extends PureComponent {
 
     onTogglePopupMenu = () => this.setState({ showPopupMenu: !this.state.showPopupMenu });
 
-    onClick = (evt) => {
+    onClick = (event) => {
         const { onTogglePopupMenu } = this;
         const { disabled, onClick, popupMenu } = this.props;
 
-        if (disabled && evt) {
-            evt.preventDefault();
+        if (disabled && event) {
+            event.preventDefault();
             return;
         }
 
@@ -111,14 +111,14 @@ export class Button extends PureComponent {
         }
     };
 
-    onPopupMenuClick = (evt) => {
-        if (evt) {
-            evt.stopPropagation();
+    onPopupMenuClick = (event) => {
+        if (event) {
+            event.stopPropagation();
         }
     };
 
-    handleClickOutside = (evt) => {
-        if (evt && this.node && this.node.contains(evt.target)) {
+    handleClickOutside = (event) => {
+        if (event && this.node && this.node.contains(event.target)) {
             return;
         }
 

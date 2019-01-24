@@ -6,12 +6,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Button } from './Button';
 
-const PopupMenu = (
-    <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-        <span>Popup Menu</span>
-    </div>
-);
-
 storiesOf('Button', module)
     .add('with primary style', () => (
         <>
@@ -94,16 +88,14 @@ storiesOf('Button', module)
                 />
             </div>
             <Highlight className="html">
-                {`
-<Button
-    text="Click to toggle popup menu"
-    popupMenu={(
-        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-\t\t            <span>Popup Menu</span>
-\t        </div>
-\t  )}
-/>
-                `}
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
             </Highlight>
         </>
     ))
@@ -121,17 +113,15 @@ storiesOf('Button', module)
                 />
             </div>
             <Highlight className="html">
-                {`
-<Button
-    text="Click to toggle popup menu"
-    popupMenuPosition="top"
-    popupMenu={(
-        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-\t\t            <span>Popup Menu</span>
-\t        </div>
-\t  )}
-/>
-                `}
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="top"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
             </Highlight>
         </>
     ))
@@ -149,17 +139,15 @@ storiesOf('Button', module)
                 />
             </div>
             <Highlight className="html">
-                {`
-<Button
-    text="Click to toggle popup menu"
-    popupMenuPosition="left"
-    popupMenu={(
-        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-\t\t            <span>Popup Menu</span>
-\t        </div>
-\t  )}
-/>
-                `}
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="left"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
             </Highlight>
         </>
     ))
@@ -177,17 +165,15 @@ storiesOf('Button', module)
                 />
             </div>
             <Highlight className="html">
-                {`
-<Button
-    text="Click to toggle popup menu"
-    popupMenuPosition="right"
-    popupMenu={(
-        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-\t\t            <span>Popup Menu</span>
-\t        </div>
-\t  )}
-/>
-                `}
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="right"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
             </Highlight>
         </>
     ));
