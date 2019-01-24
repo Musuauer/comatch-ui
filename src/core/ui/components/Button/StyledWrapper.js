@@ -43,15 +43,16 @@ export const StyledWrapper = styled(({
             ` : ''}
         }
     `}
-    .TooltipText {
+
+    .Button__tooltip-text {
         display: none;
         position: absolute;
         margin-left: 20px;
     }
 
     &:hover {
-        .TooltipText {
-            display: unset;
+        .Button__tooltip-text {
+            display: inline-block;
         }
     }
 

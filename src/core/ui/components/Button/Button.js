@@ -150,7 +150,7 @@ export const Button = ({
             {
                 !!tooltipText
                 && (
-                    <Badge className="TooltipText" text={tooltipText} size="xs" color="darkGray" />
+                    <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
                 )
             }
         </StyledWrapper>
