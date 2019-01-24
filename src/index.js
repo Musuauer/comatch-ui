@@ -4,6 +4,7 @@ export { Button } from './core/ui/components/Button';
 export { CheckboxInput } from './core/ui/components/CheckboxInput';
 export { CheckboxGroupInput } from './core/ui/components/CheckboxGroupInput';
 export { DateInput } from './core/ui/components/DateInput';
+export { DropdownMenu } from './core/ui/components/DropdownMenu';
 export { EmailInput } from './core/ui/components/EmailInput';
 export { FileInput } from './core/ui/components/FileInput';
 export { Flyout } from './core/ui/components/Flyout';

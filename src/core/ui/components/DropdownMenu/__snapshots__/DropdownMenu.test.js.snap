@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu should render correctly 1`] = `
+<div
+  className="sc-htpNat fVLpAj"
+>
+  <nav
+    className="Navigation vertical sc-bdVaJa eeaaGT"
+    orientation="vertical"
+  >
+    <ul />
+  </nav>
+</div>
+`;
