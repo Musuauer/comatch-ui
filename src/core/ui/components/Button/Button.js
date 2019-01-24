@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 
-import { StyledWrapper } from './StyledWrapper';
+import { StyledWrapper, PopupMenuStyledWrapper } from './StyledWrapper';
 // import './Button.scss';
 
 const propTypes = {
@@ -39,6 +39,8 @@ const propTypes = {
      */
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    popupMenu: PropTypes.node,
+    popupMenuPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
 };
 
 const defaultProps = {
@@ -53,6 +55,8 @@ const defaultProps = {
     target: null,
     text: '',
     type: 'button',
+    popupMenu: null,
+    popupMenuPosition: 'bottom',
 };
 
 /**
@@ -64,71 +68,142 @@ const defaultProps = {
  * additional security.
  */
 
-export const Button = ({
-    id,
-    className,
-    href,
-    target,
-    onClick,
+export class Button extends PureComponent {
+    constructor(props, context) {
+        super(props, context);
 
-    ghost,
-    disabled,
+        this.state = {
+            showPopupMenu: false,
+        };
 
-    text,
-    type,
-    icon,
-    iconAfterText,
-}) => {
-    const styledProps = {
-        disabled,
-        ghost,
-        full: !ghost,
-        onlyIcon: !text,
-        iconAfterText: text && iconAfterText,
+        this.node = null;
+    }
 
-        ...(href && { as: 'a' }),
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside, false);
+    }
+
+    setNodeRef = node => {
+        this.node = node;
     };
-    const content = iconAfterText ? (
-        <span>
-            {text}
-            {icon}
-        </span>
-    ) : (
-        <span>
-            {icon}
-            {text}
-        </span>
-    );
 
-    const calculatedProps = {
-        id,
-        onClick,
-        className: classNames('Button', className, {
-            full: !ghost,
-            disabled,
-            ghost,
-            'only-icon': !text,
-            'icon-after-text': text && iconAfterText,
-        }),
+    onTogglePopupMenu = () => this.setState({ showPopupMenu: !this.state.showPopupMenu });
 
-        ...(href ? {
+    onClick = (evt) => {
+        const { onTogglePopupMenu } = this;
+        const { disabled, onClick, popupMenu } = this.props;
+
+        if (disabled && evt) {
+            evt.preventDefault();
+            return;
+        }
+
+        if (popupMenu) {
+            onTogglePopupMenu();
+        }
+
+        if (onClick) {
+            onClick();
+        }
+    };
+
+    onPopupMenuClick = (evt) => {
+        if (evt) {
+            evt.stopPropagation();
+        }
+    };
+
+    handleClickOutside = (evt) => {
+        if (evt && this.node && this.node.contains(evt.target)) {
+            return;
+        }
+
+        this.setState({ showPopupMenu: false });
+    };
+
+    render() {
+        const { setNodeRef, onClick, onPopupMenuClick } = this;
+        const { showPopupMenu } = this.state;
+        const {
+            id,
+            className,
             href,
             target,
-            rel: target && 'noopener noreferrer',
-            ...(disabled && {
-                onClick: (evt) => evt.preventDefault(),
-            }),
-        } : {
+        
+            ghost,
+            disabled,
+        
+            text,
             type,
-        }),
-    };
+            icon,
+            iconAfterText,
+        
+            popupMenu,
+            popupMenuPosition,
+        } = this.props;
 
-    return (
-        <StyledWrapper {...styledProps} {...calculatedProps}>
-            {content}
-        </StyledWrapper>
-    );
-};
+        const styledProps = {
+            disabled,
+            ghost,
+            full: !ghost,
+            onlyIcon: !text,
+            iconAfterText: text && iconAfterText,
+    
+            ...(href && { as: 'a' }),
+            ...(!!popupMenuPosition && { popupMenuPosition }),
+        };
+        const content = iconAfterText ? (
+            <span>
+                {text}
+                {icon}
+            </span>
+        ) : (
+            <span>
+                {icon}
+                {text}
+            </span>
+        );
+    
+        const calculatedProps = {
+            id,
+            onClick,
+            className: classNames('Button', className, {
+                full: !ghost,
+                disabled,
+                ghost,
+                'only-icon': !text,
+                'icon-after-text': text && iconAfterText,
+            }),
+    
+            ...(href ? {
+                href,
+                target,
+                rel: target && 'noopener noreferrer',
+            } : {
+                type,
+            }),
+        };
+    
+        return (
+            <StyledWrapper ref={setNodeRef} {...styledProps} {...calculatedProps}>
+                {content}
+                {
+                    !!popupMenu
+                    && showPopupMenu
+                    && (
+                        <PopupMenuStyledWrapper onClick={onPopupMenuClick}>
+                            {popupMenu}
+                        </PopupMenuStyledWrapper>
+                    )
+                }
+            </StyledWrapper>
+        );
+    }
+}
 
 Button.propTypes = propTypes;
 
