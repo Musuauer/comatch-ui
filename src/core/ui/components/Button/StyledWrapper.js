@@ -2,7 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
 
-export const StyledWrapper = styled(({ onlyIcon, iconAfterText, full, ghost, shape, ...rest }) => <button {...rest} />)`
+export const StyledWrapper = styled(({
+    onlyIcon,
+    iconAfterText,
+    full,
+    ghost,
+    shape,
+    ...rest
+}) => <button {...rest} />)`
     border: 1px solid;
     display: inline-block;
     font-size: ${typography.fontSm};
@@ -53,9 +60,9 @@ export const StyledWrapper = styled(({ onlyIcon, iconAfterText, full, ghost, sha
         }
     ` : ''}
 
-    ${({ ghost, disabled }) => ghost ? `
+    ${({ textOnly, ghost, disabled }) => (ghost || textOnly) ? `
         background-color: ${disabled ? `${palette.white} !important` : palette.white};
-        border-color: ${palette.primary};
+        border-color: ${textOnly ? 'transparent' : `${palette.primary}`};
         color: ${palette.primary};
 
         &:hover {

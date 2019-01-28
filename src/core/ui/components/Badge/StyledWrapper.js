@@ -9,7 +9,7 @@ export const getStylesBasedOnSize = ({ size }) => {
                 font-weight: bold;
                 line-height: 1;
                 padding: 2px 5px 3px 5px;
-        
+
                 svg {
                     height: 10px;
                 }
@@ -58,7 +58,7 @@ export const getColorBasedOnProps = ({ color }) => {
                 border-color: ${palette.darkGray};
                 color: ${palette.white};
             `;
-        
+
         case 'white':
             return `
                 background-color: ${palette.white};

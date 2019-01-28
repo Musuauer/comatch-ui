@@ -42,6 +42,10 @@ const propTypes = {
      * Text content of `Button`
      */
     text: PropTypes.string,
+    /**
+     * If true Button has a transparent border
+     */
+    textOnly: PropTypes.bool,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
 };
 
@@ -57,6 +61,7 @@ const defaultProps = {
     shape: 'rectangle',
     target: null,
     text: '',
+    textOnly: false,
     type: 'button',
 };
 
@@ -81,6 +86,7 @@ export const Button = ({
 
     shape,
     text,
+    textOnly,
     type,
     icon,
     iconAfterText,
@@ -89,7 +95,8 @@ export const Button = ({
         disabled,
         ghost,
         shape,
-        full: !ghost,
+        textOnly,
+        full: !ghost && !textOnly,
         onlyIcon: !text,
         iconAfterText: text && iconAfterText,
 
@@ -111,9 +118,10 @@ export const Button = ({
         id,
         onClick,
         className: classNames('Button', className, shape, {
-            full: !ghost,
+            full: !ghost && !textOnly,
             disabled,
             ghost,
+            textOnly,
             'only-icon': !text,
             'icon-after-text': text && iconAfterText,
         }),

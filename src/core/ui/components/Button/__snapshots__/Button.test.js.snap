@@ -6,6 +6,7 @@ exports[`Button should render the circle shaped button correctly 1`] = `
   disabled={false}
   id={null}
   onClick={[Function]}
+  textOnly={false}
   type="button"
 >
   <span>
@@ -20,6 +21,7 @@ exports[`Button should render the default button correctly 1`] = `
   disabled={false}
   id={null}
   onClick={[Function]}
+  textOnly={false}
   type="button"
 >
   <span>
@@ -34,6 +36,7 @@ exports[`Button should render the disabled button correctly 1`] = `
   disabled={true}
   id={null}
   onClick={[Function]}
+  textOnly={false}
   type="button"
 >
   <span>
@@ -48,6 +51,7 @@ exports[`Button should render the ghost and disabled button correctly 1`] = `
   disabled={true}
   id={null}
   onClick={[Function]}
+  textOnly={false}
   type="button"
 >
   <span>
@@ -62,6 +66,22 @@ exports[`Button should render the ghost button correctly 1`] = `
   disabled={false}
   id={null}
   onClick={[Function]}
+  textOnly={false}
+  type="button"
+>
+  <span>
+    
+  </span>
+</button>
+`;
+
+exports[`Button should render the textOnly and ghost button correctly 1`] = `
+<button
+  className="Button rectangle textOnly only-icon sc-bdVaJa gqBtTO"
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  textOnly={true}
   type="button"
 >
   <span>
