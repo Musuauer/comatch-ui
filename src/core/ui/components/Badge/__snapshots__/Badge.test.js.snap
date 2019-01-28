@@ -2,9 +2,7 @@
 
 exports[`Badge should render correctly 1`] = `
 <div
-  className="Badge white sm sc-bdVaJa gWuife"
-  color="white"
-  size="sm"
+  className="Badge white sm sc-bdVaJa ckOtvE"
 >
   
 </div>
