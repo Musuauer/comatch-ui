@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
 
-export const StyledWrapper = styled.button`
+export const StyledWrapper = styled(({ onlyIcon, iconAfterText, full, ghost, shape, ...rest }) => <button {...rest} />)`
     border: 1px solid;
     display: inline-block;
     font-size: ${typography.fontSm};
@@ -74,5 +75,6 @@ export const StyledWrapper = styled.button`
             color: ${palette.midGray} !important;
         }
     ` : ''}
+
     ${({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;'}
 `;

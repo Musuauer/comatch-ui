@@ -31,12 +31,12 @@ const propTypes = {
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
     /**
-     * To be used with `href`, could set for example `target="_blank"`
-     */
-    /**
      * Renders the Button in different shapes (rectangle or circle) 
      */
     shape: PropTypes.oneOf(['rectangle', 'circle']),
+    /**
+     * To be used with `href`, could set for example `target="_blank"`
+     */
     target: PropTypes.string,
     /**
      * Text content of `Button`
@@ -110,7 +110,7 @@ export const Button = ({
     const calculatedProps = {
         id,
         onClick,
-        className: classNames('Button', className, {
+        className: classNames('Button', className, shape, {
             full: !ghost,
             disabled,
             ghost,
