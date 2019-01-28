@@ -1,11 +1,12 @@
+import React from 'react';
 import styled from 'styled-components';
-import { palette } from '../../../styles/variables';
+import { palette, typography } from '../../../styles/variables';
 
 export const getStylesBasedOnSize = ({ size }) => {
     switch (size) {
         case 'xs':
             return `
-                font-size: $co-font-xs;
+                font-size: ${typography.fontXs};
                 font-weight: bold;
                 line-height: 1;
                 padding: 2px 5px 3px 5px;
@@ -17,7 +18,7 @@ export const getStylesBasedOnSize = ({ size }) => {
 
         case 'sm':
             return `
-                font-size: $co-font-sm;
+                font-size: ${typography.fontSm};
 
                 svg {
                     height: 12px;
@@ -85,7 +86,7 @@ export const getColorBasedOnProps = ({ color }) => {
     }
 };
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled(({ size, color, ...rest }) => <div {...rest} />)`
     border-radius: 3px;
     border: 1px solid;
     display: inline-block;
