@@ -12,6 +12,7 @@ export const StyledWrapper = styled.button`
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+    border-radius: 3px;
     padding: 8px 15px; // makes the height 40px
     transition: background-color 250ms ease-out, border-color 250ms ease-out, color 250ms ease-out;
 
@@ -74,5 +75,8 @@ export const StyledWrapper = styled.button`
             color: ${palette.midGray} !important;
         }
     ` : ''}
-    ${({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;'}
+
+    &.circle {
+        border-radius: 50%;
+    }
 `;
