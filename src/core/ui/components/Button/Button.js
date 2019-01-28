@@ -186,13 +186,12 @@ export class Button extends PureComponent {
 
             ...(href
                 ? {
-                      href,
-                      target,
-                      rel: target && 'noopener noreferrer',
-                  }
-                : {
-                      type,
-                  }),
+                    href,
+                    target,
+                    rel: target && 'noopener noreferrer',
+                } : {
+                    type,
+                }),
         };
 
         return (
