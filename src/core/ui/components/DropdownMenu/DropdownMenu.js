@@ -18,7 +18,6 @@ const propTypes = {
      * Additional class names to be applied on each item
      */
     itemClassName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-
     /**
      * The menu items
      */
@@ -29,16 +28,15 @@ const defaultProps = {
     id: null,
     className: null,
     itemClassName: null,
-
     items: [],
 };
 
 export const DropdownMenu = ({ id, className, itemClassName, items }) => (
-    <StyledWrapper {...id && { id }} className={classNames(className)}>
+    <StyledWrapper {...id && { id }} className={classNames('DropdownMenu', className)}>
         <Navigation
             orientation={ORIENTATION.VERTICAL}
             items={items.map((item, index) => (
-                <ItemStyledWrapper key={index} className={classNames(itemClassName)}>
+                <ItemStyledWrapper key={index} className={classNames('DropdownMenu__item', itemClassName)}>
                     {item}
                 </ItemStyledWrapper>
             ))}
