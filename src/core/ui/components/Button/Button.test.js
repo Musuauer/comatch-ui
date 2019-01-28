@@ -25,6 +25,10 @@ describe('Button', () => {
         const button = renderer.create(<Button ghost={true} disabled={true} />).toJSON();
         expect(button).toMatchSnapshot();
     });
+    it('should render the circle shaped button correctly', () => {
+        const button = renderer.create(<Button shape='circle' />).toJSON();
+        expect(button).toMatchSnapshot();
+    });
 
     it('should have the correct default props', () => {
         const button = mount(<Button />);
@@ -39,6 +43,7 @@ describe('Button', () => {
         expect(button.prop('target')).toEqual(null);
         expect(button.prop('text')).toEqual('');
         expect(button.prop('type')).toEqual('button');
+        expect(button.prop('shape')).toEqual('rectangle');
     });
 
     it('should have the correct passed props', () => {
@@ -53,6 +58,7 @@ describe('Button', () => {
             target: 'test target',
             text: 'test text',
             type: 'submit',
+            shape: 'circle',
         };
 
         const button = mount(<Button {...props} />);
@@ -65,6 +71,7 @@ describe('Button', () => {
         expect(button.prop('target')).toEqual('test target');
         expect(button.prop('text')).toEqual('test text');
         expect(button.prop('type')).toEqual('submit');
+        expect(button.prop('shape')).toEqual('circle');
     });
 
     it('should render the text', () => {

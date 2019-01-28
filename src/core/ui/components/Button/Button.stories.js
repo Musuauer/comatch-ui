@@ -74,4 +74,13 @@ storiesOf('Button', module)
                 {'<Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} />'}
             </Highlight>
         </>
+    ))
+
+    .add('with shape set to circle', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} shape='circle'/>
+            <Highlight className="html">
+                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />'}
+            </Highlight>
+        </>
     ));
