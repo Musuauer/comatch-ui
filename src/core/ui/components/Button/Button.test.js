@@ -57,12 +57,12 @@ describe('Button', () => {
             className: 'test className',
             disabled: true,
             ghost: true,
-            textOnly: true,
             href: 'test href',
             id: 'test id',
             onClick: mockFunction,
             target: 'test target',
             text: 'test text',
+            textOnly: true,
             type: 'submit',
             shape: 'circle',
         };
@@ -76,6 +76,7 @@ describe('Button', () => {
         expect(button.prop('onClick')).toEqual(mockFunction);
         expect(button.prop('target')).toEqual('test target');
         expect(button.prop('text')).toEqual('test text');
+        expect(button.prop('textOnly')).toEqual(true);
         expect(button.prop('type')).toEqual('submit');
         expect(button.prop('shape')).toEqual('circle');
     });

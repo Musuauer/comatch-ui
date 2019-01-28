@@ -83,10 +83,10 @@ export const Button = ({
 
     ghost,
     disabled,
-    textOnly,
 
     shape,
     text,
+    textOnly,
     type,
     icon,
     iconAfterText,
