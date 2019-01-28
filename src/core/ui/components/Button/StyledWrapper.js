@@ -8,6 +8,7 @@ export const StyledWrapper = styled(({
     full,
     ghost,
     shape,
+    textOnly,
     ...rest
 }) => <button {...rest} />)`
     position: relative;
