@@ -4,7 +4,6 @@ import noop from 'lodash/noop';
 import classNames from 'classnames';
 
 import { StyledWrapper, PopupMenuStyledWrapper } from './StyledWrapper';
-// import './Button.scss';
 
 const propTypes = {
     /**
@@ -44,7 +43,7 @@ const propTypes = {
      */
     popupMenu: PropTypes.node,
     /**
-     * The postion of the PopupMenu (if such is present of course)
+     * The position of the PopupMenu (if such is present of course)
      */
     popupMenuPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
 };
@@ -68,7 +67,7 @@ const defaultProps = {
 /**
  * A `Button` component with different stylistic variations. By default the styling is `full`,
  * but `ghost` is an alternative version with reversed colors.
- * 
+ *
  * If `href` is set an `<a>` is used instead of `<button>`. If the `target` prop is set to `_blank`
  * in combination with `href`, then it will also add the prop `rel="noopener noreferrer"` for
  * additional security.
@@ -93,7 +92,7 @@ export class Button extends PureComponent {
         document.removeEventListener('mousedown', this.handleClickOutside, false);
     }
 
-    setNodeRef = node => {
+    setNodeRef = (node) => {
         this.node = node;
     };
 
@@ -139,15 +138,15 @@ export class Button extends PureComponent {
             className,
             href,
             target,
-        
+
             ghost,
             disabled,
-        
+
             text,
             type,
             icon,
             iconAfterText,
-        
+
             popupMenu,
             popupMenuPosition,
         } = this.props;
@@ -158,7 +157,7 @@ export class Button extends PureComponent {
             full: !ghost,
             onlyIcon: !text,
             iconAfterText: text && iconAfterText,
-    
+
             ...(href && { as: 'a' }),
             ...(!!popupMenuPosition && { popupMenuPosition }),
         };
@@ -173,7 +172,7 @@ export class Button extends PureComponent {
                 {text}
             </span>
         );
-    
+
         const calculatedProps = {
             id,
             onClick,
@@ -184,28 +183,24 @@ export class Button extends PureComponent {
                 'only-icon': !text,
                 'icon-after-text': text && iconAfterText,
             }),
-    
-            ...(href ? {
-                href,
-                target,
-                rel: target && 'noopener noreferrer',
-            } : {
-                type,
-            }),
+
+            ...(href
+                ? {
+                      href,
+                      target,
+                      rel: target && 'noopener noreferrer',
+                  }
+                : {
+                      type,
+                  }),
         };
-    
+
         return (
             <StyledWrapper ref={setNodeRef} {...styledProps} {...calculatedProps}>
                 {content}
-                {
-                    !!popupMenu
-                    && showPopupMenu
-                    && (
-                        <PopupMenuStyledWrapper onClick={onPopupMenuClick}>
-                            {popupMenu}
-                        </PopupMenuStyledWrapper>
-                    )
-                }
+                {!!popupMenu && showPopupMenu && (
+                    <PopupMenuStyledWrapper onClick={onPopupMenuClick}>{popupMenu}</PopupMenuStyledWrapper>
+                )}
             </StyledWrapper>
         );
     }
