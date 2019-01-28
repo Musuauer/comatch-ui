@@ -88,9 +88,11 @@ export const Button = ({
     const styledProps = {
         disabled,
         ghost,
+        shape,
         full: !ghost,
         onlyIcon: !text,
         iconAfterText: text && iconAfterText,
+
         ...(href && { as: 'a' }),
     };
     const content = iconAfterText ? (
@@ -108,7 +110,7 @@ export const Button = ({
     const calculatedProps = {
         id,
         onClick,
-        className: classNames('Button', className, shape, {
+        className: classNames('Button', className, {
             full: !ghost,
             disabled,
             ghost,
