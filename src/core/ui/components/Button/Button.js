@@ -96,7 +96,7 @@ export const Button = ({
         ghost,
         shape,
         textOnly,
-        full: !ghost,
+        full: !ghost && !textOnly,
         onlyIcon: !text,
         iconAfterText: text && iconAfterText,
 
@@ -118,7 +118,7 @@ export const Button = ({
         id,
         onClick,
         className: classNames('Button', className, shape, {
-            full: !ghost,
+            full: !ghost && !textOnly,
             disabled,
             ghost,
             textOnly,
