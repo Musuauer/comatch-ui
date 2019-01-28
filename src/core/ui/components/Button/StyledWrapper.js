@@ -2,7 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
 
-export const StyledWrapper = styled(({ onlyIcon, iconAfterText, full, ghost, shape, ...rest }) => <button {...rest} />)`
+export const StyledWrapper = styled(({
+    onlyIcon,
+    iconAfterText,
+    full,
+    ghost,
+    shape,
+    ...rest
+}) => <button {...rest} />)`
     border: 1px solid;
     display: inline-block;
     font-size: ${typography.fontSm};

@@ -83,4 +83,13 @@ storiesOf('Button', module)
                 {'<Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />'}
             </Highlight>
         </>
+    ))
+
+    .add('with textOnly style', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />
+            <Highlight className="html">
+                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />'}
+            </Highlight>
+        </>
     ));
