@@ -33,16 +33,16 @@ const propTypes = {
     /**
      * To be used with `href`, could set for example `target="_blank"`
      */
+    /**
+     * Renders the Button in different shapes (rectangle or circle) 
+     */
+    shape: PropTypes.oneOf(['rectangle', 'circle']),
     target: PropTypes.string,
     /**
      * Text content of `Button`
      */
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    /**
-     * Can have two values: rectangle(by dafauly) and circle. 
-     */
-    shape: PropTypes.oneOf(['rectangle', 'circle']),
 };
 
 const defaultProps = {
@@ -54,10 +54,10 @@ const defaultProps = {
     icon: null,
     iconAfterText: false,
     onClick: noop,
+    shape: 'rectangle',
     target: null,
     text: '',
     type: 'button',
-    shape: 'rectangle',
 };
 
 /**
@@ -79,11 +79,11 @@ export const Button = ({
     ghost,
     disabled,
 
+    shape,
     text,
     type,
     icon,
     iconAfterText,
-    shape,
 }) => {
     const styledProps = {
         disabled,
