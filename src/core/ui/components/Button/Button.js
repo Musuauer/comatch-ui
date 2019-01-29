@@ -31,7 +31,7 @@ const propTypes = {
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
     /**
-     * Renders the Button in different shapes (rectangle or circle) 
+     * Renders the `Button` in different shapes (rectangle or circle) 
      */
     shape: PropTypes.oneOf(['rectangle', 'circle']),
     /**
@@ -43,11 +43,11 @@ const propTypes = {
      */
     text: PropTypes.string,
     /**
-     * If true Button has a transparent border
+     * If true `Button` has a transparent border
      */
     textOnly: PropTypes.bool,
     /**
-     * Text content of `Button's tooltip`
+     * Text content of tooltip for the `Button`
      */
     tooltipText: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
