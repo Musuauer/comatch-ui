@@ -38,7 +38,7 @@ export const generatePopupPositionBasedStyling = ({ popupMenuPosition }) => {
     }
 };
 
-export const generateSVGStyling = ({ onlyIcon, iconAfterText }) => `
+export const generateSVGStyling = ({ iconAfterText, onlyIcon }) => `
     // Some .Button adjustments
     ${onlyIcon ? 'padding: 8px 12px;' : ''}
 
@@ -55,7 +55,7 @@ export const generateSVGStyling = ({ onlyIcon, iconAfterText }) => `
     }
 `;
 
-export const generateFullPropsStyling = ({ full, disabled }) => (
+export const generateFullPropsStyling = ({ disabled, full }) => (
     full
         ? `
             background-color: ${disabled ? `${palette.lightGray} !important` : palette.primary};
@@ -70,7 +70,7 @@ export const generateFullPropsStyling = ({ full, disabled }) => (
         : ''
 );
 
-export const generateGhostStyling = ({ textOnly, ghost, disabled }) => (
+export const generateGhostStyling = ({ disabled, ghost, textOnly }) => (
     (ghost || textOnly)
         ? `
             background-color: ${disabled ? `${palette.white} !important` : palette.white};
@@ -111,14 +111,14 @@ export const PopupMenuStyledWrapper = styled.div`
 export const StyledWrapper = styled(class extends React.Component {
     render() {
         const {
-            onlyIcon,
-            iconAfterText,
             full,
             ghost,
+            iconAfterText,
+            noTextDecoration,
+            onlyIcon,
+            popupMenuPosition,
             shape,
             textOnly,
-            popupMenuPosition,
-            noTextDecoration,
             ...rest
         } = this.props;
 

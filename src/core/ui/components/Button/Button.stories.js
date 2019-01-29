@@ -80,11 +80,11 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={(
+                    popupMenu={
                         <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
                             <span>Popup Menu</span>
                         </div>
-                    )}
+                    }
                 />
             </div>
             <Highlight className="html">
@@ -104,11 +104,11 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px', paddingTop: '100px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={(
+                    popupMenu={
                         <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
                             <span>Popup Menu</span>
                         </div>
-                    )}
+                    }
                     popupMenuPosition="top"
                 />
             </div>
@@ -130,11 +130,11 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={(
+                    popupMenu={
                         <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
                             <span>Popup Menu</span>
                         </div>
-                    )}
+                    }
                     popupMenuPosition="left"
                 />
             </div>
@@ -156,11 +156,11 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={(
+                    popupMenu={
                         <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
                             <span>Popup Menu</span>
                         </div>
-                    )}
+                    }
                     popupMenuPosition="right"
                 />
             </div>
@@ -179,26 +179,21 @@ storiesOf('Button', module)
     ))
     .add('with shape set to circle', () => (
         <>
-            <Button icon={<FontAwesomeIcon icon={faTimes} />} shape='circle' />
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />
             <Highlight className="html">
                 {'<Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />'}
             </Highlight>
         </>
     ))
-
     .add('with textOnly style', () => (
         <>
             <Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />
-            <Highlight className="html">
-                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />'}
-            </Highlight>
+            <Highlight className="html">{'<Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />'}</Highlight>
         </>
     ))
     .add('with tooltipText', () => (
         <>
             <Button text="Hello world" tooltipText="Tooltip Text" />
-            <Highlight className="html">
-                {'<Button text="Hello world" tooltipText="Tooltip Text" />'}
-            </Highlight>
+            <Highlight className="html">{'<Button text="Hello world" tooltipText="Tooltip Text" />'}</Highlight>
         </>
     ));

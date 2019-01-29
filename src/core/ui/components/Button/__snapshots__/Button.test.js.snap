@@ -49,7 +49,7 @@ exports[`Button should render the default button correctly 1`] = `
 
 exports[`Button should render the disabled button correctly 1`] = `
 <button
-  className="Button rectangle full disabled only-icon sc-htpNat KTZUJ"
+  className="Button rectangle disabled full only-icon sc-htpNat KTZUJ"
   disabled={true}
   id={null}
   onClick={[Function]}
@@ -91,7 +91,7 @@ exports[`Button should render the ghost button correctly 1`] = `
 
 exports[`Button should render the textOnly and ghost button correctly 1`] = `
 <button
-  className="Button rectangle full textOnly only-icon sc-htpNat MBizZ"
+  className="Button rectangle full only-icon textOnly sc-htpNat MBizZ"
   disabled={false}
   id={null}
   onClick={[Function]}

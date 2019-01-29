@@ -4,7 +4,7 @@ import noop from 'lodash/noop';
 import classNames from 'classnames';
 
 import { Badge } from '../Badge';
-import { StyledWrapper, PopupMenuStyledWrapper } from './StyledWrapper';
+import { PopupMenuStyledWrapper, StyledWrapper } from './StyledWrapper';
 
 const propTypes = {
     /**
@@ -31,7 +31,15 @@ const propTypes = {
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
     /**
-     * Renders the `Button` in different shapes (rectangle or circle) 
+     * A PopupMenu node to be toggled when clicking on the button
+     */
+    popupMenu: PropTypes.node,
+    /**
+     * The position of the PopupMenu (if such is present of course)
+     */
+    popupMenuPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    /**
+     * Renders the `Button` in different shapes (rectangle or circle)
      */
     shape: PropTypes.oneOf(['rectangle', 'circle']),
     /**
@@ -51,14 +59,6 @@ const propTypes = {
      */
     tooltipText: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    /**
-     * A PopupMenu node to be toggled when clicking on the button
-     */
-    popupMenu: PropTypes.node,
-    /**
-     * The position of the PopupMenu (if such is present of course)
-     */
-    popupMenuPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
 };
 
 const defaultProps = {
@@ -147,38 +147,34 @@ export class Button extends PureComponent {
     };
 
     render() {
-        const { setNodeRef, onClick, onPopupMenuClick } = this;
+        const { onClick, onPopupMenuClick, setNodeRef } = this;
         const { showPopupMenu } = this.state;
         const {
-            id,
             className,
-            href,
-            target,
-
-            ghost,
             disabled,
-
+            ghost,
+            href,
+            icon,
+            iconAfterText,
+            id,
+            popupMenu,
+            popupMenuPosition,
             shape,
+            target,
             text,
             textOnly,
             tooltipText,
             type,
-            icon,
-            iconAfterText,
-
-            popupMenu,
-            popupMenuPosition,
         } = this.props;
 
         const styledProps = {
             disabled,
+            full: !ghost,
             ghost,
+            iconAfterText: text && iconAfterText,
+            onlyIcon: !text,
             shape,
             textOnly,
-            full: !ghost,
-            onlyIcon: !text,
-            iconAfterText: text && iconAfterText,
-
             ...(!!popupMenuPosition && { popupMenuPosition }),
             ...(href && {
                 as: 'a',
@@ -201,33 +197,31 @@ export class Button extends PureComponent {
             id,
             onClick,
             className: classNames('Button', className, shape, {
-                full: !ghost,
                 disabled,
+                full: !ghost,
                 ghost,
-                textOnly,
-                'only-icon': !text,
                 'icon-after-text': text && iconAfterText,
+                'only-icon': !text,
+                textOnly,
             }),
 
-            ...(href
-                ? {
-                    href,
-                    target,
-                    rel: target && 'noopener noreferrer',
-                } : {
-                    type,
-                }),
+            ...(
+                href
+                    ? {
+                        href,
+                        rel: target && 'noopener noreferrer',
+                        target,
+                    }
+                    : { type }
+            ),
         };
 
         return (
             <StyledWrapper ref={setNodeRef} {...styledProps} {...calculatedProps}>
                 {content}
-                {
-                    !!tooltipText
-                    && (
-                        <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
-                    )
-                }
+                {!!tooltipText && (
+                    <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
+                )}
                 {!!popupMenu && showPopupMenu && (
                     <PopupMenuStyledWrapper onClick={onPopupMenuClick}>{popupMenu}</PopupMenuStyledWrapper>
                 )}
