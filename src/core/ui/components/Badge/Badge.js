@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { StyledWrapper } from './StyledWrapper';
-// import './Badge.scss';
 
 export const allowedColors = ['green', 'orange', 'gray', 'white', 'blue', 'lightblue', 'darkGray'];
 

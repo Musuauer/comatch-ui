@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
 
@@ -68,11 +69,11 @@ export const generateFullPropsStyling = ({ full, disabled }) => (
         : ''
 );
 
-export const generateGhostStyling = ({ ghost, disabled }) => (
-    ghost
+export const generateGhostStyling = ({ textOnly, ghost, disabled }) => (
+    (ghost || textOnly)
         ? `
             background-color: ${disabled ? `${palette.white} !important` : palette.white};
-            border-color: ${palette.primary};
+            border-color: ${textOnly ? 'transparent' : `${palette.primary}`};
             color: ${palette.primary};
 
             &:hover {
@@ -104,10 +105,17 @@ export const PopupMenuStyledWrapper = styled.div`
     cursor: default;
 `;
 
-export const StyledWrapper = styled.button`
+export const StyledWrapper = styled(({
+    onlyIcon,
+    iconAfterText,
+    full,
+    ghost,
+    shape,
+    textOnly,
+    ...rest
+}) => <button {...rest} />)`
     position: relative;
     border: 1px solid;
-    border-radius: 3px;
     display: inline-block;
     outline: 0 !important;
     font-size: ${typography.fontSm};
@@ -130,12 +138,25 @@ export const StyledWrapper = styled.button`
     // SVG styling:
     ${generateSVGStyling}
 
+    .Button__tooltip-text {
+        display: none;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    &:hover {
+        .Button__tooltip-text {
+            display: inline-block;
+        }
+    }
+
     // If buttons follow each other in a row
     // set a standardized whitespace between them
     & ~ & {
         margin-left: 9px;
     }
 
+    ${({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;'}
     ${generateFullPropsStyling}
     ${generateGhostStyling}
     ${generateDisabledStyling}

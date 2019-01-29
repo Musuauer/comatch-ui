@@ -1,8 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button should render the button with tooltipText correctly 1`] = `
+<button
+  className="Button rectangle full only-icon sc-bwzfXH jcWJnl"
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  type="button"
+>
+  <span>
+    
+  </span>
+  <div
+    className="Badge Button__tooltip-text darkGray xs sc-bdVaJa jCQAeT"
+    color="darkGray"
+    size="xs"
+  >
+    Testing tooltip text
+  </div>
+</button>
+`;
+
+exports[`Button should render the circle shaped button correctly 1`] = `
+<button
+  className="Button circle full only-icon sc-bwzfXH yPbHY"
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  type="button"
+>
+  <span>
+    
+  </span>
+</button>
+`;
+
 exports[`Button should render the default button correctly 1`] = `
 <button
-  className="Button full only-icon sc-bwzfXH dujBWb"
+  className="Button rectangle full only-icon sc-bwzfXH jcWJnl"
   disabled={false}
   id={null}
   onClick={[Function]}
@@ -16,7 +51,7 @@ exports[`Button should render the default button correctly 1`] = `
 
 exports[`Button should render the disabled button correctly 1`] = `
 <button
-  className="Button full disabled only-icon sc-bwzfXH kiamgR"
+  className="Button rectangle full disabled only-icon sc-bwzfXH jUCEme"
   disabled={true}
   id={null}
   onClick={[Function]}
@@ -30,7 +65,7 @@ exports[`Button should render the disabled button correctly 1`] = `
 
 exports[`Button should render the ghost and disabled button correctly 1`] = `
 <button
-  className="Button disabled ghost only-icon sc-bwzfXH eUdtWR"
+  className="Button rectangle disabled ghost only-icon sc-bwzfXH gnelvu"
   disabled={true}
   id={null}
   onClick={[Function]}
@@ -44,7 +79,21 @@ exports[`Button should render the ghost and disabled button correctly 1`] = `
 
 exports[`Button should render the ghost button correctly 1`] = `
 <button
-  className="Button ghost only-icon sc-bwzfXH dgewZR"
+  className="Button rectangle ghost only-icon sc-bwzfXH krBWiP"
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  type="button"
+>
+  <span>
+    
+  </span>
+</button>
+`;
+
+exports[`Button should render the textOnly and ghost button correctly 1`] = `
+<button
+  className="Button rectangle textOnly only-icon sc-bwzfXH cWYKEJ"
   disabled={false}
   id={null}
   onClick={[Function]}

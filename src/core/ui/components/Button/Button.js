@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 
+import { Badge } from '../Badge';
 import { StyledWrapper, PopupMenuStyledWrapper } from './StyledWrapper';
 
 const propTypes = {
@@ -30,6 +31,10 @@ const propTypes = {
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
     /**
+     * Renders the `Button` in different shapes (rectangle or circle) 
+     */
+    shape: PropTypes.oneOf(['rectangle', 'circle']),
+    /**
      * To be used with `href`, could set for example `target="_blank"`
      */
     target: PropTypes.string,
@@ -37,6 +42,14 @@ const propTypes = {
      * Text content of `Button`
      */
     text: PropTypes.string,
+    /**
+     * If true `Button` has a transparent border
+     */
+    textOnly: PropTypes.bool,
+    /**
+     * Text content of tooltip for the `Button`
+     */
+    tooltipText: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
     /**
      * A PopupMenu node to be toggled when clicking on the button
@@ -57,8 +70,11 @@ const defaultProps = {
     icon: null,
     iconAfterText: false,
     onClick: noop,
+    shape: 'rectangle',
     target: null,
     text: '',
+    textOnly: false,
+    tooltipText: '',
     type: 'button',
     popupMenu: null,
     popupMenuPosition: 'bottom',
@@ -142,7 +158,10 @@ export class Button extends PureComponent {
             ghost,
             disabled,
 
+            shape,
             text,
+            textOnly,
+            tooltipText,
             type,
             icon,
             iconAfterText,
@@ -154,6 +173,8 @@ export class Button extends PureComponent {
         const styledProps = {
             disabled,
             ghost,
+            shape,
+            textOnly,
             full: !ghost,
             onlyIcon: !text,
             iconAfterText: text && iconAfterText,
@@ -176,10 +197,11 @@ export class Button extends PureComponent {
         const calculatedProps = {
             id,
             onClick,
-            className: classNames('Button', className, {
+            className: classNames('Button', className, shape, {
                 full: !ghost,
                 disabled,
                 ghost,
+                textOnly,
                 'only-icon': !text,
                 'icon-after-text': text && iconAfterText,
             }),
@@ -197,6 +219,12 @@ export class Button extends PureComponent {
         return (
             <StyledWrapper ref={setNodeRef} {...styledProps} {...calculatedProps}>
                 {content}
+                {
+                    !!tooltipText
+                    && (
+                        <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
+                    )
+                }
                 {!!popupMenu && showPopupMenu && (
                     <PopupMenuStyledWrapper onClick={onPopupMenuClick}>{popupMenu}</PopupMenuStyledWrapper>
                 )}

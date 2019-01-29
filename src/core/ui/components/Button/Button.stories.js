@@ -176,4 +176,29 @@ storiesOf('Button', module)
                     `\n/>`}
             </Highlight>
         </>
+    ))
+    .add('with shape set to circle', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} shape='circle' />
+            <Highlight className="html">
+                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />'}
+            </Highlight>
+        </>
+    ))
+
+    .add('with textOnly style', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />
+            <Highlight className="html">
+                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />'}
+            </Highlight>
+        </>
+    ))
+    .add('with tooltipText', () => (
+        <>
+            <Button text="Hello world" tooltipText="Tooltip Text" />
+            <Highlight className="html">
+                {'<Button text="Hello world" tooltipText="Tooltip Text" />'}
+            </Highlight>
+        </>
     ));
