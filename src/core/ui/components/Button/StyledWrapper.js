@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
@@ -100,20 +101,31 @@ export const generateDisabledStyling = ({ disabled }) => (
         : ''
 );
 
+export const generateShapeStyling = ({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;';
+
 export const PopupMenuStyledWrapper = styled.div`
     position: absolute;
     cursor: default;
 `;
 
-export const StyledWrapper = styled(({
-    onlyIcon,
-    iconAfterText,
-    full,
-    ghost,
-    shape,
-    textOnly,
-    ...rest
-}) => <button {...rest} />)`
+export const StyledWrapper = styled(class extends React.Component {
+    render() {
+        const {
+            onlyIcon,
+            iconAfterText,
+            full,
+            ghost,
+            shape,
+            textOnly,
+            popupMenuPosition,
+            ...rest
+        } = this.props;
+
+        return(
+            <button {...rest} />
+        );
+    }
+})`
     position: relative;
     border: 1px solid;
     display: inline-block;
@@ -156,7 +168,7 @@ export const StyledWrapper = styled(({
         margin-left: 9px;
     }
 
-    ${({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;'}
+    ${generateGhostStyling}
     ${generateFullPropsStyling}
     ${generateGhostStyling}
     ${generateDisabledStyling}
