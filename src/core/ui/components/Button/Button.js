@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 
+import { Badge } from '../Badge';
 import { StyledWrapper } from './StyledWrapper';
-// import './Button.scss';
 
 const propTypes = {
     /**
@@ -31,7 +31,7 @@ const propTypes = {
     iconAfterText: PropTypes.bool,
     onClick: PropTypes.func,
     /**
-     * Renders the Button in different shapes (rectangle or circle) 
+     * Renders the `Button` in different shapes (rectangle or circle) 
      */
     shape: PropTypes.oneOf(['rectangle', 'circle']),
     /**
@@ -43,9 +43,13 @@ const propTypes = {
      */
     text: PropTypes.string,
     /**
-     * If true Button has a transparent border
+     * If true `Button` has a transparent border
      */
     textOnly: PropTypes.bool,
+    /**
+     * Text content of tooltip for the `Button`
+     */
+    tooltipText: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
 };
 
@@ -62,6 +66,7 @@ const defaultProps = {
     target: null,
     text: '',
     textOnly: false,
+    tooltipText: '',
     type: 'button',
 };
 
@@ -87,6 +92,7 @@ export const Button = ({
     shape,
     text,
     textOnly,
+    tooltipText,
     type,
     icon,
     iconAfterText,
@@ -141,6 +147,12 @@ export const Button = ({
     return (
         <StyledWrapper {...styledProps} {...calculatedProps}>
             {content}
+            {
+                !!tooltipText
+                && (
+                    <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
+                )
+            }
         </StyledWrapper>
     );
 };
