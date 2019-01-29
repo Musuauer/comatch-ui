@@ -14,19 +14,18 @@ describe('Popover', () => {
     });
 
     it('should have the correct default props', () => {
-        const popover = mount(< Popover/>);
+        const popover = mount(< Popover />);
         expect(popover.prop('children')).toEqual([]);
         expect(popover.prop('toggle')).toEqual(null);
         expect(popover.prop('open')).toEqual(null);
     });
 
     it('should have the correct passed props', () => {
-        const popover = mount(< Popover position='left'/>);
+        const popover = mount(< Popover position='left' />);
         expect(popover.prop('position')).toEqual('left');
     });
 
     describe('mouse events', () => {
-
         it('should not fire handleMouseEnter() & handleMouseLeave() if controlledByExternalState is true', () => {
             const popover = mount(<Popover open={!null}>Ala</Popover>);
             const section = popover.find('section');
@@ -49,7 +48,7 @@ describe('Popover', () => {
             expect(popover.state('open')).toBe(true);
             expect(popover.state('renderContent')).toBe(true);
             expect(popover.find('div').props()['aria-hidden']).toEqual(false);
-            
+
             section.simulate('mouseLeave');
             expect(popover.state('open')).toBe(false);
         });
@@ -80,7 +79,7 @@ describe('Popover', () => {
 
     describe('should render correct content', () => {
         it('should render faQuestionCircle icon if no toggle is passed', () => {
-            const popover = mount(< Popover toggle={null}/>);
+            const popover = mount(< Popover toggle={null} />);
             const icon = popover.find('FontAwesomeIcon');
 
             expect(icon.prop('icon')).toEqual(faQuestionCircle);
@@ -88,7 +87,7 @@ describe('Popover', () => {
 
         it('should render a toggle if provided by props', () => {
             const customToggle = <button icon='customIcon'>Hover me</button>;
-            const popover = mount(<Popover toggle={customToggle}/>);
+            const popover = mount(<Popover toggle={customToggle} />);
             const button = popover.find('button');
 
             expect(button.prop('icon')).toEqual('customIcon');
