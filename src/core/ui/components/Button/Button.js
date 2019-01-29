@@ -179,8 +179,11 @@ export class Button extends PureComponent {
             onlyIcon: !text,
             iconAfterText: text && iconAfterText,
 
-            ...(href && { as: 'a' }),
             ...(!!popupMenuPosition && { popupMenuPosition }),
+            ...(href && {
+                as: 'a',
+                noTextDecoration: true,
+            }),
         };
         const content = iconAfterText ? (
             <span>

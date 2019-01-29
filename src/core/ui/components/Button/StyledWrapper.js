@@ -118,6 +118,7 @@ export const StyledWrapper = styled(class extends React.Component {
             shape,
             textOnly,
             popupMenuPosition,
+            noTextDecoration,
             ...rest
         } = this.props;
 
@@ -131,6 +132,7 @@ export const StyledWrapper = styled(class extends React.Component {
     display: inline-block;
     outline: 0 !important;
     font-size: ${typography.fontSm};
+    line-height: ${typography.lineHeightSm};
     touch-action: manipulation;
     cursor: pointer;
     text-align: center;
@@ -139,6 +141,7 @@ export const StyledWrapper = styled(class extends React.Component {
     padding: 8px 15px; // makes the height 40px
     transition: background-color 250ms ease-out, border-color 250ms ease-out, color 250ms ease-out;
 
+    ${({ noTextDecoration }) => noTextDecoration ? 'text-decoration: none;' : ''}
     ${({ iconAfterText }) => iconAfterText ? 'white-space: initial;' : ''}
 
     // PopupMenu styling:
