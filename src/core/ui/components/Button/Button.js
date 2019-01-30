@@ -92,20 +92,31 @@ const defaultProps = {
 export class Button extends PureComponent {
     constructor(props, context) {
         super(props, context);
-
-        this.state = {
-            showPopupMenu: false,
-        };
-
         this.node = null;
     }
 
+    state = {
+        showPopupMenu: false,
+        hasEventListenerForClickOutside: false,
+    };
+
     componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside, false);
+        const { handlePupupMenuEventListenerLogic } = this;
+        handlePupupMenuEventListenerLogic();
+    }
+
+    componentDidUpdate(prevProps) {
+        const { handlePupupMenuEventListenerLogic } = this;
+        handlePupupMenuEventListenerLogic(prevProps);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside, false);
+        const { handleClickOutside } = this;
+        const { hasEventListenerForClickOutside } = this.state;
+
+        if (hasEventListenerForClickOutside) {
+            document.removeEventListener('mousedown', handleClickOutside, false);
+        }
     }
 
     setNodeRef = (node) => {
@@ -135,6 +146,25 @@ export class Button extends PureComponent {
     onPopupMenuClick = (event) => {
         if (event) {
             event.stopPropagation();
+        }
+    };
+
+    handlePupupMenuEventListenerLogic = (prevProps = {}, props = this.props) => {
+        const { popupMenu } = props;
+        const { handleClickOutside } = this;
+        const { popupMenu: prevPopupMenu } = prevProps;
+        const { hasEventListenerForClickOutside } = this.state;
+
+        if (popupMenu === prevPopupMenu) {
+            return;
+        }
+
+        if (popupMenu && !hasEventListenerForClickOutside) {
+            document.addEventListener('mousedown', handleClickOutside, false);
+            this.setState({ hasEventListenerForClickOutside: true });
+        } else if (!popupMenu && hasEventListenerForClickOutside) {
+            document.removeEventListener('mousedown', handleClickOutside, false);
+            this.setState({ hasEventListenerForClickOutside: true });
         }
     };
 
@@ -175,11 +205,8 @@ export class Button extends PureComponent {
             onlyIcon: !text,
             shape,
             textOnly,
+            ...(!!href && { as: 'a' }),
             ...(!!popupMenuPosition && { popupMenuPosition }),
-            ...(href && {
-                as: 'a',
-                noTextDecoration: true,
-            }),
         };
         const content = iconAfterText ? (
             <span>

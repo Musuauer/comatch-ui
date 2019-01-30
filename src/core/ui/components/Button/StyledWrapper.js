@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React from 'react';
 import styled from 'styled-components';
 import { palette, typography } from '../../../styles/variables';
@@ -55,7 +54,7 @@ export const generateSVGStyling = ({ iconAfterText, onlyIcon }) => `
     }
 `;
 
-export const generateFullPropsStyling = ({ disabled, full }) => (
+export const generateFullPropsStyling = ({ disabled, full }) =>
     full
         ? `
             background-color: ${disabled ? `${palette.lightGray} !important` : palette.primary};
@@ -67,11 +66,10 @@ export const generateFullPropsStyling = ({ disabled, full }) => (
                 border-color: ${palette.secondary};
             }
         `
-        : ''
-);
+        : '';
 
-export const generateGhostStyling = ({ disabled, ghost, textOnly }) => (
-    (ghost || textOnly)
+export const generateGhostStyling = ({ disabled, ghost, textOnly }) =>
+    ghost || textOnly
         ? `
             background-color: ${disabled ? `${palette.white} !important` : palette.white};
             border-color: ${textOnly ? 'transparent' : `${palette.primary}`};
@@ -83,10 +81,9 @@ export const generateGhostStyling = ({ disabled, ghost, textOnly }) => (
                 color: ${palette.white};
             }
         `
-        : ''
-);
+        : '';
 
-export const generateDisabledStyling = ({ disabled }) => (
+export const generateDisabledStyling = ({ disabled }) =>
     disabled
         ? `
             border-color: ${palette.midGray} !important;
@@ -98,35 +95,20 @@ export const generateDisabledStyling = ({ disabled }) => (
                 color: ${palette.midGray} !important;
             }
         `
-        : ''
-);
+        : '';
 
-export const generateShapeStyling = ({ shape }) => shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;';
+export const generateShapeStyling = ({ shape }) => (shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;');
 
 export const PopupMenuStyledWrapper = styled.div`
     position: absolute;
     cursor: default;
 `;
 
-export const StyledWrapper = styled(class extends React.Component {
-    render() {
-        const {
-            full,
-            ghost,
-            iconAfterText,
-            noTextDecoration,
-            onlyIcon,
-            popupMenuPosition,
-            shape,
-            textOnly,
-            ...rest
-        } = this.props;
-
-        return(
-            <button {...rest} />
-        );
-    }
-})`
+export const StyledWrapper = styled(
+    React.forwardRef(({ full, ghost, iconAfterText, onlyIcon, popupMenuPosition, shape, textOnly, ...rest }, ref) => (
+        <button ref={ref} {...rest} />
+    )),
+)`
     position: relative;
     border: 1px solid;
     display: inline-block;
@@ -136,13 +118,13 @@ export const StyledWrapper = styled(class extends React.Component {
     touch-action: manipulation;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
     padding: 8px 15px; // makes the height 40px
     transition: background-color 250ms ease-out, border-color 250ms ease-out, color 250ms ease-out;
 
-    ${({ noTextDecoration }) => noTextDecoration ? 'text-decoration: none;' : ''}
-    ${({ iconAfterText }) => iconAfterText ? 'white-space: initial;' : ''}
+    ${({ iconAfterText }) => (iconAfterText ? 'white-space: initial;' : '')}
 
     // PopupMenu styling:
     ${PopupMenuStyledWrapper} {
