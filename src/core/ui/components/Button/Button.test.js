@@ -260,15 +260,13 @@ describe('Button', () => {
             expect(button.first().find('div').find('span')).toHaveLength(1);
             expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
 
-            // Click the Popup Menu to verify that the event doesn't get propagated - e.g. toggles
+            // Click the Popup Menu to verify that the event gets propagated - e.g. toggles
             button.find('div').simulate('click');
-            expect(button.first().find('div')).toHaveLength(1);
-            expect(button.first().find('div').find('span')).toHaveLength(1);
-            expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
+            expect(button.first().find('div')).toHaveLength(0);
 
-            // Click the button to remove the Popup Menu
+            // Click the button to toggle the Popup Menu again
             button.simulate('click');
-            expect(button.find('div')).toHaveLength(0);
+            expect(button.find('div')).toHaveLength(1);
         });
     });
 });

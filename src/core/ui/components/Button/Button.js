@@ -70,14 +70,14 @@ const defaultProps = {
     icon: null,
     iconAfterText: false,
     onClick: noop,
+    popupMenu: null,
+    popupMenuPosition: 'bottom',
     shape: 'rectangle',
     target: null,
     text: '',
     textOnly: false,
     tooltipText: '',
     type: 'button',
-    popupMenu: null,
-    popupMenuPosition: 'bottom',
 };
 
 /**
@@ -101,13 +101,13 @@ export class Button extends PureComponent {
     };
 
     componentDidMount() {
-        const { handlePupupMenuEventListenerLogic } = this;
-        handlePupupMenuEventListenerLogic();
+        const { handlePopupMenuEventRegistration } = this;
+        handlePopupMenuEventRegistration();
     }
 
     componentDidUpdate(prevProps) {
-        const { handlePupupMenuEventListenerLogic } = this;
-        handlePupupMenuEventListenerLogic(prevProps);
+        const { handlePopupMenuEventRegistration } = this;
+        handlePopupMenuEventRegistration(prevProps);
     }
 
     componentWillUnmount() {
@@ -138,12 +138,10 @@ export class Button extends PureComponent {
             onTogglePopupMenu();
         }
 
-        if (onClick) {
-            onClick();
-        }
+        onClick();
     };
 
-    handlePupupMenuEventListenerLogic = (prevProps = {}, props = this.props) => {
+    handlePopupMenuEventRegistration = (prevProps = {}, props = this.props) => {
         const { popupMenu } = props;
         const { handleClickOutside } = this;
         const { popupMenu: prevPopupMenu } = prevProps;
@@ -158,7 +156,7 @@ export class Button extends PureComponent {
             this.setState({ hasEventListenerForClickOutside: true });
         } else if (!popupMenu && hasEventListenerForClickOutside) {
             document.removeEventListener('mousedown', handleClickOutside, false);
-            this.setState({ hasEventListenerForClickOutside: true });
+            this.setState({ hasEventListenerForClickOutside: false });
         }
     };
 
