@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import '../../../config/tests/setup';
 
-import classNames from 'classnames';
 import { Navigation } from '../Navigation';
 import { DropdownMenu } from './DropdownMenu';
 import { ItemStyledWrapper } from './StyledWrapper';
@@ -11,10 +10,7 @@ import { ItemStyledWrapper } from './StyledWrapper';
 describe('DropdownMenu', () => {
     const OPTIONAL_PROPS = {
         id: 'test',
-        className: {
-            test: true,
-            skippedClassName: false,
-        },
+        className: 'WrapperClassName',
         itemClassName: 'ItemClassName',
         items: [
             'item 1',
@@ -62,7 +58,7 @@ describe('DropdownMenu', () => {
 
             expect(dropdownItems).toHaveLength(props.items.length);
             dropdownItems.forEach((node) => {
-                expect(node.hasClass(classNames(props.itemClassName))).toBeTruthy();
+                expect(node.hasClass(props.itemClassName)).toBeTruthy();
             });
         });
     });

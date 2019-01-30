@@ -7,17 +7,17 @@ import { StyledWrapper, ItemStyledWrapper } from './StyledWrapper';
 
 const propTypes = {
     /**
+     * Additional class names
+     */
+    className: PropTypes.string,
+    /**
      * id of the container
      */
     id: PropTypes.string,
     /**
-     * Additional class names
-     */
-    className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    /**
      * Additional class names to be applied on each item
      */
-    itemClassName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    itemClassName: PropTypes.string,
     /**
      * The menu items
      */
@@ -25,13 +25,13 @@ const propTypes = {
 };
 
 const defaultProps = {
-    id: null,
     className: null,
+    id: null,
     itemClassName: null,
     items: [],
 };
 
-export const DropdownMenu = ({ id, className, itemClassName, items }) => (
+export const DropdownMenu = ({ className, id, itemClassName, items }) => (
     <StyledWrapper {...id && { id }} className={classNames('DropdownMenu', className)}>
         <Navigation
             orientation={ORIENTATION.VERTICAL}

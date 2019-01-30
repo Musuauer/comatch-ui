@@ -7,6 +7,7 @@ export const ItemStyledWrapper = styled.div`
 
     &:hover {
         background-color: ${palette.lightGray};
+        transition: background-color 250ms ease-out;
     }
 `;
 
