@@ -143,12 +143,6 @@ export class Button extends PureComponent {
         }
     };
 
-    onPopupMenuClick = (event) => {
-        if (event) {
-            event.stopPropagation();
-        }
-    };
-
     handlePupupMenuEventListenerLogic = (prevProps = {}, props = this.props) => {
         const { popupMenu } = props;
         const { handleClickOutside } = this;
@@ -177,7 +171,7 @@ export class Button extends PureComponent {
     };
 
     render() {
-        const { onClick, onPopupMenuClick, setNodeRef } = this;
+        const { onClick, setNodeRef } = this;
         const { showPopupMenu } = this.state;
         const {
             className,
@@ -250,7 +244,7 @@ export class Button extends PureComponent {
                     <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
                 )}
                 {!!popupMenu && showPopupMenu && (
-                    <PopupMenuStyledWrapper onClick={onPopupMenuClick}>{popupMenu}</PopupMenuStyledWrapper>
+                    <PopupMenuStyledWrapper>{popupMenu}</PopupMenuStyledWrapper>
                 )}
             </StyledWrapper>
         );
