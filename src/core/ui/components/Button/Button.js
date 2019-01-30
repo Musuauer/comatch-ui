@@ -189,9 +189,9 @@ export class Button extends PureComponent {
             type,
         } = this.props;
 
-        const styledProps = {
+        const styledWrapperProps = {
             disabled,
-            full: !ghost,
+            full: !ghost && !textOnly,
             ghost,
             iconAfterText: text && iconAfterText,
             onlyIcon: !text,
@@ -212,31 +212,31 @@ export class Button extends PureComponent {
             </span>
         );
 
-        const calculatedProps = {
+        const htmlTagSpecificProps = href
+            ? {
+                href,
+                rel: target && 'noopener noreferrer',
+                target,
+            }
+            : { type };
+
+        const props = {
             id,
             onClick,
             className: classNames('Button', className, shape, {
                 disabled,
-                full: !ghost,
+                full: !ghost && !textOnly,
                 ghost,
                 'icon-after-text': text && iconAfterText,
                 'only-icon': !text,
                 textOnly,
             }),
 
-            ...(
-                href
-                    ? {
-                        href,
-                        rel: target && 'noopener noreferrer',
-                        target,
-                    }
-                    : { type }
-            ),
+            ...htmlTagSpecificProps,
         };
 
         return (
-            <StyledWrapper ref={setNodeRef} {...styledProps} {...calculatedProps}>
+            <StyledWrapper ref={setNodeRef} {...styledWrapperProps} {...props}>
                 {content}
                 {!!tooltipText && (
                     <Badge className="Button__tooltip-text" text={tooltipText} size="xs" color="darkGray" />
