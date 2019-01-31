@@ -123,7 +123,7 @@ export class Button extends PureComponent {
         this.node = node;
     };
 
-    onTogglePopupMenu = () => this.setState({ showPopupMenu: !this.state.showPopupMenu });
+    onTogglePopupMenu = () => this.setState((oldState) => ({ showPopupMenu: !oldState.showPopupMenu }));
 
     onClick = (event) => {
         const { onTogglePopupMenu } = this;
@@ -231,7 +231,6 @@ export class Button extends PureComponent {
                 'only-icon': !text,
                 textOnly,
             }),
-
             ...htmlTagSpecificProps,
         };
 
