@@ -2,7 +2,7 @@
 
 exports[`DropdownMenu should render correctly 1`] = `
 <div
-  className="DropdownMenu sc-htpNat jgCLMM"
+  className="DropdownMenu sc-htpNat fVSfgY"
 >
   <nav
     className="Navigation vertical sc-bdVaJa eeaaGT"

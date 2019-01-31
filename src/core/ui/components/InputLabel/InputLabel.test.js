@@ -9,11 +9,11 @@ const text = 'A very random text';
 
 describe('InputLabel', () => {
     it('should render correctly', () => {
-        const inputLabel = create(<InputLabel />).toJSON();
+        const inputLabel = create(<InputLabel text={text} />).toJSON();
         expect(inputLabel).toMatchSnapshot();
     });
     it('should render the InputLabel with a <span> tag', () => {
-        const inputLabel = create(<InputLabel span />).toJSON();
+        const inputLabel = create(<InputLabel text={text} span />).toJSON();
         expect(inputLabel).toMatchSnapshot();
     });
 

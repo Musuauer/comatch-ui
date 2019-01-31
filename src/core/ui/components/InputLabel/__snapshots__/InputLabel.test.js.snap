@@ -5,12 +5,16 @@ exports[`InputLabel should render correctly 1`] = `
   className="InputLabel"
   htmlFor={null}
   id={null}
-/>
+>
+  A very random text
+</label>
 `;
 
 exports[`InputLabel should render the InputLabel with a <span> tag 1`] = `
 <span
   className="InputLabel"
   id={null}
-/>
+>
+  A very random text
+</span>
 `;

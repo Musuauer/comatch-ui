@@ -128,7 +128,7 @@ export const StyledWrapper = styled(
 
     // PopupMenu styling:
     ${PopupMenuStyledWrapper} {
-        background: green;
+        background: transparent;
         ${generatePopupPositionBasedStyling}
     }
 
@@ -136,14 +136,20 @@ export const StyledWrapper = styled(
     ${generateSVGStyling}
 
     .Button__tooltip-text {
-        display: none;
+        opacity: 0;
         position: absolute;
-        margin-left: 20px;
+        transform: translateX(0);
+        transition: opacity 250ms ease-out, transform 250ms ease-out;
+        z-index: -1;
     }
 
     &:hover {
         .Button__tooltip-text {
-            display: inline-block;
+            opacity: 1;
+            transform: translateX(20px);
+            transition: opacity 250ms ease-out, transform 250ms ease-out;
+            transition-delay: 500ms;
+            z-index: 0;
         }
     }
 

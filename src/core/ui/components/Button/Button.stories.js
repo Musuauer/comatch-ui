@@ -5,6 +5,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Button } from './Button';
+import { DropdownMenu } from '../DropdownMenu';
+
+const items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+];
+const dropdownPropString = `<DropdownMenu items={[${items.map(item => `"${String(item)}"`)}]} />`;
 
 storiesOf('Button', module)
     .add('with primary style', () => (
@@ -80,21 +88,13 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={
-                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-                            <span>Popup Menu</span>
-                        </div>
-                    }
+                    popupMenu={<DropdownMenu items={items} />}
                 />
             </div>
             <Highlight className="html">
                 {`<Button` +
                     `\n\ttext="Click to toggle popup menu"` +
-                    `\n\tpopupMenu={(` +
-                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
-                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
-                    `\n\t\t\t\t</div>` +
-                    `\n\t\t)}` +
+                    `\n\tpopupMenu={${dropdownPropString}}` +
                     `\n/>`}
             </Highlight>
         </>
@@ -104,11 +104,7 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px', paddingTop: '100px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={
-                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-                            <span>Popup Menu</span>
-                        </div>
-                    }
+                    popupMenu={<DropdownMenu items={items} />}
                     popupMenuPosition="top"
                 />
             </div>
@@ -116,11 +112,7 @@ storiesOf('Button', module)
                 {`<Button` +
                     `\n\ttext="Click to toggle popup menu"` +
                     `\n\tpopupMenuPosition="top"` +
-                    `\n\tpopupMenu={(` +
-                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
-                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
-                    `\n\t\t\t\t</div>` +
-                    `\n\t\t)}` +
+                    `\n\tpopupMenu={${dropdownPropString}}` +
                     `\n/>`}
             </Highlight>
         </>
@@ -130,11 +122,7 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={
-                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-                            <span>Popup Menu</span>
-                        </div>
-                    }
+                    popupMenu={<DropdownMenu items={items} />}
                     popupMenuPosition="left"
                 />
             </div>
@@ -142,11 +130,7 @@ storiesOf('Button', module)
                 {`<Button` +
                     `\n\ttext="Click to toggle popup menu"` +
                     `\n\tpopupMenuPosition="left"` +
-                    `\n\tpopupMenu={(` +
-                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
-                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
-                    `\n\t\t\t\t</div>` +
-                    `\n\t\t)}` +
+                    `\n\tpopupMenu={${dropdownPropString}}` +
                     `\n/>`}
             </Highlight>
         </>
@@ -156,11 +140,7 @@ storiesOf('Button', module)
             <div style={{ textAlign: 'center', height: '150px' }}>
                 <Button
                     text="Click to toggle popup menu"
-                    popupMenu={
-                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
-                            <span>Popup Menu</span>
-                        </div>
-                    }
+                    popupMenu={<DropdownMenu items={items} />}
                     popupMenuPosition="right"
                 />
             </div>
@@ -168,11 +148,7 @@ storiesOf('Button', module)
                 {`<Button` +
                     `\n\ttext="Click to toggle popup menu"` +
                     `\n\tpopupMenuPosition="right"` +
-                    `\n\tpopupMenu={(` +
-                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
-                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
-                    `\n\t\t\t\t</div>` +
-                    `\n\t\t)}` +
+                    `\n\tpopupMenu={${dropdownPropString}}` +
                     `\n/>`}
             </Highlight>
         </>
