@@ -153,8 +153,8 @@ export const StyledWrapper = styled(
         margin-left: 9px;
     }
 
-    ${generateGhostStyling}
     ${generateFullPropsStyling}
-    ${generateGhostStyling}
     ${generateDisabledStyling}
+    ${generateShapeStyling}
+    ${generateGhostStyling}
 `;
