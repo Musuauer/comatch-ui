@@ -14,8 +14,8 @@ const propTypes = {
 
         let typeError;
         props[propName].forEach((step) => {
-            if (typeof step !== 'string') {
-                typeError = 'every step passed to StepProgressBar must be a string';
+            if (typeof step !== 'string' && typeof step !== 'object') {
+                typeError = 'every step passed to StepProgressBar must be a string or a <Translate /> instance';
             }
         });
         if (typeError) {
