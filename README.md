@@ -65,6 +65,7 @@ The PropTypes of all components of the library are documented in their respectiv
 -   [Button](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Button/Button.md)
 -   [CheckboxGroupInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/CheckboxGroupInput/CheckboxGroupInput.md)
 -   [CheckboxInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/CheckboxInput/CheckboxInput.md)
+-   [DropdownMenu](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/DropdownMenu/DropdownMenu.md)
 -   [EmailInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/EmailInput/EmailInput.md)
 -   [FileInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/FileInput/FileInput.md)
 -   [Flyout](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Flyout/Flyout.md)
