@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputLabel should render correctly 1`] = `
+<label
+  className="InputLabel"
+  htmlFor={null}
+  id={null}
+/>
+`;
+
+exports[`InputLabel should render the InputLabel with a <span> tag 1`] = `
+<span
+  className="InputLabel"
+  id={null}
+/>
+`;
