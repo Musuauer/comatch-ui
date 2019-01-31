@@ -100,8 +100,9 @@ export const generateDisabledStyling = ({ disabled }) =>
 export const generateShapeStyling = ({ shape }) => (shape === 'circle' ? 'border-radius: 50%;' : 'border-radius: 3px;');
 
 export const PopupMenuStyledWrapper = styled.div`
-    position: absolute;
+    background: transparent;
     cursor: default;
+    position: absolute;
 `;
 
 export const StyledWrapper = styled(
@@ -128,7 +129,6 @@ export const StyledWrapper = styled(
 
     // PopupMenu styling:
     ${PopupMenuStyledWrapper} {
-        background: transparent;
         ${generatePopupPositionBasedStyling}
     }
 

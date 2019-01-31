@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import noop from 'lodash/noop';
 import { Button } from './Button';
+import { PopupMenuStyledWrapper } from './StyledWrapper';
 import '../../../config/tests/setup';
 
 describe('Button', () => {
@@ -244,25 +245,25 @@ describe('Button', () => {
         it('should not contain the popup menu container', () => {
             const button = mount(<Button />);
 
-            expect(button.first().find('div')).toHaveLength(0);
+            expect(button.find(PopupMenuStyledWrapper)).toHaveLength(0);
             button.simulate('click');
-            expect(button.first().find('div')).toHaveLength(0);
+            expect(button.find(PopupMenuStyledWrapper)).toHaveLength(0);
         });
 
         it('should contain the popup menu container', () => {
             const button = mount(<Button popupMenu={PopupMenu} />);
 
-            expect(button.first().find('div')).toHaveLength(0);
+            expect(button.find(PopupMenuStyledWrapper)).toHaveLength(0);
 
             // Click the button to render the Popup Menu
             button.simulate('click');
-            expect(button.first().find('div')).toHaveLength(1);
-            expect(button.first().find('div').find('span')).toHaveLength(1);
-            expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
+            expect(button.find(PopupMenuStyledWrapper)).toHaveLength(1);
+            expect(button.find(PopupMenuStyledWrapper).find('span')).toHaveLength(1);
+            expect(button.find(PopupMenuStyledWrapper).find('span').text()).toEqual(popupMenuText);
 
             // Click the Popup Menu to verify that the event gets propagated - e.g. toggles
             button.find('div').simulate('click');
-            expect(button.first().find('div')).toHaveLength(0);
+            expect(button.find(PopupMenuStyledWrapper)).toHaveLength(0);
 
             // Click the button to toggle the Popup Menu again
             button.simulate('click');
