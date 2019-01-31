@@ -74,4 +74,126 @@ storiesOf('Button', module)
                 {'<Button icon={<FontAwesomeIcon icon={faTimes} />} ghost={true} />'}
             </Highlight>
         </>
+    ))
+    .add('with popupMenu', () => (
+        <>
+            <div style={{ textAlign: 'center', height: '150px' }}>
+                <Button
+                    text="Click to toggle popup menu"
+                    popupMenu={
+                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
+                            <span>Popup Menu</span>
+                        </div>
+                    }
+                />
+            </div>
+            <Highlight className="html">
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
+            </Highlight>
+        </>
+    ))
+    .add('with popupMenu on top', () => (
+        <>
+            <div style={{ textAlign: 'center', height: '150px', paddingTop: '100px' }}>
+                <Button
+                    text="Click to toggle popup menu"
+                    popupMenu={
+                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
+                            <span>Popup Menu</span>
+                        </div>
+                    }
+                    popupMenuPosition="top"
+                />
+            </div>
+            <Highlight className="html">
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="top"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
+            </Highlight>
+        </>
+    ))
+    .add('with popupMenu to the left', () => (
+        <>
+            <div style={{ textAlign: 'center', height: '150px' }}>
+                <Button
+                    text="Click to toggle popup menu"
+                    popupMenu={
+                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
+                            <span>Popup Menu</span>
+                        </div>
+                    }
+                    popupMenuPosition="left"
+                />
+            </div>
+            <Highlight className="html">
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="left"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
+            </Highlight>
+        </>
+    ))
+    .add('with popupMenu to the right', () => (
+        <>
+            <div style={{ textAlign: 'center', height: '150px' }}>
+                <Button
+                    text="Click to toggle popup menu"
+                    popupMenu={
+                        <div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>
+                            <span>Popup Menu</span>
+                        </div>
+                    }
+                    popupMenuPosition="right"
+                />
+            </div>
+            <Highlight className="html">
+                {`<Button` +
+                    `\n\ttext="Click to toggle popup menu"` +
+                    `\n\tpopupMenuPosition="right"` +
+                    `\n\tpopupMenu={(` +
+                    `\n\t\t<div style={{ background: '#e06c75', padding: '10px', height: '100px' }}>` +
+                    `\n\t\t\t\t\t<span>Popup Menu</span>` +
+                    `\n\t\t\t\t</div>` +
+                    `\n\t\t)}` +
+                    `\n/>`}
+            </Highlight>
+        </>
+    ))
+    .add('with shape set to circle', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />
+            <Highlight className="html">
+                {'<Button icon={<FontAwesomeIcon icon={faTimes} />} shape="circle" />'}
+            </Highlight>
+        </>
+    ))
+    .add('with textOnly style', () => (
+        <>
+            <Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />
+            <Highlight className="html">{'<Button icon={<FontAwesomeIcon icon={faTimes} />} textOnly />'}</Highlight>
+        </>
+    ))
+    .add('with tooltipText', () => (
+        <>
+            <Button text="Hello world" tooltipText="Tooltip Text" />
+            <Highlight className="html">{'<Button text="Hello world" tooltipText="Tooltip Text" />'}</Highlight>
+        </>
     ));

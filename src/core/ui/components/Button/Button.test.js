@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import noop from 'lodash/noop';
 import { Button } from './Button';
 import '../../../config/tests/setup';
@@ -25,6 +25,20 @@ describe('Button', () => {
         const button = renderer.create(<Button ghost={true} disabled={true} />).toJSON();
         expect(button).toMatchSnapshot();
     });
+    it('should render the circle shaped button correctly', () => {
+        const button = renderer.create(<Button shape='circle' />).toJSON();
+        expect(button).toMatchSnapshot();
+    });
+
+    it('should render the textOnly and ghost button correctly', () => {
+        const button = renderer.create(<Button textOnly />).toJSON();
+        expect(button).toMatchSnapshot();
+    });
+
+    it('should render the button with tooltipText correctly', () => {
+        const button = renderer.create(<Button tooltipText="Testing tooltip text" />).toJSON();
+        expect(button).toMatchSnapshot();
+    });
 
     it('should have the correct default props', () => {
         const button = mount(<Button />);
@@ -39,10 +53,15 @@ describe('Button', () => {
         expect(button.prop('target')).toEqual(null);
         expect(button.prop('text')).toEqual('');
         expect(button.prop('type')).toEqual('button');
+        expect(button.prop('popupMenu')).toEqual(null);
+        expect(button.prop('popupMenuPosition')).toEqual('bottom');
+        expect(button.prop('shape')).toEqual('rectangle');
+        expect(button.prop('tooltipText')).toEqual('');
     });
 
     it('should have the correct passed props', () => {
         const mockFunction = jest.fn();
+        const popupMenu = <div><span>Testing Popup Menu</span></div>;
         const props = {
             className: 'test className',
             disabled: true,
@@ -52,7 +71,12 @@ describe('Button', () => {
             onClick: mockFunction,
             target: 'test target',
             text: 'test text',
+            textOnly: true,
+            tooltipText: 'test tooltip text',
             type: 'submit',
+            popupMenu,
+            popupMenuPosition: 'top',
+            shape: 'circle',
         };
 
         const button = mount(<Button {...props} />);
@@ -64,7 +88,12 @@ describe('Button', () => {
         expect(button.prop('onClick')).toEqual(mockFunction);
         expect(button.prop('target')).toEqual('test target');
         expect(button.prop('text')).toEqual('test text');
+        expect(button.prop('textOnly')).toEqual(true);
         expect(button.prop('type')).toEqual('submit');
+        expect(button.prop('popupMenu')).toEqual(popupMenu);
+        expect(button.prop('popupMenuPosition')).toEqual('top');
+        expect(button.prop('shape')).toEqual('circle');
+        expect(button.prop('tooltipText')).toEqual('test tooltip text');
     });
 
     it('should render the text', () => {
@@ -81,6 +110,22 @@ describe('Button', () => {
         };
         const button = mount(<Button {...props} />);
         expect(button.find('span').text()).toEqual('icon');
+    });
+
+    describe('when setting the tooltipText prop (default and custom value)', () => {
+        it('should not render the tooltip', () => {
+            const button = mount(<Button />);
+            expect(button.find('div.Button__tooltip-text')).toHaveLength(0);
+        });
+
+        it('should render the tooltip text', () => {
+            const props = {
+                tooltipText: 'test tooltip text',
+            };
+            const button = mount(<Button {...props} />);
+            expect(button.find('div.Button__tooltip-text')).toHaveLength(1);
+            expect(button.find('div.Button__tooltip-text').text()).toEqual('test tooltip text');
+        });
     });
 
     describe('when iconAfterText prop is default', () => {
@@ -132,7 +177,7 @@ describe('Button', () => {
 
     describe('when href prop is empty string', () => {
         it('should render a button element', () => {
-            const button = shallow(<Button />);
+            const button = mount(<Button />);
             expect(button.find('button').exists()).toBe(true);
         });
 
@@ -140,7 +185,7 @@ describe('Button', () => {
             describe('and the button is clicked', () => {
                 it('should run the passed onClick function', () => {
                     const mockFunction = jest.fn();
-                    const button = shallow(<Button onClick={mockFunction} />);
+                    const button = mount(<Button onClick={mockFunction} />);
                     button.find('button').simulate('click');
                     expect(mockFunction.mock.calls.length).toEqual(1);
                 });
@@ -165,7 +210,7 @@ describe('Button', () => {
                 href: 'test href',
                 iconAfterText: true,
             };
-            const button = shallow(<Button {...props} />);
+            const button = mount(<Button {...props} />);
             expect(button.find('a').exists()).toBe(true);
         });
 
@@ -173,7 +218,7 @@ describe('Button', () => {
             describe('and the button is clicked', () => {
                 it('should run the passed onClick function', () => {
                     const mockFunction = jest.fn();
-                    const button = shallow(<Button onClick={mockFunction} />);
+                    const button = mount(<Button onClick={mockFunction} />);
                     button.find('button').simulate('click');
                     expect(mockFunction.mock.calls.length).toEqual(1);
                 });
@@ -189,6 +234,39 @@ describe('Button', () => {
                     expect(mockFunction.mock.calls.length).toEqual(0);
                 });
             });
+        });
+    });
+
+    describe('validating popupMenu prop', () => {
+        const popupMenuText = 'Popup Menu';
+        const PopupMenu = (<span>{popupMenuText}</span>);
+
+        it('should not contain the popup menu container', () => {
+            const button = mount(<Button />);
+
+            expect(button.first().find('div')).toHaveLength(0);
+            button.simulate('click');
+            expect(button.first().find('div')).toHaveLength(0);
+        });
+
+        it('should contain the popup menu container', () => {
+            const button = mount(<Button popupMenu={PopupMenu} />);
+
+            expect(button.first().find('div')).toHaveLength(0);
+
+            // Click the button to render the Popup Menu
+            button.simulate('click');
+            expect(button.first().find('div')).toHaveLength(1);
+            expect(button.first().find('div').find('span')).toHaveLength(1);
+            expect(button.first().find('div').find('span').text()).toEqual(popupMenuText);
+
+            // Click the Popup Menu to verify that the event gets propagated - e.g. toggles
+            button.find('div').simulate('click');
+            expect(button.first().find('div')).toHaveLength(0);
+
+            // Click the button to toggle the Popup Menu again
+            button.simulate('click');
+            expect(button.find('div')).toHaveLength(1);
         });
     });
 });
