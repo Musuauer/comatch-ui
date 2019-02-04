@@ -6,10 +6,11 @@ export const getStylesBasedOnSize = ({ size }) => {
     switch (size) {
         case 'xs':
             return `
+                border-radius: 9.5px;
                 font-size: ${typography.fontXs};
                 font-weight: bold;
                 line-height: 1;
-                padding: 2px 5px 3px 5px;
+                padding: 3px 7px 5px;
 
                 svg {
                     height: 10px;
@@ -18,6 +19,7 @@ export const getStylesBasedOnSize = ({ size }) => {
 
         case 'sm':
             return `
+                border-radius: 15px;
                 font-size: ${typography.fontSm};
 
                 svg {
@@ -87,7 +89,6 @@ export const getColorBasedOnProps = ({ color }) => {
 };
 
 export const StyledWrapper = styled(({ size, color, ...rest }) => <div {...rest} />)`
-    border-radius: 3px;
     border: 1px solid;
     display: inline-block;
     padding: 5px 8px;
