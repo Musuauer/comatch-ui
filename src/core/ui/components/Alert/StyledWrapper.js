@@ -18,7 +18,7 @@ const BACKGROUND_COLORS = {
 
 export const generateFontColor = ({ type }) => `color: ${FONT_COLORS[type]};`;
 
-export const generateDsiplayStyling = ({ display, type, withIcon }) => {
+export const generateDisplayStyling = ({ display, type, withIcon }) => {
     switch (display) {
         case 'box':
             return `
@@ -116,5 +116,5 @@ export const StyledWrapper = styled(
     }
 
     ${generateFontColor}
-    ${generateDsiplayStyling}
+    ${generateDisplayStyling}
 `;
