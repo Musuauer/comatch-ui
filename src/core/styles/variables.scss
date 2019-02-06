@@ -84,6 +84,14 @@ $co-input-box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 
 $co-input-box-shadow-focus: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
 $co-input-box-shadow-error: 0 0 4px 0 rgba(173, 25, 25, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
 
+:export {
+  inputsMarginBottom: $co-inputs-margin-bottom;
+  labelsMarginBottom: $co-labels-margin-bottom;
+  inputBoxShadow: $co-input-box-shadow;
+  inputBoxShadowFocus: $co-input-box-shadow-focus;
+  inputBoxShadowError: $co-input-box-shadow-error;
+}
+
 /**
 * Responsive breakpoints
 */
