@@ -106,9 +106,10 @@ export const PopupMenuStyledWrapper = styled.div`
 `;
 
 export const StyledWrapper = styled(
-    React.forwardRef(({ full, ghost, iconAfterText, onlyIcon, popupMenuPosition, shape, textOnly, ...rest }, ref) => (
-        <button ref={ref} {...rest} />
-    )),
+    React.forwardRef(
+        ({ full, ghost, href, iconAfterText, onlyIcon, popupMenuPosition, shape, textOnly, ...rest }, ref) =>
+            href ? <a ref={ref} href={href} {...rest} /> : <button ref={ref} {...rest} />,
+    ),
 )`
     position: relative;
     border: 1px solid;
