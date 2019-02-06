@@ -2,19 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { inputs, palette } from '../../../styles/variables';
 
-export const generateDisplayStyling = ({ display }) => {
-    switch (display) {
-        case 'inline':
-            return 'display: inline-block;';
-
-        default:
-            return `
-                > .InputLabel {
-                    width: 100%;
-                }
-            `;
-    }
-};
+export const generateDisplayStyling = ({ display }) => display === 'inline' ? 'display: inline-block;' : '';
 
 export const generateWithErrorStyling = ({ hasError }) => {
     if (!hasError) {
@@ -54,7 +42,6 @@ export const generatePerRowStyling = ({ checkboxesPerRow }) => {
         .CheckboxInput {
             display: inline-block;
             flex-basis: ${Math.round((1 / checkboxesPerRow) * 100)}%;
-            margin: 5px 0 0;
         }
     `;
 };
@@ -67,4 +54,17 @@ export const StyledWrapper = styled(forwardRef(({ checkboxesPerRow, display, has
 
     ${generatePerRowStyling}
     ${generateWithErrorStyling}
+
+    > .SectionHeader.size-xs {
+        margin-bottom: 10px;
+    }
+
+    > .InputLabel {
+        width: 100%;
+        margin-bottom: -5px;
+    }
+
+    .CheckboxInput {
+        margin: 10px 0 0;
+    }
 `;
