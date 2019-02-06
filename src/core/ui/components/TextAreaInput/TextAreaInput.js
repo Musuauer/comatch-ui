@@ -22,7 +22,7 @@ const propTypes = {
      */
     id: PropTypes.string,
     inputError: PropTypes.string,
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     maxLength: PropTypes.number,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
