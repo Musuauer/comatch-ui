@@ -13,7 +13,7 @@ prop | type | default | required | description
 **icon** | `ReactNode` | `null` | :x: | SVG icon
 **id** | `String` | `null` | :x: | HTML id attribute
 **inputError** | `String` | `null` | :x: | 
-**label** | `String` | `null` | :x: | 
+**label** | `Union<ReactNode \| String>` | `null` | :x: | 
 **maxLength** | `Number` | `null` | :x: | 
 **name** | `String` |  | :white_check_mark: | 
 **onBlur** | `Function` | `noop` | :x: | 
