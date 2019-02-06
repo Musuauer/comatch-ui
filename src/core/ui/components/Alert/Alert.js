@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faExclamationCircle, faInfoCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-
-import './Alert.scss';
+import { StyledWrapper } from './StyledWrapper';
 
 export const ALERT_TYPE = {
     SUCCESS: 'success',
@@ -71,15 +70,18 @@ const defaultProps = {
  */
 
 export const Alert = ({ id, className, children, displayIcon, display, message, type }) => (
-    <section
+    <StyledWrapper
         className={classNames('Alert', className, type, display, { 'with-icon': displayIcon })}
+        display={display}
         id={id}
         role="alert"
+        type={type}
+        withIcon={displayIcon}
     >
         {displayIcon && <FontAwesomeIcon className="Alert__icon" icon={getIcon(type)} />}
         {message && <p className="Alert__message">{message}</p>}
         {children}
-    </section>
+    </StyledWrapper>
 );
 
 Alert.defaultProps = defaultProps;
