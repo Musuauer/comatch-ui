@@ -6,8 +6,7 @@ import { InputLabel } from '../InputLabel';
 import { InputError } from '../InputError';
 import { CheckboxInput } from '../CheckboxInput';
 import { SectionHeader } from '../SectionHeader';
-
-import './CheckboxGroupInput.scss';
+import { StyledWrapper } from './StyledWrapper';
 
 export class CheckboxGroupInput extends Component {
     static propTypes = {
@@ -111,11 +110,17 @@ export class CheckboxGroupInput extends Component {
         const renderOptions = hasOptionsWithTitles ? this.renderOptionsWithTitles : this.renderOptions;
 
         return (
-            <div id={id} className={classes}>
+            <StyledWrapper
+                checkboxesPerRow={checkboxesPerRow}
+                className={classes}
+                display={display}
+                hasError={!!inputError}
+                id={id}
+            >
                 {label && <InputLabel text={label} required={required} />}
                 {renderOptions(options)}
                 {inputError && <InputError text={inputError} />}
-            </div>
+            </StyledWrapper>
         );
     }
 }

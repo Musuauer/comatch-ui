@@ -4,10 +4,10 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import noop from 'lodash/noop';
+
 import { InputLabel } from '../InputLabel';
 import { InputError } from '../InputError';
-
-import './CheckboxInput.scss';
+import { StyledWrapper, StyledCheckboxInput } from './StyledWrapper';
 
 const propTypes = {
     display: PropTypes.oneOf(['block', 'inline']),
@@ -34,16 +34,16 @@ export const CheckboxInput = ({ display, id, inputError, label, onChange, name, 
     const classes = classNames('Input', 'CheckboxInput', display, { 'has-error': inputError });
 
     return (
-        <div id={id} className={classes}>
+        <StyledWrapper id={id} className={classes} display={display}>
             <label>
                 <input type="checkbox" name={name} onChange={onChange} checked={checked} value={value} />
-                <div className="CheckboxInput__input" role="checkbox">
+                <StyledCheckboxInput className="CheckboxInput__input" role="checkbox">
                     <FontAwesomeIcon className="CheckboxInput__tick" icon={faCheck} />
-                </div>
+                </StyledCheckboxInput>
                 {label && <InputLabel className="CheckboxInput__label" span={true} text={label} />}
             </label>
             {inputError && <InputError text={inputError} />}
-        </div>
+        </StyledWrapper>
     );
 };
 

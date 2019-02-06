@@ -59,12 +59,21 @@ const typography = pick(sassVariables, [
     'lineHeightXxl',
 ]);
 
+const inputs = pick(sassVariables, [
+    'inputsMarginBottom',
+    'labelsMarginBottom',
+    'inputBoxShadow',
+    'inputBoxShadowFocus',
+    'inputBoxShadowError',
+]);
+
 const variables = {
     breakpoints,
+    inputs,
     palette,
     textPalette,
     socialMediaPalette,
     typography,
 };
 
-export { variables, breakpoints, palette, textPalette, socialMediaPalette, typography };
+export { variables, breakpoints, inputs, palette, textPalette, socialMediaPalette, typography };

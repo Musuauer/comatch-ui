@@ -17,16 +17,24 @@ storiesOf('CheckboxInput', module)
             <Highlight className="html">{'<CheckboxInput label="Foo" name="isFoo" />'}</Highlight>
         </>
     ))
+    .add('single with multi line label', () => (
+        <>
+            <CheckboxInput label={<div>Foo <br /> Bar</div>} name="isFoo" />
+            <Highlight className="html">{'<CheckboxInput label={<div>Foo <br /> Bar</div>} name="isFoo" />'}</Highlight>
+        </>
+    ))
     .add('multiple with label', () => (
         <div>
             <CheckboxInput label="Foo" name="isFoo" value="1" />
             <CheckboxInput label="Bar" name="isBar" value="2" />
+            <CheckboxInput label={<div>Foo <br /> Bar</div>} name="isFoo" />
         </div>
     ))
     .add('multiple with label and display inline', () => (
         <div>
             <CheckboxInput label="Foo" name="isFoo" display="inline" />
             <CheckboxInput label="Bar" name="isBar" value="2" display="inline" />
+            <CheckboxInput label={<div>Foo <br /> Bar</div>} name="isFoo" display="inline" />
         </div>
     ))
     .add('multiple with label, display inline and display block', () => (
@@ -36,6 +44,7 @@ storiesOf('CheckboxInput', module)
             <CheckboxInput label="Atomic" name="isAtomic" value="3" display="inline" />
             <CheckboxInput label="Radioactive" name="isRadioactive" value="4" display="inline" />
             <CheckboxInput label="Supersonic" name="isSupersonic" value="5" display="inline" />
+            <CheckboxInput label={<div>Foo <br /> Bar</div>} name="isFoo" display="inline" />
             <CheckboxInput label="Hey!" name="isHey" value="6" />
             <CheckboxInput label="Ho!" name="isHo" value="7" />
         </div>
