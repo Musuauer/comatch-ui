@@ -9,7 +9,7 @@ export const getStylesBasedOnSize = ({ size }) => {
                 font-size: ${typography.fontXs};
                 font-weight: bold;
                 line-height: 1;
-                padding: 2px 5px 3px 5px;
+                padding: 3px 7px 5px;
 
                 svg {
                     height: 10px;
@@ -87,8 +87,8 @@ export const getColorBasedOnProps = ({ color }) => {
 };
 
 export const StyledWrapper = styled(({ size, color, ...rest }) => <div {...rest} />)`
-    border-radius: 3px;
     border: 1px solid;
+    border-radius: 15px;
     display: inline-block;
     padding: 5px 8px;
 

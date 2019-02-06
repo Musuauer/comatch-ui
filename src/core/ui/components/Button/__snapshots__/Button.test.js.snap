@@ -12,7 +12,7 @@ exports[`Button should render the button with tooltipText correctly 1`] = `
     
   </span>
   <div
-    className="Badge Button__tooltip-text darkGray xs sc-bdVaJa duhyd"
+    className="Badge Button__tooltip-text darkGray xs sc-bdVaJa hgMQWD"
   >
     Testing tooltip text
   </div>
