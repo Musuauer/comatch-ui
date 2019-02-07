@@ -16,7 +16,9 @@ const BACKGROUND_COLORS = {
     success: palette.lightGreen,
 };
 
-export const generateDisplayAndTypeStyling = ({ display, type, withIcon }) => {
+export const generateTypeStyling = ({ type }) => `color: ${FONT_COLORS[type]};`;
+
+export const generateDisplayAndStyling = ({ display, type, withIcon }) => {
     switch (display) {
         case 'box':
             return `
@@ -34,7 +36,7 @@ export const generateDisplayAndTypeStyling = ({ display, type, withIcon }) => {
 
         case 'notification':
             return `
-                color: ${FONT_COLORS[type]};
+                color: ${palette.white};
                 background-color: ${BACKGROUND_COLORS[type]};
                 display: inline-block;
                 margin: 0;
@@ -113,5 +115,6 @@ export const StyledWrapper = styled(
         line-height: ${typography.lineHeightSm};
     }
 
-    ${generateDisplayAndTypeStyling}
+    ${generateDisplayAndStyling}
+    ${generateTypeStyling}
 `;
