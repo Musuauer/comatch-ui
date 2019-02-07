@@ -36,7 +36,7 @@ storiesOf('Notifications', module)
         <>
             <Button
                 text="Click me"
-                onClick={() => renderNotification(ALERT_TYPE.SUCCESS, 'So much information.')}
+                onClick={() => renderNotification(ALERT_TYPE.INFO, 'So much information.')}
             />
             <Notifications />
         </>
