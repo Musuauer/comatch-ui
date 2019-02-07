@@ -38,12 +38,13 @@ export class DateInput extends Component {
         /**
          * The value must be a moment.js object
          */
-        value: (props, propName, componentName) => {
+        value: (props, propName) => {
             const prop = props[propName];
-            if (!(prop instanceof moment)) {
+            if (prop && !(prop instanceof moment)) {
                 return new Error(
                     `Invalid prop \`${propName}\` supplied to` +
-                        ` \`${componentName}\`. Expected a momentjs instance. Validation failed.`,
+                        ` DateInput. Expected a momentjs instance, ` +
+                        `but got the value ${prop} of type ${typeof prop}. Validation failed.`,
                 );
             }
             return false;
@@ -59,14 +60,14 @@ export class DateInput extends Component {
     };
 
     state = {
-        date: this.props.value.isValid() ? this.props.value : null,
+        date: this.props.value instanceof moment && this.props.value.isValid() ? this.props.value : null,
     };
 
     static getDerivedStateFromProps(props, state) {
         // `date` state needs to be updated in case the prop is changed outside of the component.
         if (!isEqual(props.value, state.date)) {
             return {
-                date: props.value && props.value.isValid() ? props.value : null,
+                date: props.value instanceof moment && props.value.isValid() ? props.value : null,
             };
         }
 
