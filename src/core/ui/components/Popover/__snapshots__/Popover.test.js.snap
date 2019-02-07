@@ -2,7 +2,7 @@
 
 exports[`Popover should render correctly 1`] = `
 <section
-  className="Popover"
+  className="Popover right"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   onTransitionEnd={[Function]}

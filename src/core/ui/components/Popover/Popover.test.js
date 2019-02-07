@@ -8,12 +8,12 @@ import { Popover } from './index';
 
 describe('Popover', () => {
     it('should render correctly', () => {
-        const popover = renderer.create(<Popover />).toJSON();
+        const popover = renderer.create(<Popover position="right" />).toJSON();
         expect(popover).toMatchSnapshot();
     });
 
     it('should have the correct default props', () => {
-        const popover = mount(<Popover />);
+        const popover = mount(<Popover position="right" />);
         expect(popover.prop('children')).toEqual([]);
         expect(popover.prop('toggle')).toEqual(null);
         expect(popover.prop('open')).toEqual(null);
@@ -32,7 +32,7 @@ describe('Popover', () => {
 
     describe('when the prop open is not null thus the component is controlled', () => {
         it('should not fire handleMouseEnter() & handleMouseLeave()', () => {
-            const popover = mount(<Popover open={!null}>Ala</Popover>);
+            const popover = mount(<Popover position="right" open={!null}>Ala</Popover>);
             const section = popover.find('section');
             const spyMouseEnter = jest.spyOn(popover.instance(), 'handleMouseEnter');
             const spyMouseLeave = jest.spyOn(popover.instance(), 'handleMouseLeave');
@@ -49,7 +49,7 @@ describe('Popover', () => {
         let popover;
         let section;
         beforeEach(() => {
-            popover = mount(<Popover open={null} />);
+            popover = mount(<Popover position="right" open={null} />);
             section = popover.find('section');
         });
 
