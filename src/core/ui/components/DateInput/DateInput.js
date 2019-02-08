@@ -40,7 +40,8 @@ export class DateInput extends Component {
          */
         value: (props, propName) => {
             const prop = props[propName];
-            if (prop && !(prop instanceof moment)) {
+            // eslint-disable-next-line no-underscore-dangle
+            if (prop && !prop._isAMomentObject) {
                 return new Error(
                     `Invalid prop \`${propName}\` supplied to` +
                         ` DateInput. Expected a momentjs instance, ` +
@@ -60,14 +61,19 @@ export class DateInput extends Component {
     };
 
     state = {
-        date: this.props.value instanceof moment && this.props.value.isValid() ? this.props.value : null,
+        date:
+            // eslint-disable-next-line no-underscore-dangle
+            this.props.value && this.props.value._isAMomentObject && this.props.value.isValid()
+                ? this.props.value
+                : null,
     };
 
     static getDerivedStateFromProps(props, state) {
         // `date` state needs to be updated in case the prop is changed outside of the component.
         if (!isEqual(props.value, state.date)) {
             return {
-                date: props.value instanceof moment && props.value.isValid() ? props.value : null,
+                // eslint-disable-next-line no-underscore-dangle
+                date: props.value && props.value._isAMomentObject && props.value.isValid() ? props.value : null,
             };
         }
 
