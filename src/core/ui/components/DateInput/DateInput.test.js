@@ -21,7 +21,7 @@ describe('DateInput', () => {
         dateFormat: 'YYYY.MM.DD',
         inputError: 'Testing InputError Message',
         label: 'Testing Label',
-        value: moment(),
+        value: moment("2019-01-01T10:00:00"),
         onClick: jest.fn(),
     };
 
