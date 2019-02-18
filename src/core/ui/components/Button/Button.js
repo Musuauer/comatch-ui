@@ -138,7 +138,7 @@ export class Button extends PureComponent {
             onTogglePopupMenu();
         }
 
-        onClick();
+        onClick(event);
     };
 
     handlePopupMenuEventRegistration = (prevProps = {}, props = this.props) => {
