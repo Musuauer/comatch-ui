@@ -21,13 +21,14 @@ describe('DateInput', () => {
         dateFormat: 'YYYY.MM.DD',
         inputError: 'Testing InputError Message',
         label: 'Testing Label',
-        value: moment("2019-01-01T10:00:00"),
+        value: moment('2019-01-01T10:00:00'),
         onClick: jest.fn(),
     };
 
     it('should render correctly', () => {
         const props = {
             ...REQUIRED_PROPS,
+            value: moment('2019-02-08T10:00:00'),
         };
 
         const dateInputComponent = renderer.create(<DateInput {...props} />).toJSON();
@@ -75,7 +76,9 @@ describe('DateInput', () => {
     });
 
     it('should render correctly with a Label', () => {
-        const inputWithLabel = <DateInput {...REQUIRED_PROPS} label={OPTIONAL_PROPS.label} />;
+        const inputWithLabel = (
+            <DateInput {...REQUIRED_PROPS} value={moment('2019-02-08T10:00:00')} label={OPTIONAL_PROPS.label} />
+        );
         const dateInputComponentWithLabel = renderer.create(inputWithLabel).toJSON();
         const mountedDateInput = mount(inputWithLabel);
         const dateInputContainerNode = mountedDateInput.children().at(0);
@@ -85,7 +88,13 @@ describe('DateInput', () => {
     });
 
     it('should render correctly with an InputError', () => {
-        const inputWithInputError = <DateInput {...REQUIRED_PROPS} inputError={OPTIONAL_PROPS.inputError} />;
+        const inputWithInputError = (
+            <DateInput
+                {...REQUIRED_PROPS}
+                value={moment('2019-02-08T10:00:00')}
+                inputError={OPTIONAL_PROPS.inputError}
+            />
+        );
         const mountedDateInput = mount(inputWithInputError);
         const dateInputContainerNode = mountedDateInput.children().at(0);
         const dateInputComponentWithInputError = renderer.create(inputWithInputError).toJSON();
