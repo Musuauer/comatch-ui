@@ -16,7 +16,9 @@ prop | type | default | required | description
 **id** | `String` | `null` | :x: | HTML id attribute
 **inputError** | `String` | `''` | :x: | 
 **label** | `Union<ReactNode \| String>` | `''` | :x: | 
+**max** | `Number` | `null` | :x: | Used for type="number" to define maximum allowed value
 **maxLength** | `Number` | `null` | :x: | 
+**min** | `Number` | `null` | :x: | Used for type="number" to define minimum allowed value
 **name** | `String` |  | :white_check_mark: | 
 **onBlur** | `Function` | `noop` | :x: | 
 **onChange** | `Function` |  | :white_check_mark: | 
