@@ -40,6 +40,14 @@ export class TextInput extends Component {
         inputError: PropTypes.string,
         label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         maxLength: PropTypes.number,
+        /**
+         * Used for type="number" to define minimum allowed value
+         */
+        min: PropTypes.number,
+        /**
+         * Used for type="number" to define maximum allowed value
+         */
+        max: PropTypes.number,
         name: PropTypes.string.isRequired,
         onBlur: PropTypes.func,
         onChange: PropTypes.func.isRequired,
@@ -62,6 +70,8 @@ export class TextInput extends Component {
         inputError: '',
         label: '',
         maxLength: null,
+        min: null,
+        max: null,
         onBlur: noop,
         onClick: noop,
         onFocus: noop,
@@ -83,6 +93,8 @@ export class TextInput extends Component {
             inputError,
             label,
             maxLength,
+            min,
+            max,
             name,
             onBlur,
             onChange,
@@ -108,6 +120,8 @@ export class TextInput extends Component {
                     className="TextInput__input"
                     disabled={disabled}
                     maxLength={maxLength}
+                    min={min}
+                    max={max}
                     name={name}
                     onBlur={onBlur}
                     onChange={onChange}
