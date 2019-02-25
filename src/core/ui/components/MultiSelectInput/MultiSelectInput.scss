@@ -20,7 +20,7 @@
         border-radius: 3px;
         box-shadow: 0 0 4px 0 rgba(1, 156, 185, 0), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
         // sizing & whitespace
-        height: 40px;
+        min-height: 40px;
         width: 100%;
         // transition effects
         transition: box-shadow 250ms ease-out;

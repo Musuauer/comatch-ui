@@ -59,9 +59,12 @@ export const customStyles = {
         display: 'flex',
         flexDirection: 'row-reverse',
         padding: '0 4px',
-        '& ~ &': {
-            marginLeft: 10,
-        },
+        marginRight: 10,
+        marginBottom: 3,
+        marginTop: 3,
+        '&:last-child': {
+            marginRight: 0,
+        }
     }),
     multiValueLabel: () => ({
         fontSize: typography.fontSm,
