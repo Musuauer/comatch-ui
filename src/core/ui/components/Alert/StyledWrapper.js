@@ -16,12 +16,14 @@ const BACKGROUND_COLORS = {
     success: palette.lightGreen,
 };
 
-export const generateTypeStyling = ({ type }) => `color: ${FONT_COLORS[type]};`;
-
-export const generateDisplayAndStyling = ({ display, type, withIcon }) => {
+export const generateDisplayAndTypeStyling = ({ display, type, withIcon }) => {
     switch (display) {
+        case 'inline':
+            return `color: ${FONT_COLORS[type]};`;
+
         case 'box':
             return `
+                color: ${FONT_COLORS[type]};
                 background-color: ${BACKGROUND_COLORS[type]};
                 padding: 15px;
                 padding-bottom: 20px;
@@ -37,7 +39,7 @@ export const generateDisplayAndStyling = ({ display, type, withIcon }) => {
         case 'notification':
             return `
                 color: ${palette.white};
-                background-color: ${BACKGROUND_COLORS[type]};
+                background-color: ${FONT_COLORS[type]};
                 display: inline-block;
                 margin: 0;
                 padding: 10px 10px 10px 35px;
@@ -58,9 +60,7 @@ export const generateDisplayAndStyling = ({ display, type, withIcon }) => {
 };
 
 export const StyledWrapper = styled(
-    forwardRef(({ display, type, withIcon, ...rest }, ref) => (
-        <section ref={ref} {...rest} />
-    )),
+    forwardRef(({ display, type, withIcon, ...rest }, ref) => <section ref={ref} {...rest} />),
 )`
     border-radius: 3px;
     display: block;
@@ -115,6 +115,5 @@ export const StyledWrapper = styled(
         line-height: ${typography.lineHeightSm};
     }
 
-    ${generateDisplayAndStyling}
-    ${generateTypeStyling}
+    ${generateDisplayAndTypeStyling}
 `;
