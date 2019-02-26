@@ -60,9 +60,7 @@ export const generateDisplayAndTypeStyling = ({ display, type, withIcon }) => {
 };
 
 export const StyledWrapper = styled(
-    forwardRef(({ display, type, withIcon, ...rest }, ref) => (
-        <section ref={ref} {...rest} />
-    )),
+    forwardRef(({ display, type, withIcon, ...rest }, ref) => <section ref={ref} {...rest} />),
 )`
     border-radius: 3px;
     display: block;
