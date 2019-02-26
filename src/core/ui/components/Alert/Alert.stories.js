@@ -72,27 +72,27 @@ storiesOf('Alert', module)
             <Highlight className="html">{'<Alert displayIcon={false} />'}</Highlight>
         </>
     ))
-    .add('with disply as notification', () => (
+    .add('with display as notification', () => (
         <>
             <Alert display="notification" message="Notification message" />
             <Highlight className="html">{'<Alert display="notification" message="Notification message" />'}</Highlight>
         </>
     ))
-    .add('with disply as notification and type as danger', () => (
+    .add('with display as notification and type as danger', () => (
         <>
             <Alert display="notification" message="Notification message" type={ALERT_TYPE.DANGER} />
             <Highlight className="html">{'<Alert display="notification"'
                 + 'message="Notification message" type={ALERT_TYPE.DANGER} />'}</Highlight>
         </>
     ))
-    .add('with disply as notification and type as success', () => (
+    .add('with display as notification and type as success', () => (
         <>
             <Alert display="notification" message="Notification message" type={ALERT_TYPE.SUCCESS} />
             <Highlight className="html">{'<Alert display="notification"'
                 + 'message="Notification message" type={ALERT_TYPE.SUCCESS} />'}</Highlight>
         </>
     ))
-    .add('with disply as notification and type as warning', () => (
+    .add('with display as notification and type as warning', () => (
         <>
             <Alert display="notification" message="Notification message" type={ALERT_TYPE.WARNING} />
             <Highlight className="html">{'<Alert display="notification"'
