@@ -1,7 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './StepProgressBar.scss';
+import {
+    StyledLineWrapper,
+    StyledProgressWrapper,
+    StyledStepCircleWrapper,
+    StyledStepTextWrapper,
+    StyledStepWrapper,
+    StyledWrapper,
+} from './StyledWrapper';
 
 const propTypes = {
     steps(props, propName) {
@@ -37,14 +44,17 @@ const propTypes = {
 function renderSteps(steps, currentStepIndex) {
     return steps.map((step, index) => {
         const stepNumber = index + 1;
+        const isActive = currentStepIndex > stepNumber || currentStepIndex === stepNumber;
         const classnames = classNames('StepProgressBar__step', `StepProgressBar__step${stepNumber}`, {
             active: stepNumber === currentStepIndex,
         });
         return (
-            <div className={classnames} key={index}>
-                <div className="StepProgressBar__circle" />
-                <div className="StepProgressBar__step-text">{step}</div>
-            </div>
+            <StyledStepWrapper className={classnames} key={index}>
+                <StyledStepCircleWrapper isActive={isActive} className="StepProgressBar__circle" />
+                <StyledStepTextWrapper isActive={isActive} className="StepProgressBar__step-text">
+                    {step}
+                </StyledStepTextWrapper>
+            </StyledStepWrapper>
         );
     });
 }
@@ -57,12 +67,16 @@ export const StepProgressBar = ({ steps, currentStepIndex }) => {
     );
 
     return (
-        <div className={classes}>
-            <div className="StepProgressBar__line">
-                <div className="StepProgressBar__progress" />
-            </div>
+        <StyledWrapper numberOfSteps={steps.length} className={classes}>
+            <StyledLineWrapper className="StepProgressBar__line">
+                <StyledProgressWrapper
+                    className="StepProgressBar__progress"
+                    currentStepIndex={currentStepIndex}
+                    numberOfSteps={steps.length}
+                />
+            </StyledLineWrapper>
             {renderSteps(steps, currentStepIndex)}
-        </div>
+        </StyledWrapper>
     );
 };
 
