@@ -12,10 +12,7 @@ const STEP_HALF_WIDTH_RATIO = STEP_WIDTH_RATIO / 2;
 const STEP_WIDTH = `calc(100% * ${STEP_WIDTH_RATIO})`;
 const STEP_HALF_WIDTH = `100% * ${STEP_HALF_WIDTH_RATIO}`;
 
-const LARGE_STEP_WIDTH_RATIO = 0.35;
-const LARGE_STEP_WIDTH = `calc(100% * ${LARGE_STEP_WIDTH_RATIO})`;
-
-const generateProgressTracktion = ({ currentStepIndex, numberOfSteps }) => {
+const calculateProgressLineScale = ({ currentStepIndex, numberOfSteps }) => {
     if (!numberOfSteps || numberOfSteps === 1 || !currentStepIndex) {
         return '';
     }
@@ -64,20 +61,6 @@ const generateNumberOfStepsStyling = ({ numberOfSteps }) => {
 
                 .StepProgressBar__step2 {
                     left: calc(100% - ${STEP_WIDTH});
-                }
-
-                @include ${device.mobile} {
-                    .StepProgressBar__step {
-                        width: ${LARGE_STEP_WIDTH};
-                    }
-
-                    .StepProgressBar__step-text {
-                        padding-top: 10px;
-                    }
-
-                    .StepProgressBar__step2 {
-                        left: calc(100% - ${LARGE_STEP_WIDTH});
-                    }
                 }
             `;
 
@@ -175,7 +158,7 @@ export const StyledProgressWrapper = styled(
     transition: transform 0.5s ease-out;
     transform-origin: left;
 
-    ${generateProgressTracktion}
+    ${calculateProgressLineScale}
 `;
 
 export const StyledLineWrapper = styled.div`
@@ -190,11 +173,11 @@ export const StyledLineWrapper = styled.div`
 `;
 
 export const StyledWrapper = styled(React.forwardRef(({ numberOfSteps, ...rest }, ref) => <div {...rest} ref={ref} />))`
-    height: 80px;
+    height: 95px;
     position: relative;
 
-    @media ${device.mobile} {
-        height: 95px;
+    @media ${device.desktop} {
+        height: 80px;
     }
 
     ${generateNumberOfStepsStyling}
