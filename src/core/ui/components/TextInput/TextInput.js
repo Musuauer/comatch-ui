@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import isNil from 'lodash/isNil';
 import noop from 'lodash/noop';
 import { InputLabel } from '../InputLabel';
 import { InputError } from '../InputError';
@@ -129,7 +130,7 @@ export class TextInput extends Component {
                     onFocus={onFocus}
                     placeholder={placeholder}
                     type={type}
-                    value={value || defaultValue}
+                    value={isNil(value) ? defaultValue : value}
                 />
                 {icon}
                 {inputError && <InputError text={inputError} />}
