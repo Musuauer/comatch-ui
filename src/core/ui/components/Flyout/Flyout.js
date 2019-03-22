@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
 
-import './Flyout.scss';
+import { StyledButtonWrapper, StyledModal, StyledModalContent, StyledWrapper } from './StyledWrapper';
 
-/* 
- * `onTargetClick` triggers only an event if the 
- * event comes from its actual target and not from 
- * a child. This can be used to prevent events being 
+/*
+ * `onTargetClick` triggers only an event if the
+ * event comes from its actual target and not from
+ * a child. This can be used to prevent events being
  * triggered by childs through event bubbling.
  */
 const onTargetClick = (click) => (event) => {
@@ -75,6 +75,7 @@ export class Flyout extends Component {
     };
 
     render() {
+        const { toggleOpen } = this;
         const { children, className, button, delayMs } = this.props;
         const { isOpen, fadeout } = this.state;
         const fadeTransition = {
@@ -83,16 +84,20 @@ export class Flyout extends Component {
         };
 
         return (
-            <div className={classNames('Flyout', className, { 'Flyout--open': isOpen })}>
+            <StyledWrapper open={isOpen} className={classNames('Flyout', className, { 'Flyout--open': isOpen })}>
                 {isOpen && (
-                    <div onClick={onTargetClick(this.toggleOpen)} className="Flyout__modal" style={fadeTransition}>
-                        <div className="Flyout__content">{children}</div>
-                    </div>
+                    <StyledModal
+                        onClick={onTargetClick(toggleOpen)}
+                        className="Flyout__modal"
+                        style={fadeTransition}
+                    >
+                        <StyledModalContent className="Flyout__content">{children}</StyledModalContent>
+                    </StyledModal>
                 )}
-                <div className="Flyout__button-wrapper" onClick={() => this.toggleOpen()}>
+                <StyledButtonWrapper className="Flyout__button-wrapper" onClick={toggleOpen}>
                     {isFunction(button) ? button() : button}
-                </div>
-            </div>
+                </StyledButtonWrapper>
+            </StyledWrapper>
         );
     }
 }
