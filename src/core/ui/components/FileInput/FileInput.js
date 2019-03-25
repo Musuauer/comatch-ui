@@ -45,7 +45,7 @@ export class FileInput extends Component {
         const { accept, buttonText, multiple } = this.props;
 
         return (
-            <StyledWrapper>
+            <StyledWrapper className="Input FileInput">
                 <input
                     ref={this.fileInputRef}
                     type="file"
