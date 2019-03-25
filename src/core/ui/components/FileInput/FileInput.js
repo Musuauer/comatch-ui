@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import set from 'lodash/set';
 import { Button } from '../Button';
-
-import './FileInput.scss';
+import { StyledWrapper } from './StyledWrapper';
 
 export class FileInput extends Component {
     static propTypes = {
-        accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])
-            .isRequired,
+        accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
         buttonText: PropTypes.string.isRequired,
         name: PropTypes.string,
         multiple: PropTypes.bool,
@@ -41,13 +39,13 @@ export class FileInput extends Component {
         // to empty string to "trick" the input into triggering another change event in case
         // the user selects the same file they did before for another consecutive time.
         set(event, 'target.value', '');
-    }
+    };
 
     render() {
         const { accept, buttonText, multiple } = this.props;
 
         return (
-            <div className="Input FileInput">
+            <StyledWrapper>
                 <input
                     ref={this.fileInputRef}
                     type="file"
@@ -56,7 +54,7 @@ export class FileInput extends Component {
                     multiple={multiple}
                 />
                 <Button text={buttonText} onClick={this.handleButtonClick} />
-            </div>
+            </StyledWrapper>
         );
     }
 }
