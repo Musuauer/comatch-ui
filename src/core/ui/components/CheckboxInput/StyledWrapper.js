@@ -23,7 +23,7 @@ export const StyledCheckboxInput = styled.div`
     border: 1px solid ${palette.midGray};
     border-radius: 1px;
     height: 15px;
-    margin-top: -2px;
+    margin-top: 2px;
     position: relative;
     width: 15px;
 
@@ -68,7 +68,7 @@ export const StyledWrapper = styled(forwardRef(({ display, ...rest }, ref) => (
     label {
         cursor: pointer;
         position: relative;
-        display: inline-block;
+        display: inline-flex;
     }
 
     ${StyledCheckboxInput} {
@@ -89,6 +89,7 @@ export const StyledWrapper = styled(forwardRef(({ display, ...rest }, ref) => (
         display: inline-block;
         font-weight: normal;
         font-size: ${typography.fontSm};
+        flex: 1;
         line-height: ${typography.lineHeightSm};
         margin-bottom: 0;
 
