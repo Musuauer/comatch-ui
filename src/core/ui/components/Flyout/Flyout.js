@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
 
-import { StyledButtonWrapper, StyledModal, StyledModalContent, StyledWrapper } from './StyledWrapper';
+import { StyledButtonWrapper, StyledContentWrapper, StyledContent, StyledWrapper } from './StyledWrapper';
 
 /*
  * `onTargetClick` triggers only an event if the
@@ -86,13 +86,13 @@ export class Flyout extends Component {
         return (
             <StyledWrapper open={isOpen} className={classNames('Flyout', className, { 'Flyout--open': isOpen })}>
                 {isOpen && (
-                    <StyledModal
+                    <StyledContentWrapper
                         onClick={onTargetClick(toggleOpen)}
-                        className="Flyout__modal"
+                        className="Flyout__content-wrapper"
                         style={fadeTransition}
                     >
-                        <StyledModalContent className="Flyout__content">{children}</StyledModalContent>
-                    </StyledModal>
+                        <StyledContent className="Flyout__content">{children}</StyledContent>
+                    </StyledContentWrapper>
                 )}
                 <StyledButtonWrapper className="Flyout__button-wrapper" onClick={toggleOpen}>
                     {isFunction(button) ? button() : button}

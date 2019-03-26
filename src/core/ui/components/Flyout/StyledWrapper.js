@@ -8,7 +8,7 @@ const MODAL = `${ROOT}__modal`;
 const MODAL_FADE_IN = `${MODAL}--fade-in`;
 const MODAL_FADE_OUT = `${MODAL}--fade-out`;
 
-const StyledModalContent = styled.div`
+const StyledContent = styled.div`
     background: ${palette.white};
     border-radius: 3px;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
@@ -19,7 +19,7 @@ const StyledModalContent = styled.div`
     }
 `;
 
-const StyledModal = styled.div`
+const StyledContentWrapper = styled.div`
     background: rgba(62, 62, 62, 0.8);
     height: 100%;
     opacity: 0;
@@ -83,4 +83,4 @@ const StyledWrapper = styled(forwardRef(({ open, ...rest }, ref) => <div {...res
     }}
 `;
 
-export { StyledButtonWrapper, StyledModal, StyledModalContent, StyledWrapper };
+export { StyledButtonWrapper, StyledContentWrapper, StyledContent, StyledWrapper };
