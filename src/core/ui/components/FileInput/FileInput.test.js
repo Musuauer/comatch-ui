@@ -4,7 +4,6 @@ import { mount } from 'enzyme';
 import '../../../config/tests/setup';
 
 import { FileInput } from './FileInput';
-import { Button } from '../Button';
 
 const mockFunction = jest.fn();
 
