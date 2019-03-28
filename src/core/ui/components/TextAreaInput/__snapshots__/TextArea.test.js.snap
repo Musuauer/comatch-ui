@@ -108,7 +108,7 @@ exports[`TextAreaInput should render correctly with an InputError 1`] = `
     value=""
   />
   <span
-    className="InputError sc-bdVaJa camiNS"
+    className="InputError sc-bwzfXH bZudyR"
   >
     Testing errror
   </span>
