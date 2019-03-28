@@ -2,7 +2,7 @@
 
 exports[`CheckboxInput should render correctly 1`] = `
 <div
-  className="Input CheckboxInput block sc-bwzfXH bDaeSK"
+  className="Input CheckboxInput block sc-htpNat gXnGFZ"
   id={null}
 >
   <label>
@@ -14,7 +14,7 @@ exports[`CheckboxInput should render correctly 1`] = `
       value=""
     />
     <div
-      className="CheckboxInput__input sc-bdVaJa hZAXXt"
+      className="CheckboxInput__input sc-bwzfXH MQtcE"
       role="checkbox"
     >
       <svg
