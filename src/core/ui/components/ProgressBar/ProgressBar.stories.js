@@ -16,6 +16,12 @@ storiesOf('ProgressBar', module)
             <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
         </>
     ))
+    .add('10% progress with label on the left', () => (
+        <>
+            <ProgressBar progress={10} label="A label" labelPosition="left" />
+            <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
+        </>
+    ))
     .add('10% progress reverse', () => (
         <>
             <ProgressBar progress={10} reverse />
@@ -37,6 +43,12 @@ storiesOf('ProgressBar', module)
     .add('10% progress with label, light version and reverse', () => (
         <>
             <ProgressBar progress={10} label="A label" lightVersion reverse />
+            <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
+        </>
+    ))
+    .add('10% progress with label, light version and reverse, label on left', () => (
+        <>
+            <ProgressBar progress={10} label="A label" lightVersion reverse labelPosition="left" />
             <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
         </>
     ))
