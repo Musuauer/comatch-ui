@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { InputLabel } from '../InputLabel';
-import './ProgressBar.scss';
+import { StyledWrapper } from './StyledWrapper';
 
 const propTypes = {
     displayProgressLabel: PropTypes.bool,
@@ -92,7 +92,7 @@ export const ProgressBar = ({
     });
 
     return (
-        <div>
+        <StyledWrapper>
             <InputLabel text={label} className={labelClasses} />
             <div className={classes}>
                 <div className={progressClasses} style={progressStyle} />
@@ -105,7 +105,7 @@ export const ProgressBar = ({
                     {renderProgressLabel(displayProgressLabel, progressLabel, progress)}
                 </div>
             </div>
-        </div>
+        </StyledWrapper>
     );
 };
 
