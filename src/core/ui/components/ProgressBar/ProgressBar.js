@@ -15,11 +15,15 @@ const propTypes = {
         }
         return false;
     },
+    /** Label/title of the progress bar */
     label: PropTypes.string,
+    /** Position of the label/title of the progress bar */
     labelPosition: PropTypes.oneOf[('right', 'left')],
+    /** Lighter colouring of the progress bar and it's labels */
     lightVersion: PropTypes.bool.isRequired,
     progressiveColoring: PropTypes.bool,
     progressLabel: PropTypes.string,
+    /** Progress bar from left to right */
     reverse: PropTypes.bool,
     secondaryColor: PropTypes.bool,
 };
@@ -59,14 +63,16 @@ export const ProgressBar = ({
     const progressStyle = { transform: `scaleX(${progress / 100})` };
 
     // per design specs, label is displayed
-    // - at the right of the progress limit for progress < 80,
-    // - at the left of the progress limit for progress >= 80,
+    // - at the right of the progress limit for progress < 40,
+    // - at the left of the progress limit for progress >= 40,
     const progressLabelOnLeft = progress >= 40;
 
+    // styles for progress bar from right to left
     const progressLabelPrimaryStyle = progressLabelOnLeft
         ? { right: `calc(${100 - progress}% + 8px)` }
         : { left: `calc(${progress}% + 8px)` };
 
+    // styles for progress bar from left to right
     const progressLabelReverseStyle = progressLabelOnLeft
         ? { right: `calc(${progress}% - 38px)` }
         : { left: `calc(${100 - progress}% - 38px)` };
