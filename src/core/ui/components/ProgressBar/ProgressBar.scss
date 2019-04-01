@@ -7,13 +7,27 @@
     border-radius: 3px;
     background-color: $co-color-white;
 
+    &__label {
+        color: $co-color-dark-gray;
+        text-align: right;
+
+        &--reverse {
+            text-align: left;
+        }
+    }
+
     &__progress {
         height: 100%;
-        border-radius: 3px 0 0 3px;
-        background-color: $co-color-primary;
+        border-radius: 6px 0 0 3px;
         transform: scaleX(0);
-        transform-origin: left;
         transition: transform 0.5s ease-out;
+        transform-origin: left;
+        background-color: $co-color-primary;
+
+        &.reverse {
+            transform-origin: right;
+            border-radius: 0 3px 3px 0;
+        }
 
         &.full {
             border-radius: 3px;
@@ -30,6 +44,7 @@
         &.ProgressBar__progress-label-left {
             color: $co-color-white;
             text-align: right;
+            font-weight: bold;
         }
     }
 
@@ -61,7 +76,7 @@
         }
 
         .ProgressBar__progress-label {
-            color: $co-color-dark-orange;
+            color: $co-color-white;
         }
     }
 }
