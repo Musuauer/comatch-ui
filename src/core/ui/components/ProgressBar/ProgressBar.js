@@ -26,6 +26,8 @@ const propTypes = {
     /** Progress bar from left to right */
     reverse: PropTypes.bool,
     secondaryColor: PropTypes.bool,
+    /** Border radius 0px */
+    squareEnds: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -38,6 +40,7 @@ const defaultProps = {
     progressLabel: '',
     reverse: false,
     secondaryColor: false,
+    squareEnds: false,
 };
 
 function renderProgressLabel(displayProgressLabel, progressLabel, progress) {
@@ -59,6 +62,7 @@ export const ProgressBar = ({
     progressLabel,
     reverse,
     secondaryColor,
+    squareEnds,
 }) => {
     const progressStyle = { transform: `scaleX(${progress / 100})` };
 
@@ -85,11 +89,14 @@ export const ProgressBar = ({
         'ProgressBar--secondaryColor': secondaryColor,
         'ProgressBar--greyBackground': greyBackground,
         'ProgressBar--lightVersion': lightVersion,
+        'ProgressBar__squareEnds--left': reverse && squareEnds,
+        'ProgressBar__squareEnds--right': !reverse && squareEnds,
     });
 
     const progressClasses = classNames('ProgressBar__progress', {
         full: progress >= 100,
         reverse,
+        squareEnds,
     });
 
     const labelClasses = classNames('ProgressBar__label', {

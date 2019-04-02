@@ -22,9 +22,21 @@ storiesOf('ProgressBar', module)
             <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
         </>
     ))
+    .add('10% progress and squareEnds', () => (
+        <>
+            <ProgressBar progress={10} label="A label" squareEnds />
+            <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
+        </>
+    ))
     .add('10% progress reverse', () => (
         <>
             <ProgressBar progress={10} reverse />
+            <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
+        </>
+    ))
+    .add('10% progress reverse and squareEnds', () => (
+        <>
+            <ProgressBar progress={10} reverse squareEnds />
             <Highlight className="html">{`<ProgressBar progress={10} />`}</Highlight>
         </>
     ))
@@ -58,6 +70,12 @@ storiesOf('ProgressBar', module)
             <Highlight className="html">{`<ProgressBar progress={50} />`}</Highlight>
         </>
     ))
+    .add('50% progress squareEnds', () => (
+        <>
+            <ProgressBar progress={50} squareEnds />
+            <Highlight className="html">{`<ProgressBar progress={50} />`}</Highlight>
+        </>
+    ))
     .add('50% progress with label', () => (
         <>
             <ProgressBar progress={50} label="A label" />
@@ -67,6 +85,12 @@ storiesOf('ProgressBar', module)
     .add('50% progress reverse', () => (
         <>
             <ProgressBar progress={50} reverse />
+            <Highlight className="html">{`<ProgressBar progress={50} />`}</Highlight>
+        </>
+    ))
+    .add('50% progress reverse and squareEnds', () => (
+        <>
+            <ProgressBar progress={50} reverse squareEnds />
             <Highlight className="html">{`<ProgressBar progress={50} />`}</Highlight>
         </>
     ))

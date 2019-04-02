@@ -19,7 +19,16 @@ export const StyledWrapper = styled.div`
 
             &--lightVersion {
                 color: ${palette.midGray};
+                font-weight: normal;
             }
+        }
+
+        &__squareEnds--right {
+            border-radius: 0 3px 3px 0;
+        }
+
+        &__squareEnds--left {
+            border-radius: 3px 0 0 3px;
         }
 
         &__progress {
@@ -33,6 +42,10 @@ export const StyledWrapper = styled.div`
             &.reverse {
                 transform-origin: right;
                 border-radius: 0 3px 3px 0;
+            }
+
+            &.squareEnds {
+                border-radius: 0;
             }
 
             &.full {
