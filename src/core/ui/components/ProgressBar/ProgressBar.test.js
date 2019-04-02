@@ -11,11 +11,12 @@ const props = {
     label: 'Label test',
     labelPosition: 'left',
     lightVersion: true,
+    progress: 20,
     progressiveColoring: true,
     progressLabel: 'Test',
     reverse: true,
     secondaryColor: false,
-    progress: 20,
+    squareEnds: true,
 };
 
 describe('ProgressBar', () => {
@@ -36,6 +37,7 @@ describe('ProgressBar', () => {
         expect(wrapper.prop('progressLabel')).toEqual('');
         expect(wrapper.prop('reverse')).toEqual(false);
         expect(wrapper.prop('secondaryColor')).toEqual(false);
+        expect(wrapper.prop('squareEnds')).toEqual(false);
     });
 
     it('should render with custom props', () => {
@@ -51,5 +53,6 @@ describe('ProgressBar', () => {
         expect(wrapper.prop('reverse')).toEqual(true);
         expect(wrapper.prop('secondaryColor')).toEqual(false);
         expect(wrapper.prop('progress')).toEqual(20);
+        expect(wrapper.prop('squareEnds')).toEqual(true);
     });
 });
