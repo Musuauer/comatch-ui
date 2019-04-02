@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { palette, typography } from '../../../styles/variables.js';
+import { palette, typography } from '../../../styles/variables';
 
 export const StyledWrapper = styled.div`
     .ProgressBar {
@@ -17,7 +17,7 @@ export const StyledWrapper = styled.div`
                 text-align: left;
             }
 
-            &--lightVersion {
+            &--secondary {
                 color: ${palette.midGray};
                 font-weight: normal;
             }
@@ -51,6 +51,10 @@ export const StyledWrapper = styled.div`
             &.full {
                 border-radius: 3px;
             }
+
+            &.secondary {
+                background-color: ${palette.lightSecondary};
+            }
         }
 
         &__progress-label {
@@ -60,7 +64,7 @@ export const StyledWrapper = styled.div`
             color: ${palette.primary};
             text-align: left;
 
-            &.ProgressBar__progress-label-lightVersion {
+            &.ProgressBar__progress--label-secondary {
                 color: ${palette.lightSecondary};
                 font-weight: bold;
             }
@@ -101,12 +105,6 @@ export const StyledWrapper = styled.div`
 
             .ProgressBar__progress-label {
                 color: ${palette.white};
-            }
-        }
-
-        &--lightVersion {
-            .ProgressBar__progress {
-                background-color: ${palette.lightSecondary};
             }
         }
     }

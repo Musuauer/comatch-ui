@@ -2,7 +2,7 @@
 
 exports[`ProgressBar should render correctly 1`] = `
 <div
-  className="sc-bwzfXH fIFpgP"
+  className="sc-bwzfXH bhjSjD"
 >
   <label
     className="InputLabel ProgressBar__label sc-bdVaJa iThGRf"

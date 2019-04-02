@@ -19,8 +19,6 @@ const propTypes = {
     label: PropTypes.string,
     /** Position of the label/title of the progress bar */
     labelPosition: PropTypes.oneOf(['right', 'left']),
-    /** Lighter colouring of the progress bar and it's labels */
-    lightVersion: PropTypes.bool.isRequired,
     progressiveColoring: PropTypes.bool,
     progressLabel: PropTypes.string,
     /** Progress bar from left to right */
@@ -28,6 +26,8 @@ const propTypes = {
     secondaryColor: PropTypes.bool,
     /** Border radius 0px */
     squareEnds: PropTypes.bool,
+    /** Colouring variants of the progress bar and it's labels */
+    variant: PropTypes.oneOf(['primary', 'secondary']),
 };
 
 const defaultProps = {
@@ -35,12 +35,12 @@ const defaultProps = {
     greyBackground: false,
     label: '',
     labelPosition: 'right',
-    lightVersion: false,
     progressiveColoring: false,
     progressLabel: '',
     reverse: false,
     secondaryColor: false,
     squareEnds: false,
+    variant: 'primary',
 };
 
 function renderProgressLabel(displayProgressLabel, progressLabel, progress) {
@@ -56,7 +56,7 @@ export const ProgressBar = ({
     greyBackground,
     label,
     labelPosition,
-    lightVersion,
+    variant,
     progress,
     progressiveColoring,
     progressLabel,
@@ -88,7 +88,6 @@ export const ProgressBar = ({
         'ProgressBar--warning': progressiveColoring && progress >= 40 && progress <= 74,
         'ProgressBar--secondaryColor': secondaryColor,
         'ProgressBar--greyBackground': greyBackground,
-        'ProgressBar--lightVersion': lightVersion,
         'ProgressBar__squareEnds--left': reverse && squareEnds,
         'ProgressBar__squareEnds--right': !reverse && squareEnds,
     });
@@ -97,11 +96,12 @@ export const ProgressBar = ({
         full: progress >= 100,
         reverse,
         squareEnds,
+        secondary: variant === 'secondary',
     });
 
     const labelClasses = classNames('ProgressBar__label', {
         'ProgressBar__label--left': labelPosition === 'left',
-        'ProgressBar__label--lightVersion': lightVersion,
+        'ProgressBar__label--secondary': variant === 'secondary',
     });
 
     return (
@@ -111,8 +111,8 @@ export const ProgressBar = ({
                 <div className={progressClasses} style={progressStyle} />
                 <div
                     className={`ProgressBar__progress-label ${progressLabelOnLeft &&
-                        'ProgressBar__progress-label-left'} ${lightVersion &&
-                        'ProgressBar__progress-label-lightVersion'}`}
+                        'ProgressBar__progress-label-left'} ${variant === 'secondary' &&
+                        'ProgressBar__progress--label-secondary'}`}
                     style={progressLabelStyle}
                 >
                     {renderProgressLabel(displayProgressLabel, progressLabel, progress)}

@@ -10,7 +10,7 @@ const props = {
     greyBackground: true,
     label: 'Label test',
     labelPosition: 'left',
-    lightVersion: true,
+    variant: 'secondary',
     progress: 20,
     progressiveColoring: true,
     progressLabel: 'Test',
@@ -32,7 +32,7 @@ describe('ProgressBar', () => {
         expect(wrapper.prop('greyBackground')).toEqual(false);
         expect(wrapper.prop('label')).toEqual('');
         expect(wrapper.prop('labelPosition')).toEqual('right');
-        expect(wrapper.prop('lightVersion')).toEqual(false);
+        expect(wrapper.prop('variant')).toEqual('primary');
         expect(wrapper.prop('progressiveColoring')).toEqual(false);
         expect(wrapper.prop('progressLabel')).toEqual('');
         expect(wrapper.prop('reverse')).toEqual(false);
@@ -47,7 +47,7 @@ describe('ProgressBar', () => {
         expect(wrapper.prop('greyBackground')).toEqual(true);
         expect(wrapper.prop('label')).toEqual('Label test');
         expect(wrapper.prop('labelPosition')).toEqual('left');
-        expect(wrapper.prop('lightVersion')).toEqual(true);
+        expect(wrapper.prop('variant')).toEqual('secondary');
         expect(wrapper.prop('progressiveColoring')).toEqual(true);
         expect(wrapper.prop('progressLabel')).toEqual('Test');
         expect(wrapper.prop('reverse')).toEqual(true);
