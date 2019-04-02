@@ -18,7 +18,7 @@ const propTypes = {
     /** Label/title of the progress bar */
     label: PropTypes.string,
     /** Position of the label/title of the progress bar */
-    labelPosition: PropTypes.oneOf[('right', 'left')],
+    labelPosition: PropTypes.oneOf(['right', 'left']),
     /** Lighter colouring of the progress bar and it's labels */
     lightVersion: PropTypes.bool.isRequired,
     progressiveColoring: PropTypes.bool,

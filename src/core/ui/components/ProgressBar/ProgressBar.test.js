@@ -15,6 +15,7 @@ const props = {
     progressLabel: 'Test',
     reverse: true,
     secondaryColor: false,
+    progress: 20,
 };
 
 describe('ProgressBar', () => {
@@ -49,5 +50,6 @@ describe('ProgressBar', () => {
         expect(wrapper.prop('progressLabel')).toEqual('Test');
         expect(wrapper.prop('reverse')).toEqual(true);
         expect(wrapper.prop('secondaryColor')).toEqual(false);
+        expect(wrapper.prop('progress')).toEqual(20);
     });
 });
