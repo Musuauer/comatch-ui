@@ -23,11 +23,8 @@ const propTypes = {
     progressLabel: PropTypes.string,
     /** Progress bar from left to right */
     reverse: PropTypes.bool,
-    secondaryColor: PropTypes.bool,
-    /** Border radius 0px */
-    squareEnds: PropTypes.bool,
     /** Colouring variants of the progress bar and it's labels */
-    variant: PropTypes.oneOf(['primary', 'secondary']),
+    variant: PropTypes.oneOf(['standard', 'light', 'dark']),
 };
 
 const defaultProps = {
@@ -38,9 +35,7 @@ const defaultProps = {
     progressiveColoring: false,
     progressLabel: '',
     reverse: false,
-    secondaryColor: false,
-    squareEnds: false,
-    variant: 'primary',
+    variant: 'standard',
 };
 
 function renderProgressLabel(displayProgressLabel, progressLabel, progress) {
@@ -61,8 +56,6 @@ export const ProgressBar = ({
     progressiveColoring,
     progressLabel,
     reverse,
-    secondaryColor,
-    squareEnds,
 }) => {
     const progressStyle = { transform: `scaleX(${progress / 100})` };
 
@@ -71,37 +64,40 @@ export const ProgressBar = ({
     // - at the left of the progress limit for progress >= 40,
     const progressLabelOnLeft = progress >= 40;
 
-    // styles for progress bar from right to left
-    const progressLabelPrimaryStyle = progressLabelOnLeft
+    // styles for standard progress bar
+    const progressLabelStandardPosition = progressLabelOnLeft
         ? { right: `calc(${100 - progress}% + 8px)` }
         : { left: `calc(${progress}% + 8px)` };
 
-    // styles for progress bar from left to right
-    const progressLabelReverseStyle = progressLabelOnLeft
+    // styles for progress reverse bar
+    const progressLabelReversePosition = progressLabelOnLeft
         ? { right: `calc(${progress}% - 38px)` }
         : { left: `calc(${100 - progress}% - 38px)` };
 
-    const progressLabelStyle = !reverse ? progressLabelPrimaryStyle : progressLabelReverseStyle;
+    const progressLabelPosition = !reverse ? progressLabelStandardPosition : progressLabelReversePosition;
+
+    const progressLabelClass = classNames('ProgressBar__progress-label', {
+        'ProgressBar__progress-label-left': progressLabelOnLeft,
+        'ProgressBar__progress--label-light': variant === 'light',
+        'ProgressBar__progress--label-dark': variant === 'dark',
+    });
 
     const classes = classNames('ProgressBar', {
         'ProgressBar--danger': progressiveColoring && progress <= 39,
         'ProgressBar--warning': progressiveColoring && progress >= 40 && progress <= 74,
-        'ProgressBar--secondaryColor': secondaryColor,
         'ProgressBar--greyBackground': greyBackground,
-        'ProgressBar__squareEnds--left': reverse && squareEnds,
-        'ProgressBar__squareEnds--right': !reverse && squareEnds,
     });
 
     const progressClasses = classNames('ProgressBar__progress', {
         full: progress >= 100,
         reverse,
-        squareEnds,
-        secondary: variant === 'secondary',
+        light: variant === 'light',
+        dark: variant === 'dark',
     });
 
     const labelClasses = classNames('ProgressBar__label', {
         'ProgressBar__label--left': labelPosition === 'left',
-        'ProgressBar__label--secondary': variant === 'secondary',
+        'ProgressBar__label--light': variant === 'light',
     });
 
     return (
@@ -109,12 +105,7 @@ export const ProgressBar = ({
             <InputLabel text={label} className={labelClasses} />
             <div className={classes}>
                 <div className={progressClasses} style={progressStyle} />
-                <div
-                    className={`ProgressBar__progress-label ${progressLabelOnLeft &&
-                        'ProgressBar__progress-label-left'} ${variant === 'secondary' &&
-                        'ProgressBar__progress--label-secondary'}`}
-                    style={progressLabelStyle}
-                >
+                <div className={progressLabelClass} style={progressLabelPosition}>
                     {renderProgressLabel(displayProgressLabel, progressLabel, progress)}
                 </div>
             </div>

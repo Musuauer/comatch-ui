@@ -17,18 +17,10 @@ export const StyledWrapper = styled.div`
                 text-align: left;
             }
 
-            &--secondary {
+            &--light {
                 color: ${palette.midGray};
                 font-weight: normal;
             }
-        }
-
-        &__squareEnds--right {
-            border-radius: 0 3px 3px 0;
-        }
-
-        &__squareEnds--left {
-            border-radius: 3px 0 0 3px;
         }
 
         &__progress {
@@ -44,16 +36,16 @@ export const StyledWrapper = styled.div`
                 border-radius: 0 3px 3px 0;
             }
 
-            &.squareEnds {
-                border-radius: 0;
-            }
-
             &.full {
                 border-radius: 3px;
             }
 
-            &.secondary {
+            &.light {
                 background-color: ${palette.lightSecondary};
+            }
+
+            &.dark {
+                background-color: ${palette.secondary};
             }
         }
 
@@ -64,8 +56,12 @@ export const StyledWrapper = styled.div`
             color: ${palette.primary};
             text-align: left;
 
-            &.ProgressBar__progress--label-secondary {
+            &.ProgressBar__progress--label-light {
                 color: ${palette.lightSecondary};
+                font-weight: bold;
+            }
+            &.ProgressBar__progress--label-dark {
+                color: ${palette.secondary};
                 font-weight: bold;
             }
 
@@ -77,11 +73,6 @@ export const StyledWrapper = styled.div`
         }
 
         // states
-        &--secondaryColor {
-            .ProgressBar__progress {
-                background-color: ${palette.secondary};
-            }
-        }
 
         &--greyBackground {
             background-color: ${palette.midGray};
