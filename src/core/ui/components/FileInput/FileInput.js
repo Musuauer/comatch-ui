@@ -7,17 +7,18 @@ import './FileInput.scss';
 
 export class FileInput extends Component {
     static propTypes = {
-        accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])
-            .isRequired,
+        accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
         buttonText: PropTypes.string.isRequired,
-        name: PropTypes.string,
+        disabled: PropTypes.bool.isRequired,
         multiple: PropTypes.bool,
+        name: PropTypes.string,
         onChange: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
-        name: null,
+        disabled: false,
         multiple: false,
+        name: null,
     };
 
     constructor(props) {
@@ -41,10 +42,10 @@ export class FileInput extends Component {
         // to empty string to "trick" the input into triggering another change event in case
         // the user selects the same file they did before for another consecutive time.
         set(event, 'target.value', '');
-    }
+    };
 
     render() {
-        const { accept, buttonText, multiple } = this.props;
+        const { accept, buttonText, disabled, multiple } = this.props;
 
         return (
             <div className="Input FileInput">
@@ -55,7 +56,7 @@ export class FileInput extends Component {
                     onChange={this.handleChange}
                     multiple={multiple}
                 />
-                <Button text={buttonText} onClick={this.handleButtonClick} />
+                <Button text={buttonText} onClick={this.handleButtonClick} disabled={disabled} />
             </div>
         );
     }
