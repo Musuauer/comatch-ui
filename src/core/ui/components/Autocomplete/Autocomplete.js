@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import noop from 'lodash/noop';
 import { InputLabel } from '../InputLabel';
 import { InputError } from '../InputError';
-import { customStyles } from './custom-styles';
+import { customStyles } from './react-select-styles';
 
 import { StyledWrapper } from './StyledWrapper';
 
@@ -81,7 +81,7 @@ class Autocomplete extends Component {
          * Due to the nature of react-select package,
          * we need to check which type of action was emitted.
          * The only time we should notify the listener for changes
-         * is when the input chagnes. Other types of actions - e.g.
+         * is when the input changes. Other types of actions - e.g.
          * blur, close, etc. - shouldn't affect the field's value
          */
         if (action === 'input-change') {
