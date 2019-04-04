@@ -64,11 +64,6 @@ const StyledWrapper = styled(
         &:focus {
             box-shadow: 0 0 4px 0 rgba(1, 156, 185, 1), inset 0 0 2px 0 rgba(193, 193, 193, 0.5);
         }
-
-        input {
-            font-size: 14px !important;
-            line-height: 20px !important;
-        }
     }
 
     ${generateDisabledStyling}

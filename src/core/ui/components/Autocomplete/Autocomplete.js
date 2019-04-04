@@ -77,6 +77,13 @@ class Autocomplete extends Component {
     handleInputChange = (inputValue, { action }) => {
         const { onInputChange } = this.props;
 
+        /**
+         * Due to the nature of react-select package,
+         * we need to check which type of action was emitted.
+         * The only time we should notify the listener for changes
+         * is when the input chagnes. Other types of actions - e.g.
+         * blur, close, etc. - shouldn't affect the field's value
+         */
         if (action === 'input-change') {
             onInputChange({
                 target: {

@@ -1,5 +1,7 @@
 import { palette, typography } from '../../../styles/variables';
 
+const optionColor = '#f2f9f9';
+
 /**
  * Custom styles to adjust the react-select component so that
  * it conforms with the COMATCH styleguide
@@ -10,12 +12,12 @@ export const customStyles = {
     control: () => ({
         border: 'none',
         position: 'relative',
-        minWidth: 90,
+        minWidth: '90px',
         zIndex: 1,
     }),
     dropdownIndicator: () => ({
         height: '37px',
-        width: 20,
+        width: '20px',
         position: 'absolute',
         right: '.5px',
         top: '.5px',
@@ -28,45 +30,48 @@ export const customStyles = {
             display: 'none',
         },
     }),
+    input: (provided) => ({
+        ...provided,
+        fontSize: '14px',
+        lineHeight: '20px',
+    }),
     menu: (provided) => ({
         ...provided,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
-        borderBottomLeftRadius: 3,
-        borderBottomRightRadius: 3,
+        borderBottomLeftRadius: '3px',
+        borderBottomRightRadius: '3px',
         marginTop: 0,
     }),
     option: (provided, state) => ({
         ...provided,
-        // backgroundColor: state.isFocused ? palette.lightGray : palette.white,
-        backgroundColor: state.isFocused ? '#f2f9f9' : palette.white,
+        backgroundColor: state.isFocused ? optionColor : palette.white,
         color: state.isFocused ? palette.darkGray : palette.black,
         transition: 'background-color 250ms ease-out',
         fontSize: '14px',
         lineHeight: '20px',
         padding: '0 10px',
         '&:hover': {
-            // backgroundColor: palette.lightGray,
-            backgroundColor: '#f2f9f9',
+            backgroundColor: optionColor,
             color: palette.darkGray,
             cursor: 'pointer',
         },
         '&:last-child': {
-            borderBottomRightRadius: 3,
-            borderBottomLeftRadius: 3,
+            borderBottomRightRadius: '3px',
+            borderBottomLeftRadius: '3px',
         },
     }),
     multiValue: () => ({
         border: `1px solid ${palette.gray}`,
-        borderRadius: 3,
+        borderRadius: '3px',
         color: palette.gray,
         fontSize: typography.fontSm,
         display: 'flex',
         flexDirection: 'row-reverse',
         padding: '0 4px',
-        marginRight: 10,
-        marginBottom: 3,
-        marginTop: 3,
+        marginRight: '10px',
+        marginBottom: '3px',
+        marginTop: '3px',
         '&:last-child': {
             marginRight: 0,
         }
@@ -77,9 +82,9 @@ export const customStyles = {
     }),
     multiValueRemove: () => ({
         fontSize: typography.fontSm,
-        paddingRight: 4,
+        paddingRight: '4px',
         position: 'relative',
-        top: 2,
+        top: '2px',
         '&:hover': {
             cursor: 'pointer',
         },
