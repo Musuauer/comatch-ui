@@ -1,4 +1,5 @@
 export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
+export { Autocomplete } from './core/ui/components/Autocomplete';
 export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
 export { CheckboxInput } from './core/ui/components/CheckboxInput';
