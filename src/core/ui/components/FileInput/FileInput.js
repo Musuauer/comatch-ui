@@ -8,14 +8,16 @@ export class FileInput extends Component {
     static propTypes = {
         accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
         buttonText: PropTypes.string.isRequired,
-        name: PropTypes.string,
+        disabled: PropTypes.bool.isRequired,
         multiple: PropTypes.bool,
+        name: PropTypes.string,
         onChange: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
-        name: null,
+        disabled: false,
         multiple: false,
+        name: null,
     };
 
     constructor(props) {
@@ -42,7 +44,7 @@ export class FileInput extends Component {
     };
 
     render() {
-        const { accept, buttonText, multiple } = this.props;
+        const { accept, buttonText, disabled, multiple } = this.props;
 
         return (
             <StyledWrapper className="Input FileInput">
@@ -53,8 +55,8 @@ export class FileInput extends Component {
                     onChange={this.handleChange}
                     multiple={multiple}
                 />
-                <Button text={buttonText} onClick={this.handleButtonClick} />
-            </StyledWrapper>
+                <Button text={buttonText} onClick={this.handleButtonClick} disabled={disabled} />
+            </div>
         );
     }
 }

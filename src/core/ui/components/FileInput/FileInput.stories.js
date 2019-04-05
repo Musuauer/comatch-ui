@@ -37,4 +37,13 @@ storiesOf('FileInput', module)
                 {`<FileInput accept="image/*" onChange={function() {}} buttonText="Upload" multiple />`}
             </Highlight>
         </>
+    ))
+    .add('accepting images, disabled', () => (
+        <>
+            <FileInput accept="image/*" onChange={action('change')} buttonText="Upload" disabled />
+            <Highlight className="html">
+                {`<FileInput accept="image/*" onChange={function() {}} buttonText="Upload" disabled />`}
+            </Highlight>
+        </>
     ));
+
