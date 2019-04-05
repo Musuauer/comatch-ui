@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileInput should render correctly 1`] = `
+<div
+  className="Input FileInput sc-bxivhb jPHirh"
+>
+  <input
+    multiple={false}
+    onChange={[Function]}
+    type="file"
+  />
+  <button
+    className="Button rectangle full only-icon sc-htpNat bJyeSx"
+    disabled={false}
+    id={null}
+    onClick={[Function]}
+    type="button"
+  >
+    <span>
+      
+    </span>
+  </button>
+</div>
+`;

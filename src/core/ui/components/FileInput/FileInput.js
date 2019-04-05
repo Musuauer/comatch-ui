@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import set from 'lodash/set';
 import { Button } from '../Button';
-
-import './FileInput.scss';
+import { StyledWrapper } from './StyledWrapper';
 
 export class FileInput extends Component {
     static propTypes = {
@@ -48,7 +47,7 @@ export class FileInput extends Component {
         const { accept, buttonText, disabled, multiple } = this.props;
 
         return (
-            <div className="Input FileInput">
+            <StyledWrapper className="Input FileInput">
                 <input
                     ref={this.fileInputRef}
                     type="file"
@@ -57,7 +56,7 @@ export class FileInput extends Component {
                     multiple={multiple}
                 />
                 <Button text={buttonText} onClick={this.handleButtonClick} disabled={disabled} />
-            </div>
+            </StyledWrapper>
         );
     }
 }
