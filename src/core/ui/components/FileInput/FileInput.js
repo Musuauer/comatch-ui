@@ -56,7 +56,7 @@ export class FileInput extends Component {
                     multiple={multiple}
                 />
                 <Button text={buttonText} onClick={this.handleButtonClick} disabled={disabled} />
-            </div>
+            </StyledWrapper>
         );
     }
 }
