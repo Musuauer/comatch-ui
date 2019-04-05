@@ -41,7 +41,7 @@ export const StyledWrapper = styled.div`
             }
 
             &.light {
-                background-color: ${palette.lightSecondary};
+                background-color: ${palette.lightPrimary};
             }
 
             &.dark {
@@ -57,7 +57,7 @@ export const StyledWrapper = styled.div`
             text-align: left;
 
             &.ProgressBar__progress--label-light {
-                color: ${palette.lightSecondary};
+                color: ${palette.lightPrimary};
                 font-weight: bold;
             }
             &.ProgressBar__progress--label-dark {

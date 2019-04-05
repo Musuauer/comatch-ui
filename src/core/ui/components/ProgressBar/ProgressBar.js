@@ -23,7 +23,7 @@ const propTypes = {
     progressLabel: PropTypes.string,
     /** Progress bar from left to right */
     reverse: PropTypes.bool,
-    /** Colouring variants of the progress bar and it's labels */
+    /** Coloring variants of the progress bar and it's labels */
     variant: PropTypes.oneOf(['standard', 'light', 'dark']),
 };
 
