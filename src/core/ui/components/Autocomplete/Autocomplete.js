@@ -30,6 +30,7 @@ class Autocomplete extends Component {
         noOptionsMessage: PropTypes.func,
         onBlur: PropTypes.func,
         onChange: PropTypes.func,
+        onFocus: PropTypes.func,
         onInputChange: PropTypes.func.isRequired,
         options: PropTypes.arrayOf(
             PropTypes.shape({
@@ -52,8 +53,16 @@ class Autocomplete extends Component {
         noOptionsMessage: ({ inputValue }) => `No items found with search term "${inputValue}"...`,
         onBlur: noop,
         onChange: noop,
+        onFocus: noop,
         required: false,
     };
+
+    state = { focused: false };
+
+    handleBlur = (event) => this.setState({ focused: false }, () => {
+        const { onBlur } = this.props;
+        onBlur(event);
+    });
 
     handleChange = (selectedOption) => {
         const { onChange, onInputChange } = this.props;
@@ -73,6 +82,11 @@ class Autocomplete extends Component {
             },
         });
     };
+
+    handleFocus = (event) => this.setState({ focused: true }, () => {
+        const { onFocus } = this.props;
+        onFocus(event);
+    });
 
     handleInputChange = (inputValue, { action }) => {
         const { onInputChange } = this.props;
@@ -132,9 +146,12 @@ class Autocomplete extends Component {
     }
 
     render() {
+        const { focused } = this.state;
         const {
             classes,
+            handleBlur,
             handleChange,
+            handleFocus,
             handleInputChange,
             optionsArray,
             reactSelectAdditionalProps,
@@ -150,7 +167,6 @@ class Autocomplete extends Component {
             loadingMessage,
             name,
             noOptionsMessage,
-            onBlur,
             required,
         } = this.props;
 
@@ -164,10 +180,12 @@ class Autocomplete extends Component {
                     inputValue={inputValue}
                     isLoading={isLoading}
                     loadingMessage={loadingMessage}
+                    menuIsOpen={focused && !!inputValue}
                     name={name}
                     noOptionsMessage={noOptionsMessage}
-                    onBlur={onBlur}
+                    onBlur={handleBlur}
                     onChange={handleChange}
+                    onFocus={handleFocus}
                     onInputChange={handleInputChange}
                     options={optionsArray}
                     styles={customStyles}
