@@ -16,7 +16,6 @@ A preview of all the components can be seen on the deployed version of our Story
 
 **Contents**
 
-- [<img src="./comatchUiLogo.svg" width="350" alt="COMATCH UI">](#img-src%22comatchuilogosvg%22-width%22350%22-alt%22comatch-ui%22)
   - [Description](#description)
   - [Documentation](#documentation)
     - [Setting up the project](#setting-up-the-project)
