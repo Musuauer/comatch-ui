@@ -16,10 +16,13 @@ A preview of all the components can be seen on the deployed version of our Story
 
 **Contents**
 
--   [Setting up the project](#setting-up-the-project)
--   [Making a new release](#making-a-new-release)
--   [Structure of the project](#structure-of-the-project)
--   [PropTypes documentation](#proptypes-documentation)
+- [<img src="./comatchUiLogo.svg" width="350" alt="COMATCH UI">](#img-src%22comatchuilogosvg%22-width%22350%22-alt%22comatch-ui%22)
+  - [Description](#description)
+  - [Documentation](#documentation)
+    - [Setting up the project](#setting-up-the-project)
+    - [Making a new release](#making-a-new-release)
+    - [Structure of the project](#structure-of-the-project)
+    - [PropTypes documentation](#proptypes-documentation)
 
 ### Setting up the project
 
@@ -61,6 +64,7 @@ The PropTypes of all components of the library are documented in their respectiv
 **Component PropTypes**
 
 -   [Alert](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Alert/Alert.md)
+-   [Autocomplete](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Autocomplete/Autocomplete.md)
 -   [Badge](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Badge/Badge.md)
 -   [Button](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Button/Button.md)
 -   [CheckboxGroupInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/CheckboxGroupInput/CheckboxGroupInput.md)
