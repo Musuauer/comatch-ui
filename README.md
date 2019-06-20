@@ -82,6 +82,7 @@ The PropTypes of all components of the library are documented in their respectiv
 -   [Panel](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Panel/Panel.md)
 -   [PasswordInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/PasswordInput/PasswordInput.md)
 -   [PhoneNumberInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/PhoneNumberInput/PhoneNumberInput.md)
+-   [Pill](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Pill/Pill.md)
 -   [Popover](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Popover/Popover.md)
 -   [ProgressBar](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/ProgressBar/ProgressBar.md)
 -   [RadioBooleanInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/RadioBooleanInput/RadioBooleanInput.md)
