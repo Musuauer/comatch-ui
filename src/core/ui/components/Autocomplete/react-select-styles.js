@@ -43,6 +43,10 @@ export const customStyles = {
         borderBottomRightRadius: '3px',
         marginTop: 0,
     }),
+    menuPortal: (provided) => ({
+        ...provided,
+        zIndex: 4,
+    }),
     option: (provided, state) => ({
         ...provided,
         backgroundColor: state.isFocused ? optionColor : palette.white,

@@ -181,6 +181,7 @@ class Autocomplete extends Component {
                     isLoading={isLoading}
                     loadingMessage={loadingMessage}
                     menuIsOpen={focused && !!inputValue}
+                    menuPortalTarget={document.body}
                     name={name}
                     noOptionsMessage={noOptionsMessage}
                     onBlur={handleBlur}
