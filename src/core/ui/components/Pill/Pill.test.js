@@ -22,17 +22,17 @@ describe('Pill', () => {
     describe('PILL_SIZES & PILL_TYPES mapping', () => {
         [null, ...Object.values(TYPES)].forEach((type) => {
             [null, ...Object.values(SIZES)].forEach((size) => {
-                const pill = mount((
+                const pill = mount(
                     <Pill className="Test" id="test" size={size} type={type}>
                         Hello world
-                    </Pill>
-                ));
+                    </Pill>,
+                );
 
                 expect(pill.prop('className')).toEqual('Test');
                 expect(pill.prop('id')).toEqual('test');
                 expect(pill.prop('size')).toEqual(size);
                 expect(pill.prop('type')).toEqual(type);
             });
-        });        
+        });
     });
 });
