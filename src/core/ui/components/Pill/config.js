@@ -1,36 +1,36 @@
 import { palette, typography } from '../../../styles/variables';
 
 const SIZES = {
-    XS: 'XS',
-    SM: 'SM',
-    MD: 'MD',
-    LG: 'LG',
-    XL: 'XL',
-    XXL: 'XXL',
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl',
+    xxl: 'xxl',
 };
 
 const SIZES_IN_PIXELS = {
-    XS: {
+    xs: {
         fontSize: typography.fontXs,
         lineHeight: typography.lineHeightXs,
     },
-    SM: {
+    sm: {
         fontSize: typography.fontSm,
         lineHeight: typography.lineHeightSm,
     },
-    MD: {
+    md: {
         fontSize: typography.fontMd,
         lineHeight: typography.lineHeightMd,
     },
-    LG: {
+    lg: {
         fontSize: typography.fontLg,
         lineHeight: typography.lineHeightLg,
     },
-    XL: {
+    xl: {
         fontSize: typography.fontXl,
         lineHeight: typography.lineHeightXl,
     },
-    XXL: {
+    xxl: {
         fontSize: typography.fontXxl,
         lineHeight: typography.lineHeightXxl,
     },

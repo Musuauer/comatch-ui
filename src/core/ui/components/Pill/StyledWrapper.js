@@ -9,7 +9,7 @@ function generateStyling({ size, type }) {
     borderColor: palette.black,
     color: palette.black,
   };
-  const fontSpecs = SIZES_IN_PIXELS[size] || SIZES_IN_PIXELS.XS;
+  const fontSpecs = SIZES_IN_PIXELS[size] || SIZES_IN_PIXELS.xs;
 
   return `
     background-color: ${colorSpecs.background};
