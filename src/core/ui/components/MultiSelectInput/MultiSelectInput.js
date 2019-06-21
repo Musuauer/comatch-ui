@@ -90,6 +90,7 @@ export const MultiSelectInput = ({
                 isMulti
                 className="MultiSelectInput__input"
                 isDisabled={disabled}
+                menuPortalTarget={document.body}
                 name={name}
                 onBlur={onBlur}
                 onChange={handleChange}
