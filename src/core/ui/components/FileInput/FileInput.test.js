@@ -8,7 +8,7 @@ import { FileInput } from './FileInput';
 const mockFunction = jest.fn();
 
 const requiredProps = {
-    accept: '.json',
+    accept: 'application/json',
     buttonText: 'Button Text',
     onChange: mockFunction,
 };
