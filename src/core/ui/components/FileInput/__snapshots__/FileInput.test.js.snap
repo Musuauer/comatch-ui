@@ -5,7 +5,7 @@ exports[`FileInput should render correctly 1`] = `
   className="Input FileInput sc-bxivhb jPHirh"
 >
   <input
-    accept=".json"
+    accept="application/json"
     multiple={false}
     onChange={[Function]}
     type="file"

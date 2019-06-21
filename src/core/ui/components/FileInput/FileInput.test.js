@@ -38,7 +38,7 @@ describe('FileInput', () => {
     it('should render with custom props', () => {
         const wrapper = mount(<FileInput {...props} />);
 
-        expect(wrapper.prop('accept')).toEqual('.json');
+        expect(wrapper.prop('accept')).toEqual('application/json');
         expect(wrapper.prop('buttonText')).toEqual('Button Text');
         expect(wrapper.prop('onChange')).toEqual(mockFunction);
         expect(wrapper.prop('name')).toEqual('Name');

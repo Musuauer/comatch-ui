@@ -7,16 +7,16 @@ exports[`Autocomplete should render an Autocomplete 1`] = `
 >
   
   <div
-    className="css-10nd86i Autocomplete__input"
+    className="Autocomplete__input css-2b097c-container"
     onKeyDown={[Function]}
   >
     <div
-      className="css-1n4pbi4"
+      className=" css-1n4pbi4"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
       <div
-        className="css-1hmthh9"
+        className=" css-1hmthh9"
       >
         <div
           className="css-1xl6q4b"
@@ -47,6 +47,7 @@ exports[`Autocomplete should render an Autocomplete 1`] = `
                   "boxSizing": "content-box",
                   "color": "inherit",
                   "fontSize": "inherit",
+                  "label": "input",
                   "opacity": 1,
                   "outline": 0,
                   "padding": 0,
@@ -76,14 +77,14 @@ exports[`Autocomplete should render an Autocomplete 1`] = `
         </div>
       </div>
       <div
-        className="css-1wy0on6"
+        className=" css-1wy0on6"
       >
         <span
-          className="css-1hyfx7x"
+          className=" css-1hyfx7x"
         />
         <div
           aria-hidden="true"
-          className="css-1qhwvh0"
+          className=" css-1qhwvh0"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
