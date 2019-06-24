@@ -4,6 +4,8 @@
 
 [![CircleCI](https://circleci.com/gh/COMATCH/comatch-ui.svg?style=svg&circle-token=b2eea611c1911aa0d1f9c3ccf48631766425f5ec)](https://circleci.com/gh/COMATCH/comatch-ui)
 
+<img src="./.badges/badge-lines.svg" alt="lines coverage badge"> <img src="./.badges/badge-branches.svg" alt="lines coverage badge"> <img src="./.badges/badge-functions.svg" alt="lines coverage badge"> <img src="./.badges/badge-statements.svg" alt="lines coverage badge">
+
 ## Description
 
 This project contains all of our React core (UI) components to be re-used across our projects.

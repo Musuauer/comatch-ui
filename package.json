@@ -8,7 +8,7 @@
         "generate-docs": "node generateDocs.js",
         "deploy-storybook": "storybook-to-ghpages",
         "test": "jest",
-        "test-and-coverage": "jest --collectCoverage",
+        "test-and-coverage": "jest --collectCoverage && jest-coverage-badges --output .badges",
         "update-snapshots": "jest --updateSnapshot",
         "lint": "./node_modules/.bin/eslint .",
         "preversion": "yarn test",
@@ -64,6 +64,7 @@
         "faker": "^4.1.0",
         "file-loader": "^4.0.0",
         "jest": "^24.8.0",
+        "jest-coverage-badges": "^1.1.2",
         "prettier": "^1.17.0",
         "react-docgen": "^2.21.0",
         "react-docgen-markdown-renderer": "^1.1.0",
@@ -83,6 +84,11 @@
     "jest": {
         "moduleNameMapper": {
             "\\.(css|scss)$": "<rootDir>/src/core/config/tests/stylesImportMock.js"
-        }
+        },
+        "coverageReporters": [
+            "json-summary",
+            "text",
+            "lcov"
+        ]
     }
 }
