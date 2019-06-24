@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pill should render the default Pill correctly 1`] = `
+<div
+  className="Pill sc-bdVaJa jySjDV"
+>
+  Hello World
+</div>
+`;

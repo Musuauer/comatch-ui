@@ -21,6 +21,7 @@ export { MultiSelectInput } from './core/ui/components/MultiSelectInput';
 export { Panel } from './core/ui/components/Panel';
 export { PasswordInput } from './core/ui/components/PasswordInput';
 export { PhoneNumberInput } from './core/ui/components/PhoneNumberInput';
+export { Pill, PILL_SIZES, PILL_TYPES } from './core/ui/components/Pill';
 export { Popover } from './core/ui/components/Popover';
 export { ProgressBar } from './core/ui/components/ProgressBar';
 export { RadioBooleanInput } from './core/ui/components/RadioBooleanInput';

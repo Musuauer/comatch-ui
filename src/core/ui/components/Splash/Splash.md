@@ -10,7 +10,7 @@ prop | type | default | required | description
 **className** | `String` | `null` | :x: | 
 **id** | `String` | `null` | :x: | 
 **inline** | `Boolean` | `false` | :x: | 
-**orientation** | `Enum('column','column-reverse','row','row-reverse')` | `'column'` | :x: | 
+**orientation** | `Enum()` | `ORIENTATION.HORIZONTAL` | :x: | 
 **primary** | `Boolean` | `false` | :x: | 
 **secondary** | `Boolean` | `false` | :x: | 
 **subtitle** | `ReactNode` | `null` | :x: | 
