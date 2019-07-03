@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import PropTypes from 'prop-types';
@@ -5,7 +6,6 @@ import range from 'lodash/range';
 import { storiesOf } from '@storybook/react';
 import { Paginator } from './Paginator';
 
-// eslint-disable-next-line react/prop-types
 const CommentList = ({ data }) => (
     <div id="project-comments" className="commentList">
         <ul>
