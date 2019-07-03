@@ -26,6 +26,7 @@ module.exports = {
         'react-modal',
         'redux',
         'react-redux',
+        'react-paginate',
         'react-select',
     ],
     module: {

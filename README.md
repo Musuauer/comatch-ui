@@ -18,12 +18,12 @@ A preview of all the components can be seen on the deployed version of our Story
 
 **Contents**
 
-  - [Description](#description)
-  - [Documentation](#documentation)
-    - [Setting up the project](#setting-up-the-project)
-    - [Making a new release](#making-a-new-release)
-    - [Structure of the project](#structure-of-the-project)
-    - [PropTypes documentation](#proptypes-documentation)
+-   [Description](#description)
+-   [Documentation](#documentation)
+    -   [Setting up the project](#setting-up-the-project)
+    -   [Making a new release](#making-a-new-release)
+    -   [Structure of the project](#structure-of-the-project)
+    -   [PropTypes documentation](#proptypes-documentation)
 
 ### Setting up the project
 
@@ -81,6 +81,7 @@ The PropTypes of all components of the library are documented in their respectiv
 -   [MultiLangTextInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/MultiLangTextInput/MultiLangTextInput.md)
 -   [Navigation](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Navigation/Navigation.md)
 -   [NumberInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/NumberInput/NumberInput.md)
+-   [Paginator](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Paginator/Paginator.md)
 -   [Panel](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/Panel/Panel.md)
 -   [PasswordInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/PasswordInput/PasswordInput.md)
 -   [PhoneNumberInput](https://github.com/COMATCH/comatch-ui/blob/master/src/core/ui/components/PhoneNumberInput/PhoneNumberInput.md)
