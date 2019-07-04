@@ -5,9 +5,8 @@ import { Breadcrumbs } from './Breadcrumbs';
 import '../../../config/tests/setup';
 
 describe('Breadcrumbs', () => {
-
     it('should render breadcrumbs correctly', () => {
-        const breadcrumbs = renderer.create(<Breadcrumbs history={["Item 1", "Item 2"]} />).toJSON();
+        const breadcrumbs = renderer.create(<Breadcrumbs history={['Item 1', 'Item 2']} />).toJSON();
         expect(breadcrumbs).toMatchSnapshot();
     });
 
@@ -17,10 +16,9 @@ describe('Breadcrumbs', () => {
     });
 
     it('renders a list item', () => {
-        const items = ["Item 1", "Item 2"];
+        const items = ['Item 1', 'Item 2'];
         const wrapper = shallow(<Breadcrumbs history={items} />);
 
-        expect(wrapper.contains(<li key='0'>Item 1</li >)).toBeTruthy();
+        expect(wrapper.contains(<li key="0">Item 1</li>)).toBeTruthy();
     });
-    
 });

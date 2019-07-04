@@ -1,26 +1,20 @@
 import styled from 'styled-components';
+import { palette, typography } from '../../../styles/variables';
 
-const StyledWrapper = styled.section`
+const StyledItem = styled.li`
+    font-size: ${typography.fontXs};
+    color: ${palette.gray};
+    margin: 3px;
+`;
 
-ul {
+const StyledWrapper = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: row;
-}
 
-li {
-    font-size: 12px;
-    color: #777777;
-    margin: 3px;
-}
-
-li:last-child {
-    font-weight: bold;
-}
-
+    ${StyledItem}:last-child {
+        font-weight: bold;
+    }
 `;
 
-export { StyledWrapper };
-
-
-
+export { StyledItem, StyledWrapper };
