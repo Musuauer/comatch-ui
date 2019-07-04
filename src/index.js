@@ -1,4 +1,5 @@
 export { Alert, ALERT_TYPE } from './core/ui/components/Alert';
+export { Avatar } from './core/ui/components/Avatar';
 export { Autocomplete } from './core/ui/components/Autocomplete';
 export { Badge } from './core/ui/components/Badge';
 export { Button } from './core/ui/components/Button';
@@ -18,6 +19,7 @@ export { ModalWindow } from './core/ui/components/ModalWindow';
 export { MultiLangTextAreaInput } from './core/ui/components/MultiLangTextAreaInput';
 export { MultiLangTextInput } from './core/ui/components/MultiLangTextInput';
 export { MultiSelectInput } from './core/ui/components/MultiSelectInput';
+export { Paginator } from './core/ui/components/Paginator';
 export { Panel } from './core/ui/components/Panel';
 export { PasswordInput } from './core/ui/components/PasswordInput';
 export { PhoneNumberInput } from './core/ui/components/PhoneNumberInput';
