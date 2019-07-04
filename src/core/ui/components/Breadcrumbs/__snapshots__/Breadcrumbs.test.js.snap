@@ -1,19 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumbs should render breadcrumbs correctly 1`] = `
-<section
-  className="Breadcrumbs sc-bdVaJa fiviaV"
+<ul
+  className="Breadcrumbs sc-bwzfXH cwIifb"
 >
-  <ul>
-    <li>
-      Item 1
-    </li>
-    <li>
-      &gt;
-    </li>
-    <li>
-      Item 2
-    </li>
-  </ul>
-</section>
+  <li
+    className="sc-bdVaJa ebFJnS"
+  >
+    Item 1
+  </li>
+  <li
+    className="sc-bdVaJa ebFJnS"
+  >
+    &gt; Item 2
+  </li>
+</ul>
 `;

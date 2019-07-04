@@ -15,7 +15,7 @@ const defaultProps = {
     history: [],
 };
 
-export const Breadcrumbs = ({ className, history, id }) => (
+export const Breadcrumbs = ({ id, className, history }) => (
     <StyledWrapper {...(!!id && { id })} className={classnames('Breadcrumbs', className)}>
         {history.map((route, index) => (
             <StyledItem key={route}>{`${index ? '> ' : ''}${route}`}</StyledItem>

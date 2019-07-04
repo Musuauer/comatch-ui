@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { Breadcrumbs } from './Breadcrumbs';
 import '../../../config/tests/setup';
 
@@ -12,13 +12,17 @@ describe('Breadcrumbs', () => {
 
     it('should have the correct default props', () => {
         const breadcrumbs = mount(<Breadcrumbs />);
+        expect(breadcrumbs.prop('id')).toEqual(null);
+        expect(breadcrumbs.prop('className')).toEqual(null);
         expect(breadcrumbs.prop('history')).toEqual([]);
     });
 
-    it('renders a list item', () => {
-        const items = ['Item 1', 'Item 2'];
-        const wrapper = shallow(<Breadcrumbs history={items} />);
+    it('should render passed props correctly', () => {
+        const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
+        const breadcrumbs = mount(<Breadcrumbs id="ID" className="IDK" history={items}></Breadcrumbs>);
 
-        expect(wrapper.contains(<li key="0">Item 1</li>)).toBeTruthy();
+        expect(breadcrumbs.prop('id')).toEqual('ID');
+        expect(breadcrumbs.prop('className')).toEqual('IDK');
+        expect(breadcrumbs.prop('history')).toEqual(items);
     });
 });
