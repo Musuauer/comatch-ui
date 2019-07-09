@@ -29,7 +29,7 @@ const actions = (
     </>
 );
 
-storiesOf('Card|Card', module)
+storiesOf('Card|Card.Card', module)
     .add('default', () => (
         <>
             <Card />
