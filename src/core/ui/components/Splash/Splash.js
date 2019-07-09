@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ORIENTATION } from './config';
+import { ORIENTATION, SIZE } from './config';
 import { StyledSubtitle, StyledTitle, StyledWrapper } from './StyledWrapper';
 
 const propTypes = {
@@ -11,6 +11,7 @@ const propTypes = {
     orientation: PropTypes.oneOf(Object.values(ORIENTATION)),
     primary: PropTypes.bool,
     secondary: PropTypes.bool,
+    size: PropTypes.oneOf(Object.values(SIZE)),
     subtitle: PropTypes.node,
     title: PropTypes.node,
 };
@@ -22,11 +23,12 @@ const defaultProps = {
     orientation: ORIENTATION.HORIZONTAL,
     primary: false,
     secondary: false,
+    size: SIZE.SM,
     subtitle: null,
     title: null,
 };
 
-const Splash = ({ className, id, inline, orientation, primary, secondary, subtitle, title }) =>
+const Splash = ({ className, id, inline, orientation, primary, secondary, size, subtitle, title }) =>
     (!!title || !!subtitle) && (
         <StyledWrapper
             {...(id && { id })}
@@ -35,6 +37,7 @@ const Splash = ({ className, id, inline, orientation, primary, secondary, subtit
             orientation={orientation}
             primary={primary}
             secondary={secondary}
+            size={size}
         >
             {!!title && <StyledTitle className="Title">{title}</StyledTitle>}
             {!!subtitle && <StyledSubtitle className="Subtitle">{subtitle}</StyledSubtitle>}
