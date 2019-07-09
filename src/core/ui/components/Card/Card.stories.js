@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import Highlight from 'react-highlight';
 import { storiesOf } from '@storybook/react';
 import { Card } from './Card';
+import { Button } from '../Button';
 import { BACKGROUND_COLOR } from './config';
 
-const CardCollection = styled.div`
+const Collection = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     min-height: 125px;
 
     .Card {
+        flex: 500px 0;
         margin: 20px;
     }
 `;
@@ -19,6 +21,13 @@ const CardCollection = styled.div`
 const BasicContent = styled.div`
     padding: 10px 15px;
 `;
+
+const actions = (
+    <>
+        <Button text="Action A" ghost />
+        <Button text="Action B" />
+    </>
+);
 
 storiesOf('Card|Card', module)
     .add('default', () => (
@@ -29,19 +38,43 @@ storiesOf('Card|Card', module)
     ))
     .add('with different `backgroundColor`', () => (
         <>
-            <CardCollection>
+            <Collection>
                 {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card key={backgroundColor} backgroundColor={backgroundColor}>
                         <BasicContent>{backgroundColor}</BasicContent>
                     </Card>
                 ))}
-            </CardCollection>
+            </Collection>
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
                         `${index ? '\n\n' : ''}<Card backgroundColor={${backgroundColor}}>` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card>`,
+                )}
+            </Highlight>
+        </>
+    ))
+    .add('with `Header` & `Body`', () => (
+        <>
+            <Collection>
+                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                    <Card key={backgroundColor} backgroundColor={backgroundColor}>
+                        <Card.Header title="Header" subtitle="Header subtitle" controls={actions} />
+                        <Card.Body>
+                            <p>This is the Card&apos;s Body (Content)</p>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </Collection>
+            <Highlight className="html">
+                {Object.keys(BACKGROUND_COLOR).map(
+                    (backgroundColor, index) =>
+                        `${index ? '\n\n' : ''}<Card backgroundColor={${backgroundColor}}>` +
+                        '\n\t<Card.Header title="Header" subtitle="Header subtitle" controls={actions} />' +
+                        "\n\t<Card.Body>\n\t\t<p>This is the Card's Body (Content)</p>" +
+                        '\n\t</Card.Body>' +
+                        '\n</Card>',
                 )}
             </Highlight>
         </>
