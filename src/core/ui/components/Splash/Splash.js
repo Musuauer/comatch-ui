@@ -26,28 +26,20 @@ const defaultProps = {
     title: null,
 };
 
-const Splash = ({
-    className,
-    id,
-    inline,
-    orientation,
-    primary,
-    secondary,
-    subtitle,
-    title,
-}) => (!!title || !!subtitle) && (
-    <StyledWrapper
-        {...(id && { id })}
-        className={classnames('Splash', className)}
-        inline={inline}
-        orientation={orientation}
-        primary={primary}
-        secondary={secondary}
-    >
-        {!!title && <StyledTitle>{title}</StyledTitle>}
-        {!!subtitle && <StyledSubtitle>{subtitle}</StyledSubtitle>}
-    </StyledWrapper>
-);
+const Splash = ({ className, id, inline, orientation, primary, secondary, subtitle, title }) =>
+    (!!title || !!subtitle) && (
+        <StyledWrapper
+            {...(id && { id })}
+            className={classnames('Splash', className)}
+            inline={inline}
+            orientation={orientation}
+            primary={primary}
+            secondary={secondary}
+        >
+            {!!title && <StyledTitle className="Title">{title}</StyledTitle>}
+            {!!subtitle && <StyledSubtitle className="Subtitle">{subtitle}</StyledSubtitle>}
+        </StyledWrapper>
+    );
 
 Splash.propTypes = propTypes;
 Splash.defaultProps = defaultProps;
