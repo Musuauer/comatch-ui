@@ -5,12 +5,12 @@ exports[`Breadcrumbs should render breadcrumbs correctly 1`] = `
   className="Breadcrumbs sc-bwzfXH cwIifb"
 >
   <li
-    className="sc-bdVaJa ebFJnS"
+    className="list-item sc-bdVaJa ebFJnS"
   >
     Item 1
   </li>
   <li
-    className="sc-bdVaJa ebFJnS"
+    className="list-item sc-bdVaJa ebFJnS"
   >
     &gt; Item 2
   </li>

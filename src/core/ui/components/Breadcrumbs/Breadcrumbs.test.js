@@ -17,12 +17,17 @@ describe('Breadcrumbs', () => {
         expect(breadcrumbs.prop('history')).toEqual([]);
     });
 
-    it('should render passed props correctly', () => {
+    it('should create expected nodes/dom elements', () => {
         const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
         const breadcrumbs = mount(<Breadcrumbs id="ID" className="IDK" history={items}></Breadcrumbs>);
 
+        expect(breadcrumbs.find('ul')).toBeDefined();
+        expect(breadcrumbs.find('li')).toHaveLength(items.length);
+        expect(breadcrumbs.find('.list-item').get(0).props.children).toEqual('Item 1');
         expect(breadcrumbs.prop('id')).toEqual('ID');
         expect(breadcrumbs.prop('className')).toEqual('IDK');
-        expect(breadcrumbs.prop('history')).toEqual(items);
+
     });
-});
+
+})
+
