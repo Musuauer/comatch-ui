@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { StyledHeader, StyledHeaderControls } from './StyledWrapper';
+import { StyledHeader, StyledHeaderChildren, StyledHeaderControls } from './StyledWrapper';
 import { BACKGROUND_COLOR } from './config';
 import { Splash } from '../Splash';
 
@@ -37,9 +37,9 @@ const Header = ({ backgroundColor, children, className, controls, id, title, tit
             {...(id && { id })}
             wrap={wrap}
         >
-            <Splash orientation={titleOrientation} title={title} subtitle={subtitle} />
-            {children}
-            <StyledHeaderControls>{controls}</StyledHeaderControls>
+            <Splash className="TitleAndSubtitle" orientation={titleOrientation} title={title} subtitle={subtitle} />
+            {!!children && <StyledHeaderChildren className="Children">{children}</StyledHeaderChildren>}
+            {!!controls && <StyledHeaderControls className="Controls">{controls}</StyledHeaderControls>}
         </StyledHeader>
     );
 

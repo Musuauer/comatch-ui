@@ -8,9 +8,15 @@ function wrapValue({ wrap }) {
     return wrap ? 'wrap' : 'nowrap';
 }
 
+const StyledHeaderChildren = styled.div``;
+
 const StyledHeaderControls = styled.div`
     display: flex;
     justify-content: flex-end;
+
+    > *:not(:last-child) {
+        margin-right: 10px;
+    }
 `;
 
 const Node = forwardRef(({ backgroundColor, wrap, ...rest }, ref) => <div {...rest} ref={ref} />);
@@ -23,9 +29,14 @@ const StyledHeader = styled(Node)`
     overflow: hidden;
     padding: 15px 20px;
 
+    ${StyledHeaderControls}, ${StyledHeaderChildren} {
+        flex: 1;
+    }
+
     .Splash {
         align-items: flex-start;
         color: inherit;
+        flex: 1;
 
         .Title,
         .Subtitle {
@@ -34,4 +45,4 @@ const StyledHeader = styled(Node)`
     }
 `;
 
-export { StyledHeader, StyledHeaderControls };
+export { StyledHeader, StyledHeaderChildren, StyledHeaderControls };

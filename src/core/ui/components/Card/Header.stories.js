@@ -13,6 +13,7 @@ const Collection = styled.div`
     min-height: 125px;
 
     .Header {
+        flex: 450px 0;
         margin: 20px;
     }
 `;
