@@ -46,4 +46,9 @@ const FONT_COLOR = {
     TRANSPARENT: 'black',
 };
 
-export { BACKGROUND_COLOR, FONT_COLOR };
+const ORIENTATION = {
+    HORIZONTAL: 'horizontal',
+    VERTICAL: 'vertical',
+};
+
+export { BACKGROUND_COLOR, FONT_COLOR, ORIENTATION };

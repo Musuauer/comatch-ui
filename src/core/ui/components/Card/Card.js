@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Body } from './Body';
 import { Header } from './Header';
 import { BACKGROUND_COLOR } from './config';
 import { StyledWrapper } from './StyledWrapper';
@@ -39,6 +40,7 @@ const Card = ({ backgroundColor, bordered, children, className, id, inline }) =>
 Card.propTypes = propTypes;
 Card.defaultProps = defaultProps;
 
+Card.Body = Body;
 Card.Header = Header;
 
 export { Card };

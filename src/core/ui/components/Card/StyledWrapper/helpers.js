@@ -17,4 +17,8 @@ function fontColor({ backgroundColor }) {
     return palette[FONT_COLOR[backgroundColor] || FONT_COLOR.WHITE];
 }
 
-export { background, border, display, fontColor };
+function wrapValue({ wrap }) {
+    return wrap ? 'wrap' : 'nowrap';
+}
+
+export { background, border, display, fontColor, wrapValue };

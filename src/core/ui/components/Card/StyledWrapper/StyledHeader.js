@@ -2,11 +2,7 @@
 /* eslint-disable react/display-name */
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { background, fontColor } from './helpers';
-
-function wrapValue({ wrap }) {
-    return wrap ? 'wrap' : 'nowrap';
-}
+import { background, fontColor, wrapValue } from './helpers';
 
 const StyledHeaderChildren = styled.div``;
 
