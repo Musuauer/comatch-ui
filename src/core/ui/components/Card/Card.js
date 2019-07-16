@@ -16,7 +16,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    backgroundColor: 'WHITE',
+    backgroundColor: BACKGROUND_COLOR.WHITE,
     bordered: false,
     className: null,
     children: null,

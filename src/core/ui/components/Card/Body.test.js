@@ -28,14 +28,12 @@ describe('Card.Body', () => {
         expect(body).toMatchSnapshot();
     });
 
-    // it('should have the correct default props', () => {
-    //     const avatar = mount(<Body />);
-    //     expect(avatar.prop('badgeChildren')).toEqual(null);
-    //     expect(avatar.prop('className')).toEqual(null);
-    //     expect(avatar.prop('diameter')).toEqual(45);
-    //     expect(avatar.prop('id')).toEqual(null);
-    //     expect(avatar.prop('popoverChildren')).toEqual(null);
-    //     expect(avatar.prop('popoverPosition')).toEqual('bottom');
-    //     expect(avatar.prop('src')).toEqual(null);
-    // });
+    it('should have the correct default props', () => {
+        const body = mount(<Body />);
+        expect(body.prop('backgroundColor')).toEqual('transparent');
+        expect(body.prop('className')).toEqual(null);
+        expect(body.prop('id')).toEqual(null);
+        expect(body.prop('orientation')).toEqual('vertical');
+        expect(body.prop('wrap')).toEqual(false);
+    });
 });
