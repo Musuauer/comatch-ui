@@ -25,6 +25,7 @@ const propTypes = {
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
+    onInputChange: PropTypes.func,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
@@ -43,12 +44,13 @@ const defaultProps = {
     label: '',
     onBlur: noop,
     onChange: noop,
+    onInputChange: noop,
     required: false,
 };
 
 /**
  * An input similar to our `Select` input, allowing the user to select multiple options.
- * 
+ *
  * This component is our customized wrapper around the 'react-select' component.
  * @see https://github.com/JedWatson/react-select
  */
@@ -63,6 +65,7 @@ export const MultiSelectInput = ({
     name,
     onBlur,
     onChange,
+    onInputChange,
     options,
     required,
     ...props
@@ -83,6 +86,23 @@ export const MultiSelectInput = ({
         });
     }
 
+    function handleInputChange(inputValue, { action }) {
+        /**
+         * Due to the nature of react-select package,
+         * we need to check which type of action was emitted.
+         * The only time we should notify the listener for changes
+         * is when the input changes. Other types of actions - e.g.
+         * blur, close, etc. - shouldn't affect the field's value
+         */
+        if (action === 'input-change') {
+            onInputChange({
+                target: {
+                    value: inputValue,
+                },
+            });
+        }
+    }
+
     return (
         <div id={id} className={classes}>
             {label && <InputLabel text={label} required={required} />}
@@ -94,6 +114,7 @@ export const MultiSelectInput = ({
                 name={name}
                 onBlur={onBlur}
                 onChange={handleChange}
+                onInputChange={handleInputChange}
                 options={options}
                 styles={customStyles}
                 {...props}
