@@ -39,7 +39,7 @@ storiesOf('Card|Card.Card', module)
     .add('with different `backgroundColor`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card key={backgroundColor} backgroundColor={backgroundColor}>
                         <BasicContent>{backgroundColor}</BasicContent>
                     </Card>
@@ -48,7 +48,7 @@ storiesOf('Card|Card.Card', module)
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
-                        `${index ? '\n\n' : ''}<Card backgroundColor={${backgroundColor}}>` +
+                        `${index ? '\n\n' : ''}<Card backgroundColor={BACKGROUND_COLOR.${backgroundColor}}>` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card>`,
                 )}
@@ -58,7 +58,7 @@ storiesOf('Card|Card.Card', module)
     .add('with `Header` & `Body`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card key={backgroundColor} backgroundColor={backgroundColor}>
                         <Card.Header title="Header" subtitle="Header subtitle" controls={actions} />
                         <Card.Body>
@@ -70,7 +70,7 @@ storiesOf('Card|Card.Card', module)
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
-                        `${index ? '\n\n' : ''}<Card backgroundColor={${backgroundColor}}>` +
+                        `${index ? '\n\n' : ''}<Card backgroundColor={BACKGROUND_COLOR.${backgroundColor}}>` +
                         '\n\t<Card.Header title="Header" subtitle="Header subtitle" controls={actions} />' +
                         "\n\t<Card.Body>\n\t\t<p>This is the Card's Body (Content)</p>" +
                         '\n\t</Card.Body>' +

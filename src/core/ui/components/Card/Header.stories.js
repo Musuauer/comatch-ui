@@ -40,7 +40,7 @@ storiesOf('Card|Card.Header', module)
     .add('with different `backgroundColor`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card.Header key={backgroundColor} backgroundColor={backgroundColor}>
                         <BasicContent>{backgroundColor}</BasicContent>
                     </Card.Header>
@@ -49,7 +49,7 @@ storiesOf('Card|Card.Header', module)
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
-                        `${index ? '\n\n' : ''}<Card.Header backgroundColor={${backgroundColor}}>` +
+                        `${index ? '\n\n' : ''}<Card.Header backgroundColor={BACKGROUND_COLOR.${backgroundColor}}>` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card.Header>`,
                 )}
@@ -65,7 +65,7 @@ storiesOf('Card|Card.Header', module)
     .add('with content, `controls` and different `backgroundColor`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card.Header key={backgroundColor} backgroundColor={backgroundColor} controls={BasicControls}>
                         <BasicContent>{backgroundColor}</BasicContent>
                     </Card.Header>
@@ -76,7 +76,7 @@ storiesOf('Card|Card.Header', module)
                     (backgroundColor, index) =>
                         `${
                             index ? '\n\n' : ''
-                        }<Card.Header backgroundColor={${backgroundColor}} controls={BasicControls}>` +
+                        }<Card.Header backgroundColor={BACKGROUND_COLOR.${backgroundColor}} controls={BasicControls}>` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card.Header>`,
                 )}
@@ -94,7 +94,7 @@ storiesOf('Card|Card.Header', module)
     .add('with content, `title`, `subtitle` and different `backgroundColor`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card.Header
                         key={backgroundColor}
                         backgroundColor={backgroundColor}
@@ -109,7 +109,7 @@ storiesOf('Card|Card.Header', module)
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
-                        `${index ? '\n\n' : ''}<Card.Header backgroundColor={${backgroundColor}} ` +
+                        `${index ? '\n\n' : ''}<Card.Header backgroundColor={BACKGROUND_COLOR.${backgroundColor}} ` +
                         `title="Title" titleOrientation={ORIENTATION.VERTICAL} subtitle="Subtitle">` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card.Header>`,

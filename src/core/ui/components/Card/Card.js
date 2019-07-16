@@ -7,7 +7,7 @@ import { BACKGROUND_COLOR } from './config';
 import { StyledWrapper } from './StyledWrapper';
 
 const propTypes = {
-    backgroundColor: PropTypes.oneOf(Object.keys(BACKGROUND_COLOR)),
+    backgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLOR)),
     bordered: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node,

@@ -38,10 +38,10 @@ storiesOf('Card|Card.Body', module)
     .add('with different `orientation`', () => (
         <>
             <Collection>
-                <Card.Body backgroundColor="PRIMARY" orientation={ORIENTATION.HORIZONTAL}>
+                <Card.Body backgroundColor="primary" orientation={ORIENTATION.HORIZONTAL}>
                     {Content}
                 </Card.Body>
-                <Card.Body backgroundColor="PRIMARY" orientation={ORIENTATION.VERTICAL}>
+                <Card.Body backgroundColor="primary" orientation={ORIENTATION.VERTICAL}>
                     {Content}
                 </Card.Body>
             </Collection>
@@ -54,7 +54,7 @@ storiesOf('Card|Card.Body', module)
     .add('with different `backgroundColor`', () => (
         <>
             <Collection>
-                {Object.keys(BACKGROUND_COLOR).map((backgroundColor) => (
+                {Object.values(BACKGROUND_COLOR).map((backgroundColor) => (
                     <Card.Body key={backgroundColor} backgroundColor={backgroundColor}>
                         <BasicContent>{backgroundColor}</BasicContent>
                     </Card.Body>
@@ -63,7 +63,7 @@ storiesOf('Card|Card.Body', module)
             <Highlight className="html">
                 {Object.keys(BACKGROUND_COLOR).map(
                     (backgroundColor, index) =>
-                        `${index ? '\n\n' : ''}<Card.Body backgroundColor={${backgroundColor}}>` +
+                        `${index ? '\n\n' : ''}<Card.Body backgroundColor={BACKGROUND_COLOR.${backgroundColor}}>` +
                         `\n\t<BasicContent>{${backgroundColor}}</BasicContent>` +
                         `\n</Card.Body>`,
                 )}

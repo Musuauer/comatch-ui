@@ -5,7 +5,7 @@ import { StyledBody } from './StyledWrapper';
 import { BACKGROUND_COLOR, ORIENTATION } from './config';
 
 const propTypes = {
-    backgroundColor: PropTypes.oneOf(Object.keys(BACKGROUND_COLOR)),
+    backgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLOR)),
     children: PropTypes.node,
     className: PropTypes.string,
     id: PropTypes.string,
@@ -14,7 +14,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    backgroundColor: 'TRANSPARENT',
+    backgroundColor: BACKGROUND_COLOR.TRANSPARENT,
     children: null,
     className: null,
     id: null,

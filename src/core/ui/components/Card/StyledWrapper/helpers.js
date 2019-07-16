@@ -1,8 +1,8 @@
-import { BACKGROUND_COLOR, FONT_COLOR } from '../config';
+import { FONT_COLOR_VALUES } from '../config';
 import { palette } from '../../../../styles/variables';
 
 function background({ backgroundColor }) {
-    return palette[BACKGROUND_COLOR[backgroundColor] || BACKGROUND_COLOR.WHITE];
+    return palette[backgroundColor] || palette.white;
 }
 
 function border({ bordered }) {
@@ -14,7 +14,7 @@ function display({ inline }) {
 }
 
 function fontColor({ backgroundColor }) {
-    return palette[FONT_COLOR[backgroundColor] || FONT_COLOR.WHITE];
+    return palette[FONT_COLOR_VALUES[backgroundColor] || FONT_COLOR_VALUES.white];
 }
 
 function wrapValue({ wrap }) {

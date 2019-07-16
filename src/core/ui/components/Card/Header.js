@@ -6,7 +6,7 @@ import { BACKGROUND_COLOR } from './config';
 import { Splash, ORIENTATION, SIZE } from '../Splash';
 
 const propTypes = {
-    backgroundColor: PropTypes.oneOf(Object.keys(BACKGROUND_COLOR)),
+    backgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLOR)),
     children: PropTypes.node,
     className: PropTypes.string,
     controls: PropTypes.node,
@@ -18,7 +18,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    backgroundColor: 'TRANSPARENT',
+    backgroundColor: BACKGROUND_COLOR.TRANSPARENT,
     children: null,
     className: null,
     controls: null,

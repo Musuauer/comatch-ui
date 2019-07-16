@@ -46,9 +46,33 @@ const FONT_COLOR = {
     TRANSPARENT: 'black',
 };
 
+const FONT_COLOR_VALUES = {
+    black: 'white',
+    white: 'black',
+    lightBlue: 'black',
+    primary: 'white',
+    lightPrimary: 'black',
+    secondary: 'white',
+    lightGray: 'black',
+    midGray: 'black',
+    gray: 'white',
+    darkGray: 'white',
+    green: 'white',
+    lightGreen: 'black',
+    darkGreen: 'white',
+    red: 'white',
+    lightRed: 'black',
+    darkRed: 'white',
+    lightOrange: 'black',
+    orange: 'black',
+    darkOrange: 'white',
+    yellow: 'black',
+    transparent: 'black',
+};
+
 const ORIENTATION = {
     HORIZONTAL: 'horizontal',
     VERTICAL: 'vertical',
 };
 
-export { BACKGROUND_COLOR, FONT_COLOR, ORIENTATION };
+export { BACKGROUND_COLOR, FONT_COLOR, FONT_COLOR_VALUES, ORIENTATION };
