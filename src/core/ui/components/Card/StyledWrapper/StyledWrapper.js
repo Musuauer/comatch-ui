@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { StyledBody, StyledHeader } from '.';
+import { StyledBody } from './StyledBody';
+import { StyledHeader } from './StyledHeader';
 import { background, border, fontColor, display } from './helpers';
 
 const CardNode = forwardRef(({ backgroundColor, bordered, inline, ...rest }, ref) => <div {...rest} ref={ref} />);
